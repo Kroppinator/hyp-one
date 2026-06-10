@@ -1,0 +1,30 @@
+{
+  "name": "hypnosewebsite",
+  "version": "1.0.0",
+  "description": "A modern, mobile-first static website for a coaching business. Built with HTML, CSS, and vanilla JavaScript.",
+  "main": "script.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^16.2.7",
+    "nodemailer": "^8.0.10",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.0",
+    "@types/node": "25.9.1",
+    "@types/react": "19.2.16",
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^4.3.0",
+    "typescript": "6.0.3"
+  }
+}
