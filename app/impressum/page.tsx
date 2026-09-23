@@ -1,51 +1,88 @@
+import type { Metadata } from 'next';
+import LegalPage from '@/components/LegalPage';
+
+export const metadata: Metadata = {
+  title: 'Impressum',
+  robots: { index: false, follow: true },
+};
+
 export default function Impressum() {
   return (
-    <>
-      <section className="bg-gradient-to-r from-primary to-secondary text-white py-8 md:py-12">
-        <div className="max-w-6xl mx-auto px-5 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold">Impressum</h1>
-        </div>
-      </section>
+    <LegalPage title="Impressum">
+      <h2>Angaben gemäß § 5 DDG</h2>
+      <p>
+        Isabelle Kroppenstedt
+        <br />
+        Transformation bei Isa – Coaching und Beratung
+        <br />
+        [Straße und Hausnummer]
+        <br />
+        21244 Buchholz in der Nordheide
+        <br />
+        Deutschland
+      </p>
 
-      <section className="py-12 md:py-16 px-5">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-dark mb-6">Impressum</h2>
+      <h2>Kontakt</h2>
+      <p>
+        Telefon: [Telefonnummer]
+        <br />
+        E-Mail: [E-Mail-Adresse]
+      </p>
 
-          <h3 className="text-xl font-semibold text-dark mb-3">Angaben gemäß § 5 TMG</h3>
-          <p className="mb-6">
-            [Dein Name]<br />
-            [Deine Adresse]<br />
-            [PLZ Stadt]<br />
-            Deutschland
-          </p>
+      <h2>Umsatzsteuer</h2>
+      <p>
+        [Umsatzsteuer-Identifikationsnummer gemäß § 27 a UStG – oder, falls
+        Kleinunternehmerregelung: „Gemäß § 19 UStG wird keine Umsatzsteuer berechnet."]
+      </p>
 
-          <h3 className="text-xl font-semibold text-dark mb-3">Kontakt</h3>
-          <p className="mb-6">
-            Telefon: [Deine Telefonnummer]<br />
-            E-Mail: [Deine E-Mail]
-          </p>
+      <h2>Verantwortlich für den Inhalt</h2>
+      <p>
+        Isabelle Kroppenstedt, Anschrift wie oben.
+      </p>
 
-          <h3 className="text-xl font-semibold text-dark mb-3">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
-          <p className="mb-6">[Dein Name]</p>
+      <h2>Berufsbezeichnung und Hinweise zur Tätigkeit</h2>
+      <p>
+        Die angebotenen Leistungen sind Coaching und Beratung. Sie stellen keine
+        Heilbehandlung dar und ersetzen keine ärztliche oder psychologische Therapie.
+        Ich weise ausdrücklich darauf hin, dass ich nicht mehr ärztlich oder
+        therapeutisch tätig bin. Die Kosten tragen die Klientinnen und Klienten
+        eigenständig; eine Erstattung durch Krankenkassen erfolgt nicht.
+      </p>
 
-          <h3 className="text-xl font-semibold text-dark mb-3">Haftungsausschluss</h3>
+      <h2>Verbraucherstreitbeilegung</h2>
+      <p>
+        Ich bin nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor
+        einer Verbraucherschlichtungsstelle teilzunehmen.
+      </p>
 
-          <h4 className="text-lg font-semibold text-dark mb-2">Haftung für Inhalte</h4>
-          <p className="mb-6">
-            Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 des TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
-          </p>
+      <h2>Haftung für Inhalte</h2>
+      <p>
+        Die Inhalte dieser Seiten wurden mit größter Sorgfalt erstellt. Für die
+        Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann ich jedoch keine
+        Gewähr übernehmen. Als Diensteanbieterin bin ich gemäß § 7 Abs. 1 DDG für eigene
+        Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach
+        §§ 8 bis 10 DDG bin ich als Diensteanbieterin jedoch nicht verpflichtet,
+        übermittelte oder gespeicherte fremde Informationen zu überwachen.
+      </p>
 
-          <h4 className="text-lg font-semibold text-dark mb-2">Haftung für Links</h4>
-          <p className="mb-6">
-            Unsere Website enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
-          </p>
+      <h2>Haftung für Links</h2>
+      <p>
+        Diese Website enthält gegebenenfalls Links zu externen Webseiten Dritter, auf
+        deren Inhalte ich keinen Einfluss habe. Für die Inhalte der verlinkten Seiten ist
+        stets der jeweilige Anbieter oder Betreiber verantwortlich.
+      </p>
 
-          <h4 className="text-lg font-semibold text-dark mb-2">Urheberrecht</h4>
-          <p>
-            Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des Autors oder Schöpfers.
-          </p>
-        </div>
-      </section>
-    </>
+      <h2>Urheberrecht</h2>
+      <p>
+        Die auf diesen Seiten erstellten Inhalte und Werke unterliegen dem deutschen
+        Urheberrecht. „Auflösende Hypnose©" ist eine geschützte Bezeichnung.
+      </p>
+
+      <p className="mt-12 rounded-2xl border border-sand bg-shell p-6 text-sm">
+        <strong className="text-ink">Hinweis an die Betreiberin:</strong> Die Angaben in
+        eckigen Klammern müssen noch ergänzt werden. Bitte lass das fertige Impressum vor
+        dem Livegang rechtlich prüfen.
+      </p>
+    </LegalPage>
   );
 }

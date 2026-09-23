@@ -1,62 +1,110 @@
+import type { Metadata } from 'next';
+import LegalPage from '@/components/LegalPage';
+
+export const metadata: Metadata = {
+  title: 'Datenschutz',
+  robots: { index: false, follow: true },
+};
+
 export default function Datenschutz() {
   return (
-    <>
-      <section className="bg-gradient-to-r from-primary to-secondary text-white py-8 md:py-12">
-        <div className="max-w-6xl mx-auto px-5 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold">Datenschutz</h1>
-        </div>
-      </section>
+    <LegalPage title="Datenschutzerklärung">
+      <h2>1. Verantwortliche Stelle</h2>
+      <p>
+        Isabelle Kroppenstedt
+        <br />
+        [Straße und Hausnummer]
+        <br />
+        21244 Buchholz in der Nordheide
+        <br />
+        E-Mail: [E-Mail-Adresse]
+        <br />
+        Telefon: [Telefonnummer]
+      </p>
 
-      <section className="py-12 md:py-16 px-5">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-dark mb-6">Datenschutzerklärung</h2>
+      <h2>2. Datenschutz auf einen Blick</h2>
+      <p>
+        Der Schutz deiner persönlichen Daten ist mir wichtig – gerade bei den Themen, um
+        die es hier geht. Diese Website setzt <strong>keine Cookies</strong> zu
+        Analyse- oder Marketingzwecken ein, bindet keine Social-Media-Plugins ein und
+        verwendet kein Tracking. Schriftarten werden lokal vom eigenen Server
+        ausgeliefert, es findet also keine Verbindung zu Google Fonts statt.
+      </p>
 
-          <h3 className="text-xl font-semibold text-dark mb-3">1. Datenschutz auf einen Blick</h3>
-          <h4 className="text-lg font-semibold text-dark mb-2">Allgemeine Hinweise</h4>
-          <p className="mb-6">
-            Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.
-          </p>
+      <h2>3. Hosting</h2>
+      <p>
+        Diese Website wird bei [Hosting-Anbieter, z. B. Vercel Inc.] gehostet. Beim
+        Aufruf der Seite werden durch den Anbieter automatisch sogenannte Server-Logfiles
+        erfasst:
+      </p>
+      <ul>
+        <li>IP-Adresse (gekürzt bzw. kurzzeitig gespeichert)</li>
+        <li>Datum und Uhrzeit des Zugriffs</li>
+        <li>aufgerufene Seite und übertragene Datenmenge</li>
+        <li>Browsertyp und Betriebssystem</li>
+      </ul>
+      <p>
+        Diese Daten sind technisch erforderlich, um die Website sicher und stabil
+        auszuliefern. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes
+        Interesse an einem technisch fehlerfreien Betrieb). Mit dem Anbieter besteht ein
+        Vertrag zur Auftragsverarbeitung.
+      </p>
 
-          <h3 className="text-xl font-semibold text-dark mb-3">2. Allgemeine Hinweise und Pflichtinformationen</h3>
-          <h4 className="text-lg font-semibold text-dark mb-2">Datenschutz</h4>
-          <p className="mb-6">
-            Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
-          </p>
-          <p className="mb-6">
-            Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie persönlich identifiziert werden können. Diese Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen. Sie erläutert auch, wie und zu welchem Zweck das geschieht.
-          </p>
+      <h2>4. Kontaktformular und E-Mail</h2>
+      <p>
+        Wenn du mir über das Kontaktformular schreibst, werden die von dir angegebenen
+        Daten (Name, E-Mail-Adresse, optional Telefonnummer, Anliegen und Nachricht) per
+        E-Mail an mich übermittelt und dort gespeichert. Ich verwende diese Angaben
+        ausschließlich zur Bearbeitung deiner Anfrage und gebe sie nicht an Dritte
+        weiter.
+      </p>
+      <p>
+        Rechtsgrundlage ist deine Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sowie
+        Art. 6 Abs. 1 lit. b DSGVO, soweit die Anfrage auf einen Vertragsabschluss
+        gerichtet ist. Du kannst deine Einwilligung jederzeit formlos widerrufen. Die
+        Daten verbleiben bei mir, bis du die Löschung verlangst oder der Zweck entfällt;
+        gesetzliche Aufbewahrungsfristen bleiben unberührt.
+      </p>
+      <p>
+        Der Versand erfolgt über den Mailserver [E-Mail-Anbieter]. Das Formular enthält
+        ein verstecktes Feld zur Spam-Abwehr, das keine personenbezogenen Daten erhebt.
+      </p>
 
-          <h3 className="text-xl font-semibold text-dark mb-3">3. Datenerfassung auf dieser Website</h3>
-          <h4 className="text-lg font-semibold text-dark mb-2">Kontaktformular</h4>
-          <p className="mb-6">
-            Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
-          </p>
+      <h2>5. Vertraulichkeit der Sitzungsinhalte</h2>
+      <p>
+        Alles, was du mir in einem Vorgespräch oder in einer Sitzung anvertraust,
+        behandle ich vertraulich. Aufzeichnungen zu Sitzungen werden ausschließlich zur
+        Begleitung deines Prozesses geführt und nicht über diese Website verarbeitet.
+      </p>
 
-          <h4 className="text-lg font-semibold text-dark mb-2">Cookies</h4>
-          <p className="mb-6">
-            Die Internetseiten verwenden Cookies. Cookies sind Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglichen.
-          </p>
-          <p className="mb-6">
-            Die durch Cookies erzeugten Informationen über Ihre Benutzung dieser Internetseite werden in der Regel an einen Server übertragen und dort gespeichert. Sie können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website vollumfänglich werden nutzen können.
-          </p>
+      <h2>6. Deine Rechte</h2>
+      <p>Du hast jederzeit das Recht auf:</p>
+      <ul>
+        <li>Auskunft über die zu dir gespeicherten Daten (Art. 15 DSGVO)</li>
+        <li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
+        <li>Löschung (Art. 17 DSGVO)</li>
+        <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+        <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+        <li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+      </ul>
+      <p>
+        Außerdem steht dir ein Beschwerderecht bei einer Datenschutz-Aufsichtsbehörde zu
+        – für Niedersachsen ist das die Landesbeauftragte für den Datenschutz
+        Niedersachsen.
+      </p>
 
-          <h3 className="text-xl font-semibold text-dark mb-3">4. Ihre Rechte</h3>
-          <p className="mb-6">
-            Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung, Sperrung oder Löschung dieser Daten zu verlangen. Hierzu sowie zu weiteren Fragen zum Datenschutz können Sie sich jederzeit an uns wenden.
-          </p>
+      <h2>7. SSL-/TLS-Verschlüsselung</h2>
+      <p>
+        Diese Seite nutzt aus Sicherheitsgründen eine TLS-Verschlüsselung. Du erkennst
+        sie daran, dass die Adresszeile deines Browsers mit „https://" beginnt.
+      </p>
 
-          <h3 className="text-xl font-semibold text-dark mb-3">5. Kontakt</h3>
-          <p className="mb-6">
-            Für Fragen zum Datenschutz kontaktieren Sie uns unter [Deine E-Mail]
-          </p>
-
-          <div className="mt-8 p-6 bg-light border-l-4 border-primary rounded">
-            <p className="font-semibold">
-              <strong>Hinweis:</strong> Diese Datenschutzerklärung ist ein Template. Bitte passen Sie sie an Ihre spezifischen Bedingungen an und lassen Sie sie ggf. von einem Rechtsanwalt überprüfen, um vollständige GDPR-Compliance zu gewährleisten.
-            </p>
-          </div>
-        </div>
-      </section>
-    </>
+      <p className="mt-12 rounded-2xl border border-sand bg-shell p-6 text-sm">
+        <strong className="text-ink">Hinweis an die Betreiberin:</strong> Diese
+        Datenschutzerklärung ist ein sorgfältig vorbereiteter Entwurf, aber keine
+        Rechtsberatung. Bitte ergänze die Angaben in eckigen Klammern und lass den Text
+        vor dem Livegang rechtlich prüfen.
+      </p>
+    </LegalPage>
   );
 }

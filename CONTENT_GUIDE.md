@@ -1,143 +1,130 @@
-# Content Guide — How to Edit Your Website
+# Inhalte pflegen – Transformation bei Isa
 
-This guide explains how to update text, prices, and contact details on your website.
-No coding knowledge is required. All edits are made directly on GitHub.
-
----
-
-## How to Edit a File on GitHub
-
-1. Go to [github.com/Kroppinator/hyp-one](https://github.com/Kroppinator/hyp-one)
-2. Click the file you want to edit (see sections below for which file to open)
-3. Click the **pencil icon** (Edit this file) in the top right
-4. Make your changes
-5. Scroll down and click **"Commit changes"** → **"Commit changes"** again
-
-Your website will automatically update within 1–2 minutes.
+Diese Anleitung richtet sich an alle, die Texte ändern wollen, ohne Programmierkenntnisse
+zu haben. Jede Datei ist reiner Text – öffnen, Wörter zwischen den Anführungszeichen
+austauschen, speichern.
 
 ---
 
-## Placeholder Text Still To Be Filled In
+## Wo steht was?
 
-These placeholders exist in the code and need your real information:
-
-| Location | Placeholder | File |
-|---|---|---|
-| Contact page | `contact@example.com` | `app/contact/page.tsx` |
-| Contact page | `+49 (0) 123 456 789` | `app/contact/page.tsx` |
-| About page | All `[Hier kommt...]` blocks | `app/about/page.tsx` |
-| Impressum | `[Dein Name]`, `[Deine Adresse]` etc. | `app/impressum/page.tsx` |
-| Datenschutz | `[Deine E-Mail]` | `app/datenschutz/page.tsx` |
-| Footer | `© 2026 Coaching` | `components/Footer.tsx` |
-| Navbar | `Coaching` (brand name) | `components/Navbar.tsx` |
+| Was du ändern willst | Datei |
+| --- | --- |
+| Alle Texte der Startseite | `app/page.tsx` |
+| Navigation oben, Schaltfläche „Kennenlernen" | `components/Navbar.tsx` |
+| Fußzeile mit Adresse und Kontaktdaten | `components/Footer.tsx` |
+| Felder und Texte des Kontaktformulars | `components/ContactForm.tsx` |
+| Impressum | `app/impressum/page.tsx` |
+| Datenschutzerklärung | `app/datenschutz/page.tsx` |
+| Farben und Schriften | `app/globals.css` |
 
 ---
 
-## Page by Page Guide
+## Noch offene Platzhalter
 
-### Homepage — `app/page.tsx`
+Alles in **eckigen Klammern** muss vor dem Livegang ersetzt werden:
 
-**Hero section** (the big banner at the top):
-- Line 8: Main headline — `Deine persönliche Transformation`
-- Line 10: Subtitle — `Begleitung für Dein bestes Leben...`
-- Line 13: Button label — `Jetzt Kontakt aufnehmen`
+- `[Straße und Hausnummer]` – im Footer, auf der Startseite (Abschnitt Kontakt), im
+  Impressum und in der Datenschutzerklärung
+- `[E-Mail-Adresse]` und `[Telefonnummer]` – an denselben Stellen
+- `[Umsatzsteuer-Identifikationsnummer …]` – nur im Impressum
+- `[Hosting-Anbieter …]` und `[E-Mail-Anbieter]` – nur in der Datenschutzerklärung
 
-**Services preview** (the three cards in the middle):
-- Lines 28–30: Card 1 title and description — `Persönliches Coaching`
-- Lines 33–35: Card 2 title and description — `Berufliche Entwicklung`
-- Lines 38–40: Card 3 title and description — `Work-Life-Balance`
-
-**Bottom banner (CTA)**:
-- Line 45: Heading — `Bereit für Veränderung?`
-- Line 46–48: Subtext
-- Line 52: Button label — `Kostenloses Vorgespräch`
+Tipp: In VS Code mit `Strg + Umschalt + F` nach `[` suchen – dann siehst du alle
+Fundstellen auf einen Blick.
 
 ---
 
-### About Page — `app/about/page.tsx`
+## Bilder einfügen
 
-Fill in the four placeholder blocks:
+Aktuell stehen an drei Stellen farbige Platzhalterflächen:
 
-- **Wer bin ich?** (lines 16–18): Your personal introduction and background
-- **Mein Ansatz** (lines 23–25): Your coaching philosophy and values
-- **Qualifikationen** (lines 30–42): Replace `[Qualifikation 1]` etc. with your real qualifications
-- **Meine Leidenschaft** (lines 52–54): What drives you in your work
+1. Startseite oben rechts – Aquarell vom Lebensbaum
+2. Abschnitt „Wie ich arbeite" – Aquarell von der Weggabelung
+3. Abschnitt „Über mich" – Porträtfoto
+
+So tauschst du eine Fläche gegen ein echtes Bild:
+
+1. Lege einen Ordner `public/bilder/` an und speichere die Bilddateien dort
+   (z. B. `lebensbaum.jpg`).
+2. Öffne `app/page.tsx` und ersetze den jeweiligen Block
+
+   ```jsx
+   <ImageSlot caption="Hier steht Isas Aquarell vom Lebensbaum" className="…" />
+   ```
+
+   durch
+
+   ```jsx
+   <Image
+     src="/bilder/lebensbaum.jpg"
+     alt="Aquarell eines Lebensbaums"
+     width={800}
+     height={800}
+     className="rounded-[2.5rem]"
+   />
+   ```
+
+3. Ganz oben in der Datei einmalig ergänzen: `import Image from 'next/image';`
+
+Der `alt`-Text beschreibt das Bild für blinde Besucherinnen und Besucher sowie für
+Google – bitte nicht weglassen.
 
 ---
 
-### Services / Packages — `app/services/page.tsx`
+## Texte auf der Startseite
 
-There are three pricing cards. For each card, edit:
-- The package name (e.g. `Starter Paket`)
-- The price (e.g. `€ 149`)
-- The bullet point features (lines starting with `✓`)
+Die Startseite ist in Abschnitte gegliedert, die im Code durch Kommentarzeilen wie
+`{/* ---- Hero ---- */}` getrennt sind:
 
-**Card 1 — Starter Paket**: lines 16–26
-**Card 2 — Coaching Paket** (highlighted as popular): lines 29–46
-**Card 3 — Intensive Begleitung**: lines 49–61
+| Abschnitt im Code | Was auf der Seite steht |
+| --- | --- |
+| `Hero` | „Damit das Leben wieder Farbe bekommt…", Begrüßung, die beiden Schaltflächen |
+| `Dein emotionales Coaching` | Die vier nummerierten Karten (Liste `nutzen` ganz oben in der Datei) |
+| `Kennst du das?` | Die sechs Situationen (Liste `situationen`) |
+| `Was dich erwartet` | Die drei dunklen Spalten (Liste `erwartet`) |
+| `Wie ich arbeite` | Fließtext, die Methoden-Schlagworte (Liste `methoden`) und die drei Kacheln (Liste `eckdaten`) |
+| `Über mich` | Die Kurzbiografie |
+| `Hinweis` | Der Pflichthinweis „ersetzt keine Therapie" |
+| `Kontakt` | Einladungstext, Adresse und Formular |
 
-To change a price, find the line with `€` and update the number. Example:
+Die Listen stehen gesammelt **ganz oben** in `app/page.tsx`. Einen Punkt ändern heißt
+dort: Text zwischen den einfachen Anführungszeichen austauschen. Einen Punkt ergänzen
+heißt: eine Zeile nach demselben Muster hinzufügen, inklusive Komma am Ende.
+
+---
+
+## Farben ändern
+
+In `app/globals.css` stehen ganz oben die Farbwerte:
+
+```css
+--color-cream:   #fdfbf7;   /* Seitenhintergrund */
+--color-sand:    #f6efe4;   /* Trennflächen */
+--color-shell:   #fbf4ec;   /* helle Abschnitte */
+--color-ink:     #3a3733;   /* Text, dunkler Abschnitt */
+--color-sage:    #8ba888;   /* Salbeigrün */
+--color-apricot: #e8a87c;   /* Apricot-Akzent */
+--color-rose:    #d9a7b0;   /* Rosé-Akzent */
 ```
-<p className="text-primary font-bold text-xl mb-4">€ 149</p>
-```
-Change `149` to your desired price.
+
+Änderst du hier einen Wert, ändert er sich auf der ganzen Seite mit.
 
 ---
 
-### Contact Page — `app/contact/page.tsx`
+## Kontaktformular
 
-**Contact info panel** (right side, lines 139–162):
-- Email address: line 143 — change `contact@example.com` to your email
-- Phone number: line 150 — change `+49 (0) 123 456 789` to your number
-- Opening hours: lines 157–161
+Das Formular schickt zwei E-Mails: eine an Isabelle und eine Eingangsbestätigung an die
+anfragende Person. Damit das funktioniert, müssen in Vercel die Zugangsdaten des
+Postfachs hinterlegt sein – siehe `.env.example` und `README.md`.
 
----
-
-### Impressum — `app/impressum/page.tsx`
-
-Replace the following placeholders (lines 14–29):
-- `[Dein Name]` → Your full legal name
-- `[Deine Adresse]` → Your street address
-- `[PLZ Stadt]` → Your postcode and city
-- `[Deine Telefonnummer]` → Your phone number
-- `[Deine E-Mail]` → Your email address
-
-> **Important:** The Impressum is a legal requirement in Germany. Have a lawyer review it to ensure it meets all requirements for your specific business situation.
+Die Auswahlmöglichkeiten unter „Worum geht es?" stehen in `components/ContactForm.tsx`
+in der Liste `SUBJECTS`.
 
 ---
 
-### Datenschutz — `app/datenschutz/page.tsx`
+## Rechtliches
 
-- Line 50: Replace `[Deine E-Mail]` with your contact email address.
-
-> **Important:** This is a template privacy policy. Have a lawyer review it for your specific situation, especially if you use analytics tools or third-party services in the future.
-
----
-
-### Brand Name — `components/Navbar.tsx` and `components/Footer.tsx`
-
-**Navbar** (`components/Navbar.tsx`, line 15):
-```
-<div className="text-2xl font-bold text-primary">Coaching</div>
-```
-Replace `Coaching` with your business name.
-
-**Footer** (`components/Footer.tsx`, line 7):
-```
-<p className="mb-4">&copy; 2026 Coaching. Alle Rechte vorbehalten.</p>
-```
-Replace `Coaching` with your business name.
-
----
-
-## What Requires Developer Help
-
-The following changes are more technical and should be handled by a developer:
-
-- Changing the color scheme (brand colors)
-- Adding or removing navigation menu items
-- Adding a new page
-- Integrating a booking system (e.g. Calendly)
-- Adding images or a gallery
-- Setting up analytics (e.g. Google Analytics)
-- Connecting the contact form to your email inbox (requires environment variable setup on Vercel)
+Impressum und Datenschutzerklärung sind sorgfältig vorbereitete **Entwürfe**, aber keine
+Rechtsberatung. Bitte vor dem Livegang von einer Anwältin oder einem Anwalt prüfen
+lassen – besonders wegen der Abgrenzung von Coaching zu Heilbehandlung.

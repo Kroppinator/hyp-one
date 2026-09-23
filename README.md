@@ -1,204 +1,116 @@
-# HypnoseWebsite — Technical Admin Documentation
+# Transformation bei Isa
 
-German-language coaching business website built with Next.js 16, React 19, and Tailwind CSS v4. Deployed on Vercel with automatic deploys on every push to `main`.
+Website für Isabelle Kroppenstedt – Coaching und Beratung mit Auflösender Hypnose©,
+Buchholz in der Nordheide.
 
-**Live site:** configured in Vercel dashboard
-**Repository:** https://github.com/Kroppinator/hyp-one
-**Content editing guide (non-technical):** [CONTENT_GUIDE.md](CONTENT_GUIDE.md)
+Aktueller Stand: **Landing Page** (One-Pager). Die ausführliche Website mit eigenen
+Unterseiten (Hypnose-FAQ, Ablauf, Preise) folgt als zweiter Schritt.
 
 ---
 
 ## Stack
 
-| Layer | Technology |
-|---|---|
-| Framework | Next.js 16 (App Router) |
+| | |
+| --- | --- |
+| Framework | Next.js 16 (App Router, Turbopack) |
 | UI | React 19, TypeScript |
-| Styling | Tailwind CSS v4 (`@tailwindcss/postcss`) |
-| Email | Nodemailer (contact form API route) |
-| Hosting | Vercel (auto-deploy from GitHub) |
+| Styling | Tailwind CSS v4 – Theme in `app/globals.css` via `@theme`, **keine** `tailwind.config.js` |
+| Schriften | `next/font/google` (Cormorant Garamond, Karla) – werden beim Build heruntergeladen und selbst ausgeliefert, kein Request an Google zur Laufzeit |
+| Mailversand | Nodemailer über eine Route Handler (`app/api/contact/route.ts`) |
+| Hosting | Vercel |
 
 ---
 
-## Project Structure
+## Entwicklung
+
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # Produktionsbuild
+npm start        # Produktionsbuild lokal starten
+```
+
+---
+
+## Projektstruktur
 
 ```
 app/
-  layout.tsx              # Root layout — Navbar, Footer, CookieBanner
-  page.tsx                # Homepage
-  globals.css             # Tailwind v4 import + @theme custom colors
-  about/page.tsx
-  services/page.tsx
-  contact/page.tsx
-  datenschutz/page.tsx
-  impressum/page.tsx
-  api/contact/route.ts    # Nodemailer email handler
+  layout.tsx            Schriften, Metadaten, Navbar + Footer
+  page.tsx              Die Landing Page (alle Abschnitte, alle Texte)
+  globals.css           Farb- und Schrift-Tokens, Reveal-Animation
+  impressum/page.tsx    Impressum (Entwurf)
+  datenschutz/page.tsx  Datenschutzerklärung (Entwurf)
+  api/contact/route.ts  Formularversand
+
 components/
-  Navbar.tsx
-  Footer.tsx
-  CookieBanner.tsx        # localStorage-based cookie consent
-tailwind.config.js        # Content path config (v4 still reads this)
-postcss.config.js         # Uses @tailwindcss/postcss (v4)
-next.config.js            # Minimal — no static export, no image config needed
-.env.example              # Template for required environment variables
+  Navbar.tsx            Fixierte Navigation, Anker-Links, Mobilmenü
+  Footer.tsx            Adresse, Rechtslinks, Pflichthinweis
+  ContactForm.tsx       Kontaktformular inkl. Einwilligung und Honeypot
+  ImageSlot.tsx         Platzhalterfläche für Isas Aquarelle
+  Reveal.tsx            Sanftes Einblenden beim Scrollen
+  Spiral.tsx            Spiral-Ornament („Reise nach Innen")
+  LegalPage.tsx         Gemeinsamer Rahmen für Impressum/Datenschutz
 ```
 
+Inhalte pflegen: siehe [CONTENT_GUIDE.md](CONTENT_GUIDE.md).
+
 ---
 
-## Local Development
+## Umgebungsvariablen
 
-**Prerequisites:** Node.js 18+
+Für das Kontaktformular. Lokal in `.env.local`, in Produktion unter
+*Vercel → Project → Settings → Environment Variables*. Vorlage: `.env.example`.
 
-```bash
-# Install dependencies
-npm install
+| Variable | Bedeutung |
+| --- | --- |
+| `EMAIL_HOST` | SMTP-Server des Postfachs |
+| `EMAIL_PORT` | Port, meist `587` |
+| `EMAIL_SECURE` | `true` bei Port 465, sonst `false` |
+| `EMAIL_USER` / `EMAIL_PASSWORD` | Zugangsdaten des Postfachs |
+| `EMAIL_FROM` | Absenderadresse |
+| `EMAIL_TO` | Postfach, das die Anfragen empfängt |
 
-# Copy env template and fill in your email credentials
-cp .env.example .env.local
+Ohne gesetzte Variablen antwortet `/api/contact` mit Status 500 und das Formular zeigt
+eine Fehlermeldung – die Seite selbst funktioniert weiterhin.
 
-# Start dev server at http://localhost:3000
-npm run dev
+---
 
-# Type-check
-npx tsc --noEmit
+## Design-Tokens
 
-# Production build (to verify before pushing)
-npm run build
+Definiert in `app/globals.css` unter `@theme`:
+
+```
+cream #fdfbf7 · sand #f6efe4 · shell #fbf4ec
+ink #3a3733 · ink-soft #6f6860 · ink-faint #a09689
+sage #8ba888 / sage-deep #64856a
+apricot #e8a87c / apricot-deep #c9784a
+rose #d9a7b0 / rose-deep #b87686
 ```
 
----
-
-## Deployment — Vercel
-
-The site auto-deploys when you push to `main`. No manual deploy step needed.
-
-To trigger a redeploy manually: push any commit, or use the Vercel dashboard.
-
-### Environment Variables
-
-The contact form requires these variables set in **Vercel → Project → Settings → Environment Variables**:
-
-| Variable | Example | Description |
-|---|---|---|
-| `EMAIL_HOST` | `smtp.gmx.de` | SMTP server hostname |
-| `EMAIL_PORT` | `587` | SMTP port (587 for TLS, 465 for SSL) |
-| `EMAIL_SECURE` | `false` | `true` only for port 465 |
-| `EMAIL_USER` | `you@gmx.com` | SMTP login username |
-| `EMAIL_PASSWORD` | `your-app-password` | SMTP login password |
-| `EMAIL_FROM` | `noreply@yourdomain.com` | Sender address |
-| `EMAIL_TO` | `contact@yourdomain.com` | Where form submissions are delivered |
-
-After adding or changing env vars, trigger a redeploy from the Vercel dashboard.
+Schriftklassen: `font-display` (Cormorant Garamond, Überschriften) und `font-body`
+(Karla, Fließtext, Standard für `<body>`).
 
 ---
 
-## Styling — Tailwind CSS v4
+## Datenschutz-relevante Entscheidungen
 
-This project uses **Tailwind CSS v4**, which differs from v3 in two important ways:
-
-**1. CSS import syntax** (`app/globals.css`):
-```css
-/* v4 — correct */
-@import "tailwindcss";
-
-/* v3 — do NOT use these */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
-**2. Custom colors are defined in CSS, not JS** (`app/globals.css`):
-```css
-@theme {
-  --color-primary: #6366f1;    /* indigo — main brand color */
-  --color-secondary: #ec4899;  /* pink — accent */
-  --color-dark: #1f2937;       /* charcoal — text */
-  --color-light: #f9fafb;      /* off-white — backgrounds */
-}
-```
-
-These become available as utility classes: `bg-primary`, `text-secondary`, `bg-dark`, etc.
-
-To change brand colors, update the hex values in `@theme` and push. Vercel will rebuild automatically.
+- **Keine Cookies.** Die Seite setzt weder Analyse- noch Marketing-Cookies. Deshalb gibt
+  es bewusst **kein Cookie-Banner** – ein Banner ohne Cookies wäre irreführend.
+  Sobald Tracking (z. B. Analytics) hinzukommt, muss ein echter Consent-Dialog
+  nachgerüstet werden.
+- **Schriften lokal.** `next/font` lädt die Fonts beim Build und liefert sie vom eigenen
+  Server aus – keine Verbindung zu Google Fonts beim Seitenaufruf.
+- **Formular.** Einwilligungs-Checkbox ist Pflicht; ein verstecktes Honeypot-Feld hält
+  einfache Bots ab; Eingaben werden serverseitig geprüft und beim HTML-Mailversand
+  escaped.
 
 ---
 
-## Adding a New Page
+## Offene Punkte
 
-1. Create `app/<page-name>/page.tsx`
-2. Export a default React component
-3. Add a link in `components/Navbar.tsx` if it should appear in the nav
-
-Example minimal page:
-```tsx
-export default function MyPage() {
-  return (
-    <>
-      <section className="bg-gradient-to-r from-primary to-secondary text-white py-8 md:py-12">
-        <div className="max-w-6xl mx-auto px-5 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold">Page Title</h1>
-        </div>
-      </section>
-      <section className="py-12 px-5">
-        <div className="max-w-3xl mx-auto">
-          {/* content */}
-        </div>
-      </section>
-    </>
-  );
-}
-```
-
----
-
-## Contact Form — How It Works
-
-`app/api/contact/route.ts` is a Next.js API route that:
-1. Receives a POST request from the contact form with `{ name, email, phone, subject, message }`
-2. Sends a notification email to `EMAIL_TO`
-3. Sends a confirmation email to the user
-
-The form only works when the email env vars are set. Without them, submissions will return a 500 error.
-
----
-
-## Cookie Consent
-
-`components/CookieBanner.tsx` uses `localStorage` to track consent. No analytics or tracking cookies are currently set — the banner is purely for GDPR transparency around the session/functional behaviour of the site. If you add analytics tools in the future, you must load them conditionally based on the stored consent value.
-
----
-
-## Git Workflow
-
-```bash
-# Make changes locally, then:
-git add <files>
-git commit -m "description of change"
-git push
-# Vercel picks up the push and deploys automatically
-```
-
-There is only one branch (`main`). For larger changes, create a feature branch and open a PR on GitHub — Vercel will create a preview deployment for it automatically.
-
----
-
-## SEO
-
-- Page metadata is set in `app/layout.tsx` (`metadata` and `viewport` exports)
-- Each page currently inherits the root metadata — add per-page `export const metadata` in individual `page.tsx` files for page-specific titles/descriptions
-- No sitemap is currently configured — consider adding `app/sitemap.ts` for better search engine indexing
-
----
-
-## Dependency Updates
-
-```bash
-# Check for vulnerabilities
-npm audit
-
-# Update dependencies
-npm update
-
-# After updating, always run a build locally to verify nothing broke
-npm run build
-```
+- [ ] Kontaktdaten und Anschrift ergänzen (alle `[…]`-Platzhalter)
+- [ ] Aquarelle und Porträtfoto einbinden (siehe CONTENT_GUIDE)
+- [ ] Domain `transformationbeiisa.de` verbinden
+- [ ] Impressum und Datenschutz rechtlich prüfen lassen
+- [ ] Zweiter Schritt: Unterseiten mit dem ausführlichen Hypnose-FAQ

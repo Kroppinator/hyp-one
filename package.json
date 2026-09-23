@@ -1,8 +1,7 @@
 {
-  "name": "hypnosewebsite",
+  "name": "transformation-bei-isa",
   "version": "1.0.0",
-  "description": "A modern, mobile-first static website for a coaching business. Built with HTML, CSS, and vanilla JavaScript.",
-  "main": "script.js",
+  "description": "Website für Transformation bei Isa – Coaching und Beratung mit Auflösender Hypnose© (Isabelle Kroppenstedt).",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -27,5 +26,6 @@
     "postcss": "^8.5.15",
     "tailwindcss": "^4.3.0",
     "typescript": "6.0.3"
-  }
+  },
+  "private": true
 }

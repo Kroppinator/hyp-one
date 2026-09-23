@@ -1,23 +1,97 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------------------
+   Farbwelt "Aquarell-Pastell warm" — abgeleitet aus Isas Bildern.
+   Änderst du hier einen Wert, ändert er sich auf der ganzen Seite.
+   --------------------------------------------------------------- */
 @theme {
-  --color-primary: #6366f1;
-  --color-secondary: #ec4899;
-  --color-dark: #1f2937;
-  --color-light: #f9fafb;
+  --color-cream: #fdfbf7;
+  --color-sand: #f6efe4;
+  --color-shell: #fbf4ec;
+
+  --color-ink: #3a3733;
+  --color-ink-soft: #6f6860;
+  --color-ink-faint: #a09689;
+
+  --color-sage: #8ba888;
+  --color-sage-deep: #64856a;
+  --color-apricot: #e8a87c;
+  --color-apricot-deep: #c9784a;
+  --color-rose: #d9a7b0;
+  --color-rose-deep: #b87686;
+
+  --font-display: var(--font-cormorant), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-karla), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Platz für die fixierte Navigation beim Springen zu Ankern */
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-apricot) 35%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-sage-deep);
+    outline-offset: 3px;
   }
 }
 
-@media print {
-  .navbar,
-  .cookie-banner,
-  .cta,
-  .btn {
-    display: none;
+@layer components {
+  /* Weiche Aquarell-Flecken im Hintergrund */
+  .watercolor {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(60px);
+    opacity: 0.45;
+    pointer-events: none;
   }
+}
+
+/* Sanftes Einblenden beim Scrollen (siehe components/Reveal.tsx).
+
+   Wichtig: Der Inhalt ist standardmäßig SICHTBAR. Versteckt wird er nur,
+   wenn die Klasse "js" am <html>-Element hängt — die setzt ein kleines
+   Skript in app/layout.tsx, das sie auch wieder entfernt, falls React nicht
+   startet. So bleibt die Seite lesbar, selbst wenn JavaScript ausfällt. */
+.reveal {
+  opacity: 1;
+}
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+@media print {
+  .no-print { display: none !important; }
 }
