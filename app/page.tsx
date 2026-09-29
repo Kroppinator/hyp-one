@@ -220,10 +220,10 @@ export default function Home() {
                     />
                   ) : (
                     <div
-                      className="blob blob-morph blob-weich flex aspect-4/3 w-full items-center justify-center bg-gradient-to-br from-shell to-sand"
+                      className="blob blob-morph blob-weich flex aspect-4/3 w-full items-center justify-center bg-gradient-to-br from-sage/35 via-shell to-apricot/25"
                       style={{ animationDelay: `${-i * 7}s` }}
                     >
-                      <Spiral className="h-14 w-14 text-sage-deep/40" />
+                      <Spiral className="h-28 w-28 text-sage-deep/55" />
                     </div>
                   )}
                   <p className="px-1 pt-6 leading-relaxed text-ink-soft">{s.text}</p>
@@ -340,7 +340,7 @@ export default function Home() {
             <Reveal className="md:col-span-5">
               {/* Freigestelltes Porträt – steht ohne Rahmen auf der Fläche,
                   hinterlegt von einem weichen Aquarellkreis. */}
-              <div className="relative mx-auto w-full max-w-xs">
+              <div className="relative mx-auto w-full max-w-[15rem] sm:max-w-xs">
                 {/* Ovaler Farbgrund, etwas größer als das Porträt selbst */}
                 <div
                   className="blob blob-morph absolute -inset-5 bg-gradient-to-br from-sage/50 via-shell to-apricot/35"

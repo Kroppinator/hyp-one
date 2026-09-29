@@ -22,7 +22,7 @@ export default function UeberMich() {
           <div className="grid items-center gap-14 md:grid-cols-12">
             <Reveal className="md:col-span-5">
               {/* Freigestelltes Porträt vor einem weichen Aquarellkreis */}
-              <div className="relative mx-auto w-full max-w-xs">
+              <div className="relative mx-auto w-full max-w-[15rem] sm:max-w-xs">
                 {/* Ovaler Farbgrund, etwas größer als das Porträt selbst */}
                 <div
                   className="blob blob-morph absolute -inset-5 bg-gradient-to-br from-sage/50 via-shell to-apricot/35"

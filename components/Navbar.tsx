@@ -62,7 +62,7 @@ export default function Navbar() {
             width={44}
             height={44}
             priority
-            className="aquarell h-11 w-11 shrink-0 object-cover"
+            className="h-11 w-11 shrink-0 object-contain"
           />
           <span className="flex flex-col leading-none">
             <span className="font-display text-xl tracking-wide text-ink sm:text-2xl">
