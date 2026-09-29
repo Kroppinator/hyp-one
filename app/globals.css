@@ -104,6 +104,13 @@
     mask-image: radial-gradient(closest-side, #000 74%, transparent 100%);
   }
 
+  /* Das Porträt braucht einen zurückhaltenderen Verlauf als die Aquarelle,
+     sonst fängt der Kopf oben an zu verschwinden. Kleinerer Wert = weicher. */
+  .portraet-weich > img {
+    -webkit-mask-image: radial-gradient(closest-side, #000 86%, transparent 100%);
+    mask-image: radial-gradient(closest-side, #000 86%, transparent 100%);
+  }
+
   /* Die Form wandert langsam weiter. Über animation-delay bekommt jedes
      Bild eine andere Phase, damit nicht alle im Gleichtakt atmen. */
   @media (prefers-reduced-motion: no-preference) {

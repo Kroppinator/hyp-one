@@ -340,17 +340,21 @@ export default function Home() {
             <Reveal className="md:col-span-5">
               {/* Freigestelltes Porträt – steht ohne Rahmen auf der Fläche,
                   hinterlegt von einem weichen Aquarellkreis. */}
-              <div className="relative mx-auto w-full max-w-sm">
-                <div className="watercolor top-6 left-1/2 h-64 w-64 -translate-x-1/2 bg-sage/70" />
+              <div className="relative mx-auto w-full max-w-xs">
+                {/* Ovaler Farbgrund, etwas größer als das Porträt selbst */}
+                <div
+                  className="blob blob-morph absolute -inset-5 bg-gradient-to-br from-sage/50 via-shell to-apricot/35"
+                  style={{ animationDelay: '-24s' }}
+                />
                 <Aquarell
                   src="/bilder/isabelle.webp"
                   alt="Porträt von Isabelle Kroppenstedt"
-                  className="aspect-3/4 w-full"
+                  className="portraet-weich aspect-2/3 w-full"
                   shape="rect"
                   rounded="rounded-none"
                   blend={false}
-                  fit="object-contain"
-                  sizes="(max-width: 768px) 80vw, 33vw"
+                  fit="object-cover object-top"
+                  sizes="(max-width: 768px) 70vw, 28vw"
                 />
               </div>
             </Reveal>

@@ -22,18 +22,22 @@ export default function UeberMich() {
           <div className="grid items-center gap-14 md:grid-cols-12">
             <Reveal className="md:col-span-5">
               {/* Freigestelltes Porträt vor einem weichen Aquarellkreis */}
-              <div className="relative mx-auto w-full max-w-sm">
-                <div className="watercolor top-4 left-1/2 h-72 w-72 -translate-x-1/2 bg-sage/70" />
+              <div className="relative mx-auto w-full max-w-xs">
+                {/* Ovaler Farbgrund, etwas größer als das Porträt selbst */}
+                <div
+                  className="blob blob-morph absolute -inset-5 bg-gradient-to-br from-sage/50 via-shell to-apricot/35"
+                  style={{ animationDelay: '-11s' }}
+                />
                 <Aquarell
                   src="/bilder/isabelle.webp"
                   alt="Porträt von Isabelle Kroppenstedt"
-                  className="aspect-3/4 w-full"
+                  className="portraet-weich aspect-2/3 w-full"
                   shape="rect"
                   rounded="rounded-none"
                   blend={false}
-                  fit="object-contain"
+                  fit="object-cover object-top"
                   priority
-                  sizes="(max-width: 768px) 80vw, 33vw"
+                  sizes="(max-width: 768px) 70vw, 28vw"
                 />
               </div>
             </Reveal>
@@ -78,9 +82,7 @@ export default function UeberMich() {
               </p>
               <p>
                 Das Erleben von Energiearbeit, Tanz sowie Klangtherapie und Spiritualität
-                mit vielen besonderen Menschen hinterließ bleibenden Eindruck. Insbesondere
-                freies und intuitives Tanzen und Singen sind es, die ich noch heute in
-                meiner Freizeit lebe.
+                mit vielen besonderen Menschen hinterließ bleibenden Eindruck.
               </p>
             </div>
           </Reveal>
