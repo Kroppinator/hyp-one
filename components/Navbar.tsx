@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 const links = [
   { href: '/hypnose', label: 'Auflösende Hypnose' },
@@ -12,6 +13,19 @@ const links = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  // Auf der Startseite führt ein Klick auf das Logo sonst ins Leere, weil die
+  // Route dieselbe bleibt. Dann scrollen wir stattdessen nach oben – spart auf
+  // dem Handy den langen Weg zurück.
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    setOpen(false);
+    if (pathname !== '/') return;
+
+    e.preventDefault();
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -39,7 +53,7 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-8">
         <Link
           href="/"
-          onClick={() => setOpen(false)}
+          onClick={handleLogoClick}
           className="group flex items-center gap-3"
         >
           <Image
