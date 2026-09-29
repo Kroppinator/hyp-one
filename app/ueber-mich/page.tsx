@@ -44,7 +44,7 @@ export default function UeberMich() {
 
             <div className="md:col-span-7">
               <Reveal delay={120}>
-                <p className="text-xs tracking-[0.25em] text-ink-faint uppercase">
+                <p className="text-sm tracking-[0.2em] text-sage-deep uppercase">
                   Über mich
                 </p>
                 <h1 className="mt-6 font-display text-5xl leading-[1.05] text-ink sm:text-6xl">

@@ -68,7 +68,7 @@ export default function Navbar() {
             <span className="font-display text-xl tracking-wide text-ink sm:text-2xl">
               Transformation <span className="text-apricot-deep italic">bei Isa</span>
             </span>
-            <span className="mt-1 text-[0.62rem] tracking-[0.22em] text-ink-faint uppercase">
+            <span className="mt-1 text-[0.72rem] tracking-[0.2em] text-ink-soft uppercase">
               Isabelle Kroppenstedt
             </span>
           </span>

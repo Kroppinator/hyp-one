@@ -87,7 +87,7 @@ export default function Home() {
           <div className="grid items-center gap-14 md:grid-cols-12">
             <div className="md:col-span-7">
               <Reveal>
-                <p className="text-xs tracking-[0.25em] text-ink-faint uppercase">
+                <p className="text-sm tracking-[0.2em] text-sage-deep uppercase">
                   Coaching &amp; Beratung mit Auflösender Hypnose©
                 </p>
               </Reveal>
@@ -323,7 +323,7 @@ export default function Home() {
               <Reveal key={item.wert} delay={i * 100}>
                 <div className="h-full rounded-3xl border border-sand bg-shell p-8 text-center">
                   <p className="font-display text-3xl text-sage-deep">{item.wert}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">{item.label}</p>
+                  <p className="mt-3 leading-relaxed text-ink-soft">{item.label}</p>
                 </div>
               </Reveal>
             ))}
@@ -361,7 +361,7 @@ export default function Home() {
 
             <Reveal delay={120} className="md:col-span-7">
               <div>
-                <p className="text-xs tracking-[0.25em] text-ink-faint uppercase">
+                <p className="text-sm tracking-[0.2em] text-sage-deep uppercase">
                   Über mich
                 </p>
                 <h2 className="mt-5 font-display text-4xl text-ink sm:text-5xl">
@@ -402,7 +402,7 @@ export default function Home() {
       {/* -------------------------------------------------------------- Hinweis */}
       <section className="border-y border-sand bg-sand/60 py-12">
         <div className="mx-auto max-w-3xl px-6 text-center">
-          <p className="text-sm leading-relaxed text-ink-soft">
+          <p className="leading-relaxed text-ink-soft">
             <span className="text-ink">Wichtiger Hinweis:</span> Die Sitzungen bei mir
             ersetzen keine ärztliche oder psychologische Therapie. Die Klientinnen und
             Klienten tragen die Kosten eigenständig. Ich weise ausdrücklich darauf hin, dass

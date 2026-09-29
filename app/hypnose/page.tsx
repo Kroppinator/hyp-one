@@ -53,7 +53,7 @@ export default function Hypnose() {
           <div className="grid items-center gap-14 md:grid-cols-12">
             <div className="md:col-span-7">
               <Reveal>
-                <p className="text-xs tracking-[0.25em] text-ink-faint uppercase">
+                <p className="text-sm tracking-[0.2em] text-sage-deep uppercase">
                   Auflösende Hypnose©
                 </p>
                 <h1 className="mt-6 font-display text-5xl leading-[1.05] text-ink sm:text-6xl">
@@ -90,7 +90,7 @@ export default function Hypnose() {
             aria-label="Inhalt dieser Seite"
             className="rounded-3xl border border-sand bg-shell p-8"
           >
-            <h2 className="text-xs tracking-[0.25em] text-ink-faint uppercase">
+            <h2 className="text-sm tracking-[0.2em] text-sage-deep uppercase">
               Auf dieser Seite
             </h2>
             <ul className="mt-5 grid gap-x-10 gap-y-3 sm:grid-cols-2">
@@ -325,7 +325,7 @@ export default function Hypnose() {
                     </li>
                   ))}
                 </ul>
-                <p className="mt-6 text-sm leading-relaxed text-ink-soft">
+                <p className="mt-6 leading-relaxed text-ink-soft">
                   Wenn du unsicher bist, ob einer dieser Punkte auf dich zutrifft, sprich
                   mich einfach im kostenfreien Vorgespräch darauf an.
                 </p>
@@ -402,7 +402,7 @@ export default function Hypnose() {
                   [Hier trägt Isa ihr Honorar ein – zum Beispiel: Zeitfenster von
                   eineinhalb Stunden, Zahlungsweise, ob Pakete möglich sind.]
                 </p>
-                <p className="mt-5 text-sm leading-relaxed text-ink-soft">
+                <p className="mt-5 leading-relaxed text-ink-soft">
                   Das erste Kennenlernen ist kostenfrei. Die Klientinnen und Klienten tragen
                   die Kosten eigenständig; eine Erstattung durch Krankenkassen erfolgt
                   nicht.
@@ -416,7 +416,7 @@ export default function Hypnose() {
       {/* -------------------------------------------------------------- Hinweis */}
       <section className="border-y border-sand bg-sand/60 py-12">
         <div className="mx-auto max-w-3xl px-6 text-center">
-          <p className="text-sm leading-relaxed text-ink-soft">
+          <p className="leading-relaxed text-ink-soft">
             <span className="text-ink">Wichtiger Hinweis:</span> Die Sitzungen bei mir
             ersetzen keine ärztliche oder psychologische Therapie. Die Klientinnen und
             Klienten tragen die Kosten eigenständig. Ich weise ausdrücklich darauf hin, dass

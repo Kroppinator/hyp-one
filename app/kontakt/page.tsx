@@ -39,7 +39,7 @@ export default function Kontakt() {
               <Reveal>
                 <div className="space-y-10">
                   <div>
-                    <h2 className="text-xs tracking-[0.25em] text-ink-faint uppercase">
+                    <h2 className="text-sm tracking-[0.2em] text-sage-deep uppercase">
                       Coachingraum
                     </h2>
                     <address className="mt-3 leading-relaxed text-ink-soft not-italic">
@@ -50,7 +50,7 @@ export default function Kontakt() {
                   </div>
 
                   <div>
-                    <h2 className="text-xs tracking-[0.25em] text-ink-faint uppercase">
+                    <h2 className="text-sm tracking-[0.2em] text-sage-deep uppercase">
                       Direkt erreichbar
                     </h2>
                     <div className="mt-3 space-y-1">
@@ -74,7 +74,7 @@ export default function Kontakt() {
                   </div>
 
                   <div>
-                    <h2 className="text-xs tracking-[0.25em] text-ink-faint uppercase">
+                    <h2 className="text-sm tracking-[0.2em] text-sage-deep uppercase">
                       Anfahrt
                     </h2>
                     <p className="mt-3 leading-relaxed text-ink-soft">
@@ -87,7 +87,7 @@ export default function Kontakt() {
                     <p className="font-display text-xl text-ink">
                       Wie eine Sitzung abläuft
                     </p>
-                    <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                    <p className="mt-3 leading-relaxed text-ink-soft">
                       Rund 1,5 Stunden Zeitfenster, davon etwa 30 Minuten reine Trance –
                       davor und danach ist Raum für das Gespräch.
                     </p>
@@ -102,7 +102,7 @@ export default function Kontakt() {
                   <h2 className="font-display text-3xl text-ink">
                     Schreib mir eine Nachricht
                   </h2>
-                  <p className="mt-3 mb-8 text-sm leading-relaxed text-ink-soft">
+                  <p className="mt-3 mb-8 leading-relaxed text-ink-soft">
                     Ich melde mich so bald wie möglich bei dir zurück.
                   </p>
                   <ContactForm />
@@ -115,7 +115,7 @@ export default function Kontakt() {
 
       <section className="border-t border-sand bg-sand/60 py-12">
         <div className="mx-auto max-w-3xl px-6 text-center">
-          <p className="text-sm leading-relaxed text-ink-soft">
+          <p className="leading-relaxed text-ink-soft">
             <span className="text-ink">Wichtiger Hinweis:</span> Die Sitzungen bei mir
             ersetzen keine ärztliche oder psychologische Therapie. Die Klientinnen und
             Klienten tragen die Kosten eigenständig. Ich weise ausdrücklich darauf hin,

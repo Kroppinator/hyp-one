@@ -14,7 +14,8 @@
   /* Schrift */
   --color-ink: #2c3830;
   --color-ink-soft: #55665b;
-  --color-ink-faint: #78897c;
+  /* dunkler als im ersten Entwurf – 3,4:1 war zu wenig Kontrast */
+  --color-ink-faint: #627468;
 
   /* Grün – die Leitfarbe */
   --color-sage: #7fb18b;
@@ -39,6 +40,10 @@
 
   body {
     font-family: var(--font-body);
+    /* Fließtext auf 18px – das ist die Größe, die sich im Entwurf als
+       angenehm erwiesen hat (vorher 16px). */
+    font-size: 1.125rem;
+    line-height: 1.7;
     background-color: var(--color-cream);
     color: var(--color-ink);
     -webkit-font-smoothing: antialiased;
