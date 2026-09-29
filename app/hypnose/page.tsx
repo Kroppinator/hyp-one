@@ -73,7 +73,7 @@ export default function Hypnose() {
                   src="/bilder/prisma.webp"
                   alt="Aquarell eines Prismas, das weißes Licht in die Farben des Spektrums bricht"
                   className="aspect-square w-full"
-                  rounded="rounded-[2.5rem]"
+                  morphDelay={-9}
                   priority
                   sizes="(max-width: 768px) 90vw, 40vw"
                 />

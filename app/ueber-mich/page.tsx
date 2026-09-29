@@ -28,6 +28,7 @@ export default function UeberMich() {
                   src="/bilder/isabelle.webp"
                   alt="Porträt von Isabelle Kroppenstedt"
                   className="aspect-3/4 w-full"
+                  shape="rect"
                   rounded="rounded-none"
                   blend={false}
                   fit="object-contain"

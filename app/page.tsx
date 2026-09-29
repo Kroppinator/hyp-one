@@ -140,7 +140,6 @@ export default function Home() {
                   src="/bilder/lebensbaum.webp"
                   alt="Aquarell eines Lebensbaums mit farbiger Krone und weit verzweigten Wurzeln"
                   className="aspect-square w-full"
-                  rounded="rounded-[2.5rem]"
                   priority
                   sizes="(max-width: 768px) 90vw, 40vw"
                 />
@@ -210,21 +209,24 @@ export default function Home() {
           <div className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
             {situationen.map((s, i) => (
               <Reveal key={i} delay={(i % 3) * 100}>
-                <div className="h-full overflow-hidden rounded-3xl border border-sand bg-cream transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_50px_-32px_rgba(44,56,48,0.5)]">
+                <div className="h-full rounded-3xl border border-sand bg-cream p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_50px_-32px_rgba(44,56,48,0.5)]">
                   {s.img ? (
                     <Aquarell
                       src={s.img}
                       alt={s.alt ?? ''}
-                      className="aspect-3/2 w-full"
-                      rounded="rounded-none"
+                      className="aspect-4/3 w-full"
+                      morphDelay={-i * 7}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                   ) : (
-                    <div className="flex aspect-3/2 w-full items-center justify-center bg-gradient-to-br from-shell to-sand">
+                    <div
+                      className="blob blob-morph blob-weich flex aspect-4/3 w-full items-center justify-center bg-gradient-to-br from-shell to-sand"
+                      style={{ animationDelay: `${-i * 7}s` }}
+                    >
                       <Spiral className="h-14 w-14 text-sage-deep/40" />
                     </div>
                   )}
-                  <p className="p-7 leading-relaxed text-ink-soft">{s.text}</p>
+                  <p className="px-1 pt-6 leading-relaxed text-ink-soft">{s.text}</p>
                 </div>
               </Reveal>
             ))}
@@ -284,6 +286,7 @@ export default function Home() {
                 src="/bilder/spirale.webp"
                 alt="Aquarell einer Spirale als Bild für die Reise nach Innen"
                 className="aspect-square w-full"
+                morphDelay={-16}
               />
             </Reveal>
 
@@ -343,6 +346,7 @@ export default function Home() {
                   src="/bilder/isabelle.webp"
                   alt="Porträt von Isabelle Kroppenstedt"
                   className="aspect-3/4 w-full"
+                  shape="rect"
                   rounded="rounded-none"
                   blend={false}
                   fit="object-contain"
