@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="watercolor -bottom-24 left-1/4 h-64 w-64 bg-sage/40" />
 
       <div className="relative mx-auto max-w-6xl px-6 py-16 lg:px-8">
-        <div className="grid gap-12 md:grid-cols-3">
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <p className="font-display text-2xl text-ink">
               Transformation <span className="italic text-apricot-deep">bei Isa</span>
@@ -46,6 +46,38 @@ export default function Footer() {
                 </a>
               </p>
             </div>
+          </div>
+
+          <div>
+            <h3 className="mb-4 text-sm tracking-[0.18em] text-ink-faint uppercase">
+              Seiten
+            </h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link
+                  href="/hypnose"
+                  className="text-ink-soft underline-offset-4 transition-colors hover:text-ink hover:underline"
+                >
+                  Auflösende Hypnose©
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/ueber-mich"
+                  className="text-ink-soft underline-offset-4 transition-colors hover:text-ink hover:underline"
+                >
+                  Über mich
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/kontakt"
+                  className="text-ink-soft underline-offset-4 transition-colors hover:text-ink hover:underline"
+                >
+                  Kontakt
+                </Link>
+              </li>
+            </ul>
           </div>
 
           <div>

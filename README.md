@@ -3,8 +3,8 @@
 Website für Isabelle Kroppenstedt – Coaching und Beratung mit Auflösender Hypnose©,
 Buchholz in der Nordheide.
 
-Aktueller Stand: **Landing Page** (One-Pager). Die ausführliche Website mit eigenen
-Unterseiten (Hypnose-FAQ, Ablauf, Preise) folgt als zweiter Schritt.
+Aktueller Stand: Startseite plus die Unterseiten **Auflösende Hypnose©**, **Über mich**
+und **Kontakt**, dazu Impressum und Datenschutz.
 
 ---
 
@@ -37,20 +37,25 @@ npm start        # Produktionsbuild lokal starten
 ```
 app/
   layout.tsx            Schriften, Metadaten, Navbar + Footer
-  page.tsx              Die Landing Page (alle Abschnitte, alle Texte)
+  page.tsx              Startseite
+  hypnose/page.tsx      Das vollständige Hypnose-FAQ inkl. Honorar
+  ueber-mich/page.tsx   Isabelles Werdegang
+  kontakt/page.tsx      Formular, Kontaktdaten, Anfahrt
   globals.css           Farb- und Schrift-Tokens, Reveal-Animation
   impressum/page.tsx    Impressum (Entwurf)
   datenschutz/page.tsx  Datenschutzerklärung (Entwurf)
   api/contact/route.ts  Formularversand
 
 components/
-  Navbar.tsx            Fixierte Navigation, Anker-Links, Mobilmenü
-  Footer.tsx            Adresse, Rechtslinks, Pflichthinweis
+  Navbar.tsx            Fixierte Navigation mit Prisma-Logo, Mobilmenü
+  Footer.tsx            Adresse, Seitenlinks, Rechtslinks, Pflichthinweis
   ContactForm.tsx       Kontaktformular inkl. Einwilligung und Honeypot
-  ImageSlot.tsx         Platzhalterfläche für Isas Aquarelle
+  Aquarell.tsx          next/image-Rahmen für Isas Bilder (Multiply-Blend)
   Reveal.tsx            Sanftes Einblenden beim Scrollen
   Spiral.tsx            Spiral-Ornament („Reise nach Innen")
   LegalPage.tsx         Gemeinsamer Rahmen für Impressum/Datenschutz
+
+public/bilder/          Isas Aquarelle und das freigestellte Porträt
 ```
 
 Inhalte pflegen: siehe [CONTENT_GUIDE.md](CONTENT_GUIDE.md).
@@ -81,12 +86,15 @@ eine Fehlermeldung – die Seite selbst funktioniert weiterhin.
 Definiert in `app/globals.css` unter `@theme`:
 
 ```
-cream #fdfbf7 · sand #f6efe4 · shell #fbf4ec
-ink #3a3733 · ink-soft #6f6860 · ink-faint #a09689
-sage #8ba888 / sage-deep #64856a
-apricot #e8a87c / apricot-deep #c9784a
-rose #d9a7b0 / rose-deep #b87686
+cream #fbfaf6 · shell #eaf3e7 · sand #d8e8d3
+ink #2c3830 · ink-soft #55665b · ink-faint #78897c
+sage #7fb18b / sage-deep #3d7a52      ← Leitfarbe
+apricot #eb9b62 / apricot-deep #bf6527
+rose #dd93a2 / rose-deep #b0556c
 ```
+
+Grün ist die Leitfarbe; die warmen Töne stammen aus dem Prisma-Logo. Die weichen
+Farbflecken im Hintergrund erzeugt die Klasse `.watercolor`.
 
 Schriftklassen: `font-display` (Cormorant Garamond, Überschriften) und `font-body`
 (Karla, Fließtext, Standard für `<body>`).
@@ -107,10 +115,20 @@ Schriftklassen: `font-display` (Cormorant Garamond, Überschriften) und `font-bo
 
 ---
 
+## Bilder
+
+Die Originale liegen außerhalb des Repos in
+`OneDrive/Neue Homepage 2026/Bilder für Homepage`. Für das Web wurden sie auf maximal
+1200 px verkleinert und als WebP nach `public/bilder/` geschrieben. Das Porträt wurde mit
+`rembg` freigestellt und behält seinen transparenten Hintergrund.
+
+---
+
 ## Offene Punkte
 
 - [ ] Kontaktdaten und Anschrift ergänzen (alle `[…]`-Platzhalter)
-- [ ] Aquarelle und Porträtfoto einbinden (siehe CONTENT_GUIDE)
+- [ ] Honorar auf der Hypnose-Seite eintragen (`[Betrag]`)
+- [ ] Anfahrtshinweis auf der Kontaktseite ergänzen
 - [ ] Domain `transformationbeiisa.de` verbinden
 - [ ] Impressum und Datenschutz rechtlich prüfen lassen
-- [ ] Zweiter Schritt: Unterseiten mit dem ausführlichen Hypnose-FAQ
+- [ ] Entscheiden, ob und wie die Google-Rezensionen eingebunden werden

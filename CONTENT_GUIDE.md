@@ -10,10 +10,13 @@ austauschen, speichern.
 
 | Was du ändern willst | Datei |
 | --- | --- |
-| Alle Texte der Startseite | `app/page.tsx` |
-| Navigation oben, Schaltfläche „Kennenlernen" | `components/Navbar.tsx` |
+| Startseite (alle Texte) | `app/page.tsx` |
+| Seite „Auflösende Hypnose" inkl. Honorar | `app/hypnose/page.tsx` |
+| Seite „Über mich" | `app/ueber-mich/page.tsx` |
+| Seite „Kontakt" inkl. Anfahrt | `app/kontakt/page.tsx` |
+| Navigation oben | `components/Navbar.tsx` |
 | Fußzeile mit Adresse und Kontaktdaten | `components/Footer.tsx` |
-| Felder und Texte des Kontaktformulars | `components/ContactForm.tsx` |
+| Felder des Kontaktformulars | `components/ContactForm.tsx` |
 | Impressum | `app/impressum/page.tsx` |
 | Datenschutzerklärung | `app/datenschutz/page.tsx` |
 | Farben und Schriften | `app/globals.css` |
@@ -24,73 +27,75 @@ austauschen, speichern.
 
 Alles in **eckigen Klammern** muss vor dem Livegang ersetzt werden:
 
-- `[Straße und Hausnummer]` – im Footer, auf der Startseite (Abschnitt Kontakt), im
-  Impressum und in der Datenschutzerklärung
-- `[E-Mail-Adresse]` und `[Telefonnummer]` – an denselben Stellen
-- `[Umsatzsteuer-Identifikationsnummer …]` – nur im Impressum
-- `[Hosting-Anbieter …]` und `[E-Mail-Anbieter]` – nur in der Datenschutzerklärung
+- `[Straße und Hausnummer]`, `[E-Mail-Adresse]`, `[Telefonnummer]` – in Footer,
+  Kontaktseite, Impressum und Datenschutzerklärung
+- `[Betrag]` und der Text darunter – Honorar auf der Hypnose-Seite
+- `[Kurzer Hinweis zur Anfahrt…]` – auf der Kontaktseite
+- `[Umsatzsteuer-Identifikationsnummer …]` – Impressum
+- `[Hosting-Anbieter …]`, `[E-Mail-Anbieter]` – Datenschutzerklärung
 
 Tipp: In VS Code mit `Strg + Umschalt + F` nach `[` suchen – dann siehst du alle
 Fundstellen auf einen Blick.
 
 ---
 
-## Bilder einfügen
+## Bilder
 
-Aktuell stehen an drei Stellen farbige Platzhalterflächen:
+Alle Bilder liegen in `public/bilder/` und sind bereits fürs Web verkleinert
+(aus ~15 MB Originalen wurden ~1 MB).
 
-1. Startseite oben rechts – Aquarell vom Lebensbaum
-2. Abschnitt „Wie ich arbeite" – Aquarell von der Weggabelung
-3. Abschnitt „Über mich" – Porträtfoto
+| Datei | Wo sie erscheint |
+| --- | --- |
+| `prisma-logo.webp` | Logo oben links in der Navigation |
+| `lebensbaum.webp` | Startseite, großes Bild im Kopfbereich |
+| `weggabelung.webp` | „Kennst du das?" – welcher Weg der richtige ist |
+| `kopf-gedanken.webp` | „Kennst du das?" – viel um die Ohren |
+| `paar.webp` | „Kennst du das?" – Schwierigkeiten in Beziehungen |
+| `spirituelles-wachstum.webp` | „Kennst du das?" – spirituell wachsen |
+| `spirale.webp` | Startseite, Abschnitt „Wie ich arbeite" |
+| `prisma.webp` | Hypnose-Seite, Kopfbereich |
+| `isabelle.webp` | Porträt, freigestellt (transparenter Hintergrund) |
 
-So tauschst du eine Fläche gegen ein echtes Bild:
+**Ein Bild austauschen:** neue Datei unter demselben Namen in `public/bilder/` legen.
+Sonst muss nichts geändert werden. Sinnvolle Größe: längste Kante etwa 1000 Pixel.
 
-1. Lege einen Ordner `public/bilder/` an und speichere die Bilddateien dort
-   (z. B. `lebensbaum.jpg`).
-2. Öffne `app/page.tsx` und ersetze den jeweiligen Block
-
-   ```jsx
-   <ImageSlot caption="Hier steht Isas Aquarell vom Lebensbaum" className="…" />
-   ```
-
-   durch
-
-   ```jsx
-   <Image
-     src="/bilder/lebensbaum.jpg"
-     alt="Aquarell eines Lebensbaums"
-     width={800}
-     height={800}
-     className="rounded-[2.5rem]"
-   />
-   ```
-
-3. Ganz oben in der Datei einmalig ergänzen: `import Image from 'next/image';`
-
-Der `alt`-Text beschreibt das Bild für blinde Besucherinnen und Besucher sowie für
-Google – bitte nicht weglassen.
+**Warum sehen die Aquarelle nicht wie Kästen aus?** Sie sind auf weißem Grund gemalt. Die
+Klasse `aquarell` in `app/globals.css` lässt dieses Weiß mit dem Seitenhintergrund
+verschmelzen. Deshalb gehören diese Bilder nur auf helle Flächen – im dunklen Abschnitt
+„Was dich erwartet" würden sie schwarz wirken. Das freigestellte Porträt braucht diesen
+Trick nicht und bekommt deshalb `blend={false}`.
 
 ---
 
 ## Texte auf der Startseite
 
-Die Startseite ist in Abschnitte gegliedert, die im Code durch Kommentarzeilen wie
-`{/* ---- Hero ---- */}` getrennt sind:
+Die Listen ganz **oben** in `app/page.tsx` steuern die wiederkehrenden Elemente:
 
-| Abschnitt im Code | Was auf der Seite steht |
+| Liste | Was sie erzeugt |
 | --- | --- |
-| `Hero` | „Damit das Leben wieder Farbe bekommt…", Begrüßung, die beiden Schaltflächen |
-| `Dein emotionales Coaching` | Die vier nummerierten Karten (Liste `nutzen` ganz oben in der Datei) |
-| `Kennst du das?` | Die sechs Situationen (Liste `situationen`) |
-| `Was dich erwartet` | Die drei dunklen Spalten (Liste `erwartet`) |
-| `Wie ich arbeite` | Fließtext, die Methoden-Schlagworte (Liste `methoden`) und die drei Kacheln (Liste `eckdaten`) |
-| `Über mich` | Die Kurzbiografie |
-| `Hinweis` | Der Pflichthinweis „ersetzt keine Therapie" |
-| `Kontakt` | Einladungstext, Adresse und Formular |
+| `nutzen` | Die vier nummerierten Karten |
+| `situationen` | Die sechs Karten unter „Kennst du das?" – vier davon mit Bild |
+| `erwartet` | Die drei Spalten im dunklen Abschnitt |
+| `methoden` | Die Schlagworte unter „Wie ich arbeite" |
+| `eckdaten` | Die drei Kacheln mit Dauer und Kennenlernen |
 
-Die Listen stehen gesammelt **ganz oben** in `app/page.tsx`. Einen Punkt ändern heißt
-dort: Text zwischen den einfachen Anführungszeichen austauschen. Einen Punkt ergänzen
-heißt: eine Zeile nach demselben Muster hinzufügen, inklusive Komma am Ende.
+Einen Punkt ändern: Text zwischen den einfachen Anführungszeichen austauschen.
+Einen Punkt ergänzen: eine Zeile nach demselben Muster hinzufügen, Komma am Ende
+nicht vergessen.
+
+**Einem Punkt ein Bild geben:** in der Liste `situationen` bei dem Eintrag `img` und `alt`
+ergänzen, zum Beispiel:
+
+```jsx
+{
+  text: 'Dein Text …',
+  img: '/bilder/meinbild.webp',
+  alt: 'Kurze Beschreibung für blinde Besucher und für Google',
+},
+```
+
+Ohne `img` zeigt die Karte stattdessen die Spirale – so wie bei den beiden Punkten, für
+die es kein eigenes Bild gibt.
 
 ---
 
@@ -99,16 +104,20 @@ heißt: eine Zeile nach demselben Muster hinzufügen, inklusive Komma am Ende.
 In `app/globals.css` stehen ganz oben die Farbwerte:
 
 ```css
---color-cream:   #fdfbf7;   /* Seitenhintergrund */
---color-sand:    #f6efe4;   /* Trennflächen */
---color-shell:   #fbf4ec;   /* helle Abschnitte */
---color-ink:     #3a3733;   /* Text, dunkler Abschnitt */
---color-sage:    #8ba888;   /* Salbeigrün */
---color-apricot: #e8a87c;   /* Apricot-Akzent */
---color-rose:    #d9a7b0;   /* Rosé-Akzent */
+--color-cream:     #fbfaf6;   /* Seitenhintergrund */
+--color-shell:     #eaf3e7;   /* hell begrünte Abschnitte */
+--color-sand:      #d8e8d3;   /* Trennflächen, Rahmen */
+--color-ink:       #2c3830;   /* Text und dunkler Abschnitt */
+--color-sage:      #7fb18b;   /* Grün, Leitfarbe */
+--color-sage-deep: #3d7a52;   /* Grün für Schaltflächen */
+--color-apricot:   #eb9b62;   /* warmer Akzent */
+--color-rose:      #dd93a2;   /* zarter Akzent */
 ```
 
-Änderst du hier einen Wert, ändert er sich auf der ganzen Seite mit.
+Änderst du hier einen Wert, ändert er sich auf der ganzen Seite mit. Kräftiger wird es,
+indem du die Farben satter wählst – und über `opacity` bei `.watercolor` (weiter unten in
+derselben Datei) lassen sich die weichen Farbflecken im Hintergrund stärker oder
+zurückhaltender einstellen.
 
 ---
 

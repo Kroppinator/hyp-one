@@ -2,12 +2,11 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const links = [
-  { href: '/#reise', label: 'Deine Reise' },
-  { href: '/#erwartet', label: 'Was dich erwartet' },
-  { href: '/#arbeitsweise', label: 'Wie ich arbeite' },
-  { href: '/#ueber-mich', label: 'Über mich' },
+  { href: '/hypnose', label: 'Auflösende Hypnose' },
+  { href: '/ueber-mich', label: 'Über mich' },
 ];
 
 export default function Navbar() {
@@ -41,33 +40,43 @@ export default function Navbar() {
         <Link
           href="/"
           onClick={() => setOpen(false)}
-          className="group flex flex-col leading-none"
+          className="group flex items-center gap-3"
         >
-          <span className="font-display text-xl tracking-wide text-ink sm:text-2xl">
-            Transformation <span className="italic text-apricot-deep">bei Isa</span>
-          </span>
-          <span className="mt-1 text-[0.62rem] tracking-[0.22em] text-ink-faint uppercase">
-            Isabelle Kroppenstedt
+          <Image
+            src="/bilder/prisma-logo.webp"
+            alt=""
+            width={44}
+            height={44}
+            priority
+            className="aquarell h-11 w-11 shrink-0 object-cover"
+          />
+          <span className="flex flex-col leading-none">
+            <span className="font-display text-xl tracking-wide text-ink sm:text-2xl">
+              Transformation <span className="text-apricot-deep italic">bei Isa</span>
+            </span>
+            <span className="mt-1 text-[0.62rem] tracking-[0.22em] text-ink-faint uppercase">
+              Isabelle Kroppenstedt
+            </span>
           </span>
         </Link>
 
         {/* Desktop */}
         <div className="hidden items-center gap-8 lg:flex">
           {links.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="relative text-sm text-ink-soft transition-colors hover:text-ink after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-apricot after:transition-all after:duration-300 hover:after:w-full"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="/#kontakt"
+          <Link
+            href="/kontakt"
             className="rounded-full bg-sage-deep px-5 py-2.5 text-sm text-cream shadow-sm transition-all duration-300 hover:bg-ink hover:shadow-md"
           >
             Kennenlernen
-          </a>
+          </Link>
         </div>
 
         {/* Mobil */}
@@ -104,22 +113,22 @@ export default function Navbar() {
       >
         <div className="flex flex-col gap-1 px-6 pt-2 pb-8">
           {links.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
               className="border-b border-sand py-4 font-display text-2xl text-ink"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="/#kontakt"
+          <Link
+            href="/kontakt"
             onClick={() => setOpen(false)}
             className="mt-6 rounded-full bg-sage-deep px-6 py-3.5 text-center text-cream"
           >
             Kostenlos kennenlernen
-          </a>
+          </Link>
         </div>
       </div>
     </header>

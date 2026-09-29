@@ -1,24 +1,30 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------
-   Farbwelt "Aquarell-Pastell warm" — abgeleitet aus Isas Bildern.
+   Farbwelt "Pastellgrün" — kräftiger als der erste Entwurf, mit
+   Grün als Leitfarbe und den warmen Tönen des Prismas als Akzent.
    Änderst du hier einen Wert, ändert er sich auf der ganzen Seite.
    --------------------------------------------------------------- */
 @theme {
-  --color-cream: #fdfbf7;
-  --color-sand: #f6efe4;
-  --color-shell: #fbf4ec;
+  /* Flächen */
+  --color-cream: #fbfaf6;
+  --color-shell: #eaf3e7;
+  --color-sand: #d8e8d3;
 
-  --color-ink: #3a3733;
-  --color-ink-soft: #6f6860;
-  --color-ink-faint: #a09689;
+  /* Schrift */
+  --color-ink: #2c3830;
+  --color-ink-soft: #55665b;
+  --color-ink-faint: #78897c;
 
-  --color-sage: #8ba888;
-  --color-sage-deep: #64856a;
-  --color-apricot: #e8a87c;
-  --color-apricot-deep: #c9784a;
-  --color-rose: #d9a7b0;
-  --color-rose-deep: #b87686;
+  /* Grün – die Leitfarbe */
+  --color-sage: #7fb18b;
+  --color-sage-deep: #3d7a52;
+
+  /* Warme Akzente aus dem Prisma */
+  --color-apricot: #eb9b62;
+  --color-apricot-deep: #bf6527;
+  --color-rose: #dd93a2;
+  --color-rose-deep: #b0556c;
 
   --font-display: var(--font-cormorant), Georgia, "Times New Roman", serif;
   --font-body: var(--font-karla), ui-sans-serif, system-ui, sans-serif;
@@ -45,7 +51,7 @@
   }
 
   ::selection {
-    background-color: color-mix(in srgb, var(--color-apricot) 35%, transparent);
+    background-color: color-mix(in srgb, var(--color-sage) 45%, transparent);
   }
 
   :focus-visible {
@@ -59,9 +65,16 @@
   .watercolor {
     position: absolute;
     border-radius: 9999px;
-    filter: blur(60px);
-    opacity: 0.45;
+    filter: blur(55px);
+    opacity: 0.6;
     pointer-events: none;
+  }
+
+  /* Isas Aquarelle sind auf Weiß gemalt. "multiply" lässt das Weiß
+     im Seitenhintergrund verschwinden, sodass kein Kasten entsteht –
+     nur auf hellen Flächen verwenden, nicht auf dunklen Abschnitten. */
+  .aquarell {
+    mix-blend-mode: multiply;
   }
 }
 
