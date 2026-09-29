@@ -337,12 +337,12 @@ export default function Home() {
             <Reveal className="md:col-span-5">
               {/* Freigestelltes Porträt – steht ohne Rahmen auf der Fläche,
                   hinterlegt von einem weichen Aquarellkreis. */}
-              <div className="relative mx-auto aspect-3/4 w-full max-w-sm">
+              <div className="relative mx-auto w-full max-w-sm">
                 <div className="watercolor top-6 left-1/2 h-64 w-64 -translate-x-1/2 bg-sage/70" />
                 <Aquarell
                   src="/bilder/isabelle.webp"
                   alt="Porträt von Isabelle Kroppenstedt"
-                  className="absolute inset-0"
+                  className="aspect-3/4 w-full"
                   rounded="rounded-none"
                   blend={false}
                   fit="object-contain"

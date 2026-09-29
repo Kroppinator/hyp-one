@@ -7,6 +7,11 @@ import Image from 'next/image';
  * globals.css) blendet dieses Weiß per mix-blend-mode in den Seitenhintergrund
  * ein, sodass kein weißer Kasten stehen bleibt. Deshalb gehört diese
  * Komponente nur auf helle Flächen, nicht in den dunklen Abschnitt.
+ *
+ * ACHTUNG: Der Rahmen setzt selbst "relative". Über className KEIN "absolute"
+ * mitgeben – Tailwind stellt .relative im CSS hinter .absolute, das Bild
+ * verliert dadurch seine Höhe und verschwindet. Größe stattdessen über
+ * aspect-* und w-* an className übergeben.
  */
 export default function Aquarell({
   src,
