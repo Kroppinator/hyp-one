@@ -105,12 +105,14 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Knappe Fassung des Pflichthinweises. Die ausführliche Formulierung
+            steht auf jeder Inhaltsseite im eigenen Hinweisband sowie im
+            Impressum – hier würde sie sich direkt darüber wiederholen. */}
         <div className="mt-14 flex flex-col items-center gap-4 border-t border-sand pt-8">
           <Spiral className="h-7 w-7 text-apricot/60" />
           <p className="max-w-2xl text-center text-sm leading-relaxed text-ink-soft">
-            Die Sitzungen ersetzen keine ärztliche oder psychologische Therapie. Klientinnen
-            und Klienten tragen die Kosten eigenständig. Ich weise ausdrücklich darauf hin,
-            dass ich nicht mehr ärztlich oder therapeutisch tätig bin.
+            Coaching und Beratung · kein Ersatz für ärztliche oder psychologische Therapie ·
+            Selbstzahlerleistung · nicht mehr ärztlich oder therapeutisch tätig
           </p>
           <p className="text-sm text-ink-soft">
             © {new Date().getFullYear()} Isabelle Kroppenstedt · Auflösende Hypnose©
