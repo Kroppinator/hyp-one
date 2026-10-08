@@ -18,6 +18,21 @@ const karla = Karla({
   display: 'swap',
 });
 
+/**
+ * Dürfen Suchmaschinen die Seite aufnehmen?
+ *
+ * Die Vorgabe ist NEIN. Ein Server, an dem das niemand bewusst eingestellt
+ * hat, ist kein fertiger Auftritt – und eine Testadresse wie hyp.uber.space
+ * im Google-Index wäre schwer wieder loszuwerden und würde der echten Domain
+ * Konkurrenz machen.
+ *
+ * ACHTUNG, Zeitpunkt: Dieser Wert wird BEIM BAUEN festgeschrieben, nicht beim
+ * Starten des Servers. Ihn in der Dienst-Konfiguration zu setzen hätte keine
+ * Wirkung. Er gehört in die Bau-Umgebung – bei Uberspace also in die GitHub
+ * Action, als Repository-Variable SUCHMASCHINEN_ERLAUBEN="true".
+ */
+export const suchmaschinenErlaubt = process.env.SUCHMASCHINEN_ERLAUBEN === 'true';
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.transformationbeiisa.de'),
   title: {
@@ -43,7 +58,7 @@ export const metadata: Metadata = {
     description:
       'Coaching, Begleitung und Auflösende Hypnose© – ich begleite dich bei deiner individuellen Reise nach Innen.',
   },
-  robots: { index: true, follow: true },
+  robots: { index: suchmaschinenErlaubt, follow: suchmaschinenErlaubt },
 };
 
 export const viewport: Viewport = {

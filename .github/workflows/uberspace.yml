@@ -35,7 +35,13 @@ jobs:
       - name: Pakete installieren
         run: npm ci
 
+      # Steht die Variable nicht auf "true", baut Next die Seite mit
+      # "noindex" und einer sperrenden robots.txt. Genau richtig, solange
+      # dies ein Testserver ist. Zum Freischalten unter
+      # Settings -> Secrets and variables -> Actions -> Variables anlegen.
       - name: Bauen
+        env:
+          SUCHMASCHINEN_ERLAUBEN: ${{ vars.SUCHMASCHINEN_ERLAUBEN }}
         run: npm run build
 
       # Next legt unter .next/standalone einen lauffähigen Server ab, kopiert

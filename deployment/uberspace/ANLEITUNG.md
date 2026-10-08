@@ -162,6 +162,25 @@ erfahrungsgemäß einige Minuten bis wenige Stunden.
 
 ---
 
+## Vor dem Livegang
+
+Solange keine dieser Angaben gesetzt ist, verhält sich der Server wie ein
+Testserver — das ist beabsichtigt.
+
+- [ ] **Suchmaschinen freigeben.** In GitHub unter *Settings → Secrets and
+      variables → Actions → Variables* die Variable `SUCHMASCHINEN_ERLAUBEN`
+      auf `true` setzen, dann neu ausliefern. Ohne sie liefert die Seite
+      `noindex` und eine sperrende `robots.txt` aus und bleibt bei Google
+      unsichtbar. Prüfen mit `curl https://DIE-DOMAIN/robots.txt`.
+- [ ] **Postfach umstellen.** In `~/etc/services.d/transformation.ini` die
+      vier `EMAIL_`-Zeilen von der Testadresse auf Isabelles Postfach ändern,
+      dann `supervisorctl reread && supervisorctl update`.
+- [ ] **Domain verbinden** (Schritt 8).
+- [ ] **Eine echte Anfrage über das Formular schicken** und prüfen, ob sie
+      ankommt — und ob die Bestätigungsmail beim Absender eintrifft.
+
+---
+
 ## Wenn etwas klemmt
 
 | Beobachtung | Ursache |
