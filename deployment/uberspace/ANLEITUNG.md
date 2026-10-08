@@ -166,6 +166,7 @@ erfahrungsgemäß einige Minuten bis wenige Stunden.
 
 | Beobachtung | Ursache |
 | --- | --- |
+| **502 Bad Gateway**, Action aber grün | `HOSTNAME` steht auf `127.0.0.1` statt `0.0.0.0`. Prüfen mit `uberspace web backend list` – dort steht dann „wrong interface". Die Action bleibt grün, weil ihre Prüfung über `localhost` läuft und auf IPv4 zurückfällt; der Webserver tut das nicht. |
 | `supervisorctl status` zeigt `FATAL` | Protokoll ansehen: `supervisorctl tail -100 transformation stderr` |
 | Dienst startet, Seite bleibt leer | `~/app/server.js` fehlt — die Auslieferung lief nicht durch |
 | Port bereits belegt | Alter Prozess hängt: `supervisorctl stop transformation`, dann `pkill -f "node server.js"` |
