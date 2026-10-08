@@ -51,7 +51,7 @@ export default function UeberMich() {
                 <h1 className="mt-6 font-display text-5xl leading-[1.05] text-ink sm:text-6xl">
                   {inhalt.ueberschrift}
                 </h1>
-                <p className="mt-8 font-display text-2xl leading-relaxed text-ink-soft italic sm:text-3xl">
+                <p className="mt-8 font-display text-3xl leading-relaxed text-ink italic sm:text-4xl">
                   {inhalt.leitsatz}
                 </p>
               </Reveal>
@@ -90,7 +90,7 @@ export default function UeberMich() {
               {inhalt.inspiration.absaetze.map((absatz, i) => (
                 <p key={i}>{text(absatz)}</p>
               ))}
-              <p className="font-display text-2xl text-sage-deep italic sm:text-3xl">
+              <p className="font-display text-3xl text-sage-deep italic sm:text-4xl">
                 {inhalt.inspiration.schlusssatz}
               </p>
             </div>

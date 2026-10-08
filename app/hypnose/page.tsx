@@ -28,14 +28,14 @@ function Baustein({ baustein }: { baustein: Baustein }) {
   switch (baustein.typ) {
     case 'kursiv':
       return (
-        <p className="font-display text-xl text-ink italic sm:text-2xl">
+        <p className="font-display text-2xl text-ink italic sm:text-3xl">
           {text(baustein.text ?? '')}
         </p>
       );
 
     case 'aussage':
       return (
-        <p className="font-display text-2xl text-sage-deep italic sm:text-3xl">
+        <p className="font-display text-3xl text-sage-deep italic sm:text-4xl">
           {text(baustein.text ?? '')}
         </p>
       );

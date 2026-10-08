@@ -50,7 +50,7 @@ export default function Footer() {
             <p className="mt-2 text-sm tracking-[0.18em] text-sage-deep uppercase">
               {stammdaten.inhaberin}
             </p>
-            <p className="mt-5 max-w-xs font-display text-lg text-ink-soft italic">
+            <p className="mt-5 max-w-xs font-display text-xl text-ink-soft italic">
               {stammdaten.claim}
             </p>
           </div>

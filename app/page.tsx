@@ -79,7 +79,7 @@ export default function Home() {
           </div>
 
           <Reveal delay={420}>
-            <p className="mt-20 max-w-3xl border-l-2 border-sage pl-6 font-display text-xl leading-relaxed text-ink-soft italic sm:text-2xl">
+            <p className="mt-20 max-w-3xl border-l-2 border-sage pl-6 font-display text-2xl leading-relaxed text-ink italic sm:text-3xl">
               {kopf.leitsatz}
             </p>
           </Reveal>
@@ -96,7 +96,7 @@ export default function Home() {
               <h2 className="font-display text-4xl text-ink sm:text-5xl">
                 {coaching.ueberschrift}
               </h2>
-              <p className="mt-6 font-display text-xl text-ink-soft italic sm:text-2xl">
+              <p className="mt-6 font-display text-2xl text-ink italic sm:text-3xl">
                 {coaching.unterzeile}
               </p>
               <p className="mt-6 text-ink-soft">{coaching.einleitung}</p>
@@ -121,7 +121,7 @@ export default function Home() {
           </div>
 
           <Reveal delay={200}>
-            <p className="mt-14 max-w-2xl font-display text-2xl leading-relaxed text-ink italic sm:text-3xl">
+            <p className="mt-14 max-w-2xl font-display text-3xl leading-relaxed text-ink italic sm:text-4xl">
               {betont(coaching.schlusssatz, 'text-rose-deep')}
             </p>
           </Reveal>
@@ -162,7 +162,7 @@ export default function Home() {
               <p className="max-w-3xl text-lg leading-relaxed text-ink">
                 {kennstDuDas.kastenOben}
               </p>
-              <p className="mt-5 max-w-3xl font-display text-xl leading-relaxed text-ink-soft italic sm:text-2xl">
+              <p className="mt-5 max-w-3xl font-display text-2xl leading-relaxed text-ink italic sm:text-3xl">
                 {kennstDuDas.kastenUnten}
               </p>
             </div>
@@ -298,7 +298,7 @@ export default function Home() {
                   {ueberMich.absaetze.map((absatz, i) => (
                     <p key={i}>{text(absatz)}</p>
                   ))}
-                  <p className="font-display text-xl text-ink italic sm:text-2xl">
+                  <p className="font-display text-2xl text-ink italic sm:text-3xl">
                     {ueberMich.leitsatz}
                   </p>
                   <p>{text(ueberMich.nachsatz)}</p>
