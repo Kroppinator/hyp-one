@@ -54,8 +54,11 @@ function Baustein({ baustein }: { baustein: Baustein }) {
     case 'warnliste':
       return (
         <div className="rounded-3xl border border-rose-deep/30 bg-rose/10 p-8">
-          <p className="leading-relaxed text-ink-soft">{baustein.einleitung}</p>
-          <ul className="mt-5 space-y-3">
+          {/* Leere Einleitung heißt: Die Überschrift führt die Liste bereits ein. */}
+          {baustein.einleitung && (
+            <p className="mb-5 leading-relaxed text-ink-soft">{baustein.einleitung}</p>
+          )}
+          <ul className="space-y-3">
             {baustein.punkte?.map((punkt) => (
               <li key={punkt} className="flex gap-4">
                 <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-rose-deep" />

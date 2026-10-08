@@ -132,6 +132,10 @@ Abschnitt besteht aus Bausteinen mit einem `typ`:
 Inhaltsübersicht oben auf der Seite entsteht automatisch – dort muss nichts nachgetragen
 werden. Die `id` darf nur Kleinbuchstaben und Bindestriche enthalten.
 
+**Felder leer lassen:** Beim Baustein `warnliste` darf `einleitung` leer bleiben (`""`).
+Dann entfällt die Zeile über der Liste – sinnvoll, wenn die Überschrift die Liste schon
+einleitet.
+
 **Lange Überschriften:** In der Inhaltsübersicht steht normalerweise dieselbe Überschrift
 wie auf der Seite. Ist die zu lang oder passt sie dort nicht, lässt sich mit `kurzform`
 eine kürzere Fassung nur für die Übersicht angeben:
