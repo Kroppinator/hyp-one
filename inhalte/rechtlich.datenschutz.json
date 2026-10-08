@@ -2,7 +2,7 @@
   "_ACHTUNG": "RECHTSTEXT – nicht wie gewöhnlichen Seitentext behandeln.",
   "_regel": "Änderungen hier können eine Abmahnung nach sich ziehen. Formulierungen bitte nur nach Rücksprache mit einer Anwältin oder einem Anwalt ändern, nicht aus stilistischen Gründen. Erkennbar an der Namenskonvention: alle Dateien mit dem Präfix 'rechtlich.' sind Pflichttexte.",
   "_zuletztGeprueft": "noch nicht anwaltlich geprüft",
-  "_abhaengigkeit": "Die Abschnitte 3 und 4 nennen Hosting- und Mailanbieter. Wird der Anbieter gewechselt, muss dieser Text mitgeändert werden.",
+  "_abhaengigkeit": "Die Abschnitte 3 und 4 nennen Hosting- und Mailanbieter. Wird der Anbieter gewechselt, muss dieser Text mitgeändert werden. Stand dieses Branches: Hosting bei Uberspace in Mainz (auf main steht hier noch Vercel).",
 
   "titel": "Datenschutzerklärung",
 
@@ -20,7 +20,7 @@
     {
       "ueberschrift": "3. Hosting",
       "absaetze": [
-        "Diese Website wird bei der Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA gehostet. Beim Aufruf der Seite werden durch den Anbieter automatisch sogenannte Server-Logfiles erfasst:"
+        "Diese Website wird bei Uberspace (Jonas Pasche, Kaiserstr. 15, 55116 Mainz) gehostet. Die Server stehen in Deutschland; eine Übermittlung in Drittländer findet nicht statt. Beim Aufruf der Seite werden automatisch sogenannte Server-Logfiles erfasst:"
       ],
       "liste": [
         "IP-Adresse (gekürzt bzw. kurzzeitig gespeichert)",

@@ -109,8 +109,11 @@ export default function Home() {
             {coaching.punkte.map((punkt, i) => (
               <Reveal key={punkt} delay={i * 100}>
                 <div className="flex h-full gap-5 rounded-3xl border border-sand bg-cream p-8 transition-all duration-500 hover:-translate-y-1 hover:border-sage hover:shadow-[0_18px_50px_-32px_rgba(44,56,48,0.5)]">
+                  {/* Eigene kleine Fassung: Ohne Bildoptimierung zur Laufzeit
+                      würde hier sonst die 900-px-Datei für ein 56-px-Symbol
+                      geladen. */}
                   <Image
-                    src="/bilder/spirale.webp"
+                    src="/bilder/spirale-klein.webp"
                     alt=""
                     width={56}
                     height={56}

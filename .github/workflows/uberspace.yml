@@ -1,0 +1,85 @@
+name: Nach Uberspace ausliefern
+
+# Läuft bei jedem Push auf diesen Branch – das ist der Ersatz für die
+# Automatik, die auf Vercel eingebaut ist. Ohne sie würde eine Textänderung
+# in inhalte/ nicht von selbst auf der Website landen.
+on:
+  push:
+    branches: [Uberspace_uat]
+  workflow_dispatch:
+
+# Zwei gleichzeitige Auslieferungen würden sich beim Hochladen überholen.
+concurrency:
+  group: uberspace
+  cancel-in-progress: false
+
+jobs:
+  ausliefern:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Quellcode holen
+        uses: actions/checkout@v4
+
+      - name: Node einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Pakete installieren
+        run: npm ci
+
+      - name: Bauen
+        run: npm run build
+
+      # Next legt unter .next/standalone einen lauffähigen Server ab, kopiert
+      # aber die statischen Dateien und public/ nicht mit hinein. Das holen
+      # wir hier nach, damit ein einziger Ordner alles enthält.
+      - name: Paket vervollständigen
+        run: |
+          cp -r public .next/standalone/public
+          mkdir -p .next/standalone/.next
+          cp -r .next/static .next/standalone/.next/static
+          du -sh .next/standalone
+
+      - name: SSH vorbereiten
+        env:
+          SCHLUESSEL: ${{ secrets.UBERSPACE_SSH_KEY }}
+          HOST: ${{ secrets.UBERSPACE_HOST }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$SCHLUESSEL" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H "$HOST" >> ~/.ssh/known_hosts 2>/dev/null
+
+      # --delete räumt Dateien weg, die es im neuen Build nicht mehr gibt.
+      # Ausgenommen ist alles, was auf dem Server entsteht und nicht aus
+      # dem Build kommt.
+      - name: Hochladen
+        env:
+          HOST: ${{ secrets.UBERSPACE_HOST }}
+          BENUTZER: ${{ secrets.UBERSPACE_USER }}
+        run: |
+          rsync -az --delete --human-readable \
+            -e "ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=yes" \
+            .next/standalone/ \
+            "$BENUTZER@$HOST:/home/$BENUTZER/app/"
+
+      - name: Dienst neu starten
+        env:
+          HOST: ${{ secrets.UBERSPACE_HOST }}
+          BENUTZER: ${{ secrets.UBERSPACE_USER }}
+        run: |
+          ssh -i ~/.ssh/id_ed25519 "$BENUTZER@$HOST" \
+            "supervisorctl restart transformation && sleep 5 && supervisorctl status transformation"
+
+      # Ein Neustart, der sofort wieder abstürzt, würde sonst als Erfolg
+      # durchgehen. Deshalb hier eine echte Anfrage gegen den Server.
+      - name: Erreichbarkeit prüfen
+        env:
+          HOST: ${{ secrets.UBERSPACE_HOST }}
+          BENUTZER: ${{ secrets.UBERSPACE_USER }}
+        run: |
+          ssh -i ~/.ssh/id_ed25519 "$BENUTZER@$HOST" \
+            "curl -sS -o /dev/null -w 'Startseite antwortet mit %{http_code}\n' --fail http://localhost:3000/"

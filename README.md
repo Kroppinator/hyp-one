@@ -8,6 +8,26 @@ und **Kontakt**, dazu Impressum und Datenschutz.
 
 ---
 
+## ⚠️ Dieser Branch: `Uberspace_uat`
+
+Hier wird der Umzug von Vercel zu **Uberspace** vorbereitet. Gegenüber `main`
+unterscheidet sich:
+
+| | `main` (Vercel) | dieser Branch (Uberspace) |
+| --- | --- | --- |
+| Hosting | Vercel | Uberspace, Mainz |
+| Kosten | 0 € bzw. Pro ~230 €/Jahr | ~60 €/Jahr |
+| Auslieferung | eingebaut | `.github/workflows/uberspace.yml` |
+| Build-Ausgabe | Standard | `output: 'standalone'` (22 MB statt 377 MB) |
+| Bildoptimierung | zur Laufzeit | aus, Bilder sind vorab optimiert |
+| Datenschutzerklärung | Vercel, USA | Uberspace, Deutschland |
+
+**Einrichtung des Servers:** [deployment/uberspace/ANLEITUNG.md](deployment/uberspace/ANLEITUNG.md)
+
+Noch nichts davon ist aktiv — `main` läuft unverändert auf Vercel weiter.
+
+---
+
 ## Stack
 
 | | |
