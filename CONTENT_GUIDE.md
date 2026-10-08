@@ -11,7 +11,7 @@ austauschen, speichern.
 | Was du ändern willst | Datei |
 | --- | --- |
 | Startseite (alle Texte) | `app/page.tsx` |
-| Seite „Auflösende Hypnose" inkl. Honorar | `app/hypnose/page.tsx` |
+| Seite „Auflösende Hypnose" inkl. Preise | `app/hypnose/page.tsx` |
 | Seite „Über mich" | `app/ueber-mich/page.tsx` |
 | Seite „Kontakt" inkl. Anfahrt | `app/kontakt/page.tsx` |
 | Navigation oben | `components/Navbar.tsx` |
@@ -65,6 +65,11 @@ verschmelzen. Deshalb gehören diese Bilder nur auf helle Flächen – im dunkle
 „Was dich erwartet" würden sie schwarz wirken. Das freigestellte Porträt braucht diesen
 Trick nicht und bekommt deshalb `blend={false}`.
 
+**Achtung bei neuen Bildern:** Die Originale aus dem Bildgenerator tragen oben rechts
+ein kleines „Made with AI"-Zeichen. Beim Verkleinern wurden deshalb an allen vier Seiten
+48 Pixel weggeschnitten. Wenn du ein neues Bild einsetzt, bitte vorher prüfen, ob dort
+noch so ein Zeichen steht.
+
 ---
 
 ## Texte auf der Startseite
@@ -73,8 +78,8 @@ Die Listen ganz **oben** in `app/page.tsx` steuern die wiederkehrenden Elemente:
 
 | Liste | Was sie erzeugt |
 | --- | --- |
-| `nutzen` | Die vier nummerierten Karten |
-| `situationen` | Die sechs Karten unter „Kennst du das?" – vier davon mit Bild |
+| `nutzen` | Die vier Karten mit der kleinen Spirale |
+| `situationen` | Die vier Karten unter „Kennst du das?", jede mit eigenem Bild |
 | `erwartet` | Die drei Spalten im dunklen Abschnitt |
 | `methoden` | Die Schlagworte unter „Wie ich arbeite" |
 | `eckdaten` | Die drei Kacheln mit Dauer und Kennenlernen |
@@ -94,8 +99,9 @@ ergänzen, zum Beispiel:
 },
 ```
 
-Ohne `img` zeigt die Karte stattdessen die Spirale – so wie bei den beiden Punkten, für
-die es kein eigenes Bild gibt.
+Jede Karte braucht ein Bild. Fehlt `img`, bleibt die Bildfläche leer – dann lieber den
+Text zu einer benachbarten Karte dazunehmen, so wie es bei den ursprünglich sechs
+Punkten gemacht wurde.
 
 ---
 
