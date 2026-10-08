@@ -13,7 +13,7 @@ export default function Impressum() {
       <p>
         Isabelle Kroppenstedt
         <br />
-        Transformation bei Isa – Coaching und Beratung
+        Transformation bei Isa – Coaching und Begleitung
         <br />
         [Straße und Hausnummer]
         <br />
@@ -24,15 +24,9 @@ export default function Impressum() {
 
       <h2>Kontakt</h2>
       <p>
-        Telefon: [Telefonnummer]
+        Telefon: 0155 60906840
         <br />
-        E-Mail: [E-Mail-Adresse]
-      </p>
-
-      <h2>Umsatzsteuer</h2>
-      <p>
-        [Umsatzsteuer-Identifikationsnummer gemäß § 27 a UStG – oder, falls
-        Kleinunternehmerregelung: „Gemäß § 19 UStG wird keine Umsatzsteuer berechnet."]
+        E-Mail: isabelle-kroppenstedt@gmx.de
       </p>
 
       <h2>Verantwortlich für den Inhalt</h2>
@@ -42,11 +36,11 @@ export default function Impressum() {
 
       <h2>Berufsbezeichnung und Hinweise zur Tätigkeit</h2>
       <p>
-        Die angebotenen Leistungen sind Coaching und Beratung. Sie stellen keine
-        Heilbehandlung dar und ersetzen keine ärztliche oder psychologische Therapie.
-        Ich weise ausdrücklich darauf hin, dass ich nicht mehr ärztlich oder
-        therapeutisch tätig bin. Die Kosten tragen die Klientinnen und Klienten
-        eigenständig; eine Erstattung durch Krankenkassen erfolgt nicht.
+        Die angebotenen Leistungen sind Coaching und Begleitung in Veränderungs- und
+        Entscheidungsprozessen. Sie stellen keine Heilbehandlung dar und sind kein
+        Ersatz für ärztliche oder psychotherapeutische Behandlung. Ich weise
+        ausdrücklich darauf hin, dass ich nicht mehr ärztlich oder therapeutisch tätig
+        bin. Die Kosten tragen die Klientinnen und Klienten eigenständig.
       </p>
 
       <h2>Verbraucherstreitbeilegung</h2>
@@ -79,9 +73,11 @@ export default function Impressum() {
       </p>
 
       <p className="mt-12 rounded-2xl border border-sand bg-shell p-6 text-sm">
-        <strong className="text-ink">Hinweis an die Betreiberin:</strong> Die Angaben in
-        eckigen Klammern müssen noch ergänzt werden. Bitte lass das fertige Impressum vor
-        dem Livegang rechtlich prüfen.
+        <strong className="text-ink">Hinweis an die Betreiberin:</strong> Für das
+        Impressum verlangt § 5 DDG eine vollständige, ladungsfähige Anschrift – Ort und
+        Postleitzahl allein genügen hier nicht, auch wenn die Adresse auf den übrigen
+        Seiten bewusst nicht genannt wird. Bitte Straße und Hausnummer ergänzen und das
+        fertige Impressum vor dem Livegang rechtlich prüfen lassen.
       </p>
     </LegalPage>
   );

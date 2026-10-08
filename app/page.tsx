@@ -1,27 +1,22 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Reveal from '@/components/Reveal';
 import Spiral from '@/components/Spiral';
 import Aquarell from '@/components/Aquarell';
 
 const nutzen = [
-  { nr: '01', text: 'löse alte Muster und Glaubenssätze' },
-  { nr: '02', text: 'entlarve Blockaden und Trigger' },
-  { nr: '03', text: 'entdecke Wege und Möglichkeiten' },
-  {
-    nr: '04',
-    text: 'schaffe deinem Unterbewusstsein Raum mit Auflösender Hypnose©, damit es für dich arbeiten kann',
-  },
+  'löse alte Muster und Glaubenssätze',
+  'entlarve Blockaden und Trigger',
+  'entdecke Wege und Möglichkeiten',
+  'schaffe deinem Unterbewusstsein Raum mit Auflösender Hypnose©, damit es für dich arbeiten kann',
 ];
 
-/** Isa hat vier der sechs Punkte ein eigenes Aquarell zugeordnet. */
-const situationen: { text: string; img?: string; alt?: string }[] = [
+/** Jeder Punkt hat sein eigenes Aquarell – Isas Zuordnung. */
+const situationen = [
   {
-    text: 'Vielleicht fragst du dich, welcher Weg der richtige ist für dich.',
+    text: 'Vielleicht fragst du dich, welcher Weg der richtige ist für dich. Du erlebst (kreative) Blockaden oder stehst vor einem Wendepunkt in deinem Leben?',
     img: '/bilder/weggabelung.webp',
     alt: 'Aquarell: ein Mensch steht vor einer Weggabelung in einer weiten Landschaft',
-  },
-  {
-    text: 'Du erlebst (kreative) Blockaden oder stehst vor einem Wendepunkt in deinem Leben.',
   },
   {
     text: 'Du hast viel um die Ohren, sehnst dich nach Ruhe und möchtest wieder den Durchblick haben.',
@@ -29,17 +24,14 @@ const situationen: { text: string; img?: string; alt?: string }[] = [
     alt: 'Aquarell: ein Kopf, umgeben von vielen Gegenständen und Gedanken des Alltags',
   },
   {
-    text: 'Du erlebst wiederkehrende Schwierigkeiten in Beziehungen oder Freundschaften, die dich festfahren lassen – und suchst nach den Ursachen.',
+    text: 'Du erlebst Schwierigkeiten in Beziehungen oder Freundschaften, die dich festfahren lassen – und suchst nach den Ursachen?',
     img: '/bilder/paar.webp',
     alt: 'Aquarell: zwei Menschen, die sich voneinander abwenden',
   },
   {
-    text: 'Du möchtest spirituell wachsen. Vielleicht hast du einen Menschen verloren oder eine besondere Erfahrung gemacht, die du nicht einordnen kannst.',
+    text: 'Du möchtest spirituell wachsen. Vielleicht hast du einen Menschen verloren oder eine besondere Erfahrung gemacht, die du nicht einordnen kannst. Du hegst den Wunsch nach Selbstfindung und Erkenntnis.',
     img: '/bilder/spirituelles-wachstum.webp',
     alt: 'Aquarell: ein Mensch, von Licht umgeben',
-  },
-  {
-    text: 'Du hegst den Wunsch nach Selbstfindung und tiefer Erkenntnis.',
   },
 ];
 
@@ -62,7 +54,7 @@ const methoden = [
   'Lockeres Gespräch',
   'Reflexion',
   'Perspektivwechsel',
-  'Projektion',
+  'Achtsamkeit',
   'Entspannungsverfahren',
   'Atemtechniken',
   'Auflösende Hypnose©',
@@ -88,7 +80,8 @@ export default function Home() {
             <div className="md:col-span-7">
               <Reveal>
                 <p className="text-sm tracking-[0.2em] text-sage-deep uppercase">
-                  Coaching &amp; Beratung mit Auflösender Hypnose©
+                  Coaching &amp; Begleitung in Veränderungs- und
+                  Entscheidungsprozessen · mit Auflösender Hypnose©
                 </p>
               </Reveal>
 
@@ -108,9 +101,7 @@ export default function Home() {
                       Willkommen zu deiner Reise nach Innen.
                     </p>
                     <p className="mt-4 max-w-xl leading-relaxed text-ink-soft">
-                      Ich freue mich, dich auf deinem individuellen Weg begleiten zu dürfen
-                      – denn du bist der beste{' '}
-                      <span className="text-ink">Fühlexperte</span> für dich selbst.
+                      Ich freue mich, dich auf deinem individuellen Weg begleiten zu dürfen.
                     </p>
                   </div>
                 </div>
@@ -174,13 +165,17 @@ export default function Home() {
           </Reveal>
 
           <div className="mt-14 grid gap-6 sm:grid-cols-2">
-            {nutzen.map((item, i) => (
-              <Reveal key={item.nr} delay={i * 100}>
-                <div className="group h-full rounded-3xl border border-sand bg-cream p-8 transition-all duration-500 hover:-translate-y-1 hover:border-sage hover:shadow-[0_18px_50px_-32px_rgba(44,56,48,0.5)]">
-                  <span className="font-display text-3xl text-sage transition-colors duration-500 group-hover:text-sage-deep">
-                    {item.nr}
-                  </span>
-                  <p className="mt-4 text-lg leading-relaxed text-ink">{item.text}</p>
+            {nutzen.map((text, i) => (
+              <Reveal key={text} delay={i * 100}>
+                <div className="flex h-full gap-5 rounded-3xl border border-sand bg-cream p-8 transition-all duration-500 hover:-translate-y-1 hover:border-sage hover:shadow-[0_18px_50px_-32px_rgba(44,56,48,0.5)]">
+                  <Image
+                    src="/bilder/spirale.webp"
+                    alt=""
+                    width={56}
+                    height={56}
+                    className="aquarell blob-weich h-14 w-14 shrink-0"
+                  />
+                  <p className="text-lg leading-relaxed text-ink">{text}</p>
                 </div>
               </Reveal>
             ))}
@@ -206,27 +201,19 @@ export default function Home() {
             </h2>
           </Reveal>
 
-          <div className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-            {situationen.map((s, i) => (
-              <Reveal key={i} delay={(i % 3) * 100}>
+          <div className="mt-14 grid gap-8 sm:grid-cols-2">
+            {situationen.map((sit, i) => (
+              <Reveal key={i} delay={(i % 2) * 100}>
                 <div className="h-full rounded-3xl border border-sand bg-cream p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_50px_-32px_rgba(44,56,48,0.5)]">
-                  {s.img ? (
-                    <Aquarell
-                      src={s.img}
-                      alt={s.alt ?? ''}
-                      className="aspect-4/3 w-full"
-                      morphDelay={-i * 7}
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                  ) : (
-                    <div
-                      className="blob blob-morph blob-weich flex aspect-4/3 w-full items-center justify-center bg-gradient-to-br from-sage/35 via-shell to-apricot/25"
-                      style={{ animationDelay: `${-i * 7}s` }}
-                    >
-                      <Spiral className="h-28 w-28 text-sage-deep/55" />
-                    </div>
-                  )}
-                  <p className="px-1 pt-6 leading-relaxed text-ink-soft">{s.text}</p>
+                  <Aquarell
+                    src={sit.img}
+                    alt={sit.alt}
+                    className="aspect-square w-full"
+                    shape="rect"
+                    rounded="rounded-none"
+                    sizes="(max-width: 640px) 100vw, 45vw"
+                  />
+                  <p className="px-1 pt-6 leading-relaxed text-ink-soft">{sit.text}</p>
                 </div>
               </Reveal>
             ))}
@@ -239,8 +226,8 @@ export default function Home() {
                 Gesprächen angehen.
               </p>
               <p className="mt-5 max-w-3xl font-display text-xl leading-relaxed text-ink-soft italic sm:text-2xl">
-                Manchmal hilft es, ein neutrales Ohr an seiner Seite zu haben – für Dinge,
-                die du sonst mit niemandem teilen magst…
+                Manchmal braucht es ein neutrales Ohr an der Seite – für Themen, die du
+                sonst mit niemandem teilen kannst.
               </p>
             </div>
           </Reveal>
@@ -403,10 +390,11 @@ export default function Home() {
       <section className="border-y border-sand bg-sand/60 py-12">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <p className="leading-relaxed text-ink-soft">
-            <span className="text-ink">Wichtiger Hinweis:</span> Die Sitzungen bei mir
-            ersetzen keine ärztliche oder psychologische Therapie. Die Klientinnen und
-            Klienten tragen die Kosten eigenständig. Ich weise ausdrücklich darauf hin, dass
-            ich nicht mehr ärztlich oder therapeutisch tätig bin.
+            <span className="text-ink">Wichtiger Hinweis:</span> Die Sitzungen stellen
+            keine Heilbehandlung dar und sind kein Ersatz für ärztliche oder
+            psychotherapeutische Behandlung. Die Klientinnen und Klienten tragen die Kosten
+            eigenständig. Ich weise ausdrücklich darauf hin, dass ich nicht mehr ärztlich
+            oder therapeutisch tätig bin.
           </p>
         </div>
       </section>

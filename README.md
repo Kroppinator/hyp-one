@@ -126,9 +126,10 @@ Die Originale liegen außerhalb des Repos in
 
 ## Offene Punkte
 
-- [ ] Kontaktdaten und Anschrift ergänzen (alle `[…]`-Platzhalter)
-- [ ] Honorar auf der Hypnose-Seite eintragen (`[Betrag]`)
-- [ ] Anfahrtshinweis auf der Kontaktseite ergänzen
+- [ ] **Straße und Hausnummer** in Impressum und Datenschutz ergänzen – § 5 DDG
+      verlangt dort eine ladungsfähige Anschrift. Auf den übrigen Seiten steht
+      bewusst nur „Buchholz in der Nordheide".
 - [ ] Domain `transformationbeiisa.de` verbinden
+- [ ] `EMAIL_*`-Variablen in Vercel setzen, sonst schlägt das Formular fehl
 - [ ] Impressum und Datenschutz rechtlich prüfen lassen
 - [ ] Entscheiden, ob und wie die Google-Rezensionen eingebunden werden

@@ -27,12 +27,12 @@ austauschen, speichern.
 
 Alles in **eckigen Klammern** muss vor dem Livegang ersetzt werden:
 
-- `[Straße und Hausnummer]`, `[E-Mail-Adresse]`, `[Telefonnummer]` – in Footer,
-  Kontaktseite, Impressum und Datenschutzerklärung
-- `[Betrag]` und der Text darunter – Honorar auf der Hypnose-Seite
-- `[Kurzer Hinweis zur Anfahrt…]` – auf der Kontaktseite
-- `[Umsatzsteuer-Identifikationsnummer …]` – Impressum
-- `[Hosting-Anbieter …]`, `[E-Mail-Anbieter]` – Datenschutzerklärung
+- `[Straße und Hausnummer]` – nur noch in Impressum und Datenschutzerklärung.
+  Auf allen sichtbaren Seiten steht bewusst nur „Buchholz in der Nordheide" mit dem
+  Hinweis, dass die genaue Adresse bei der Terminabsprache folgt. Im Impressum ist
+  die vollständige Anschrift dagegen gesetzlich vorgeschrieben.
+
+Kontaktdaten, Preise und Anbieterangaben sind eingetragen.
 
 Tipp: In VS Code mit `Strg + Umschalt + F` nach `[` suchen – dann siehst du alle
 Fundstellen auf einen Blick.

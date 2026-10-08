@@ -21,7 +21,7 @@ const inhalt = [
   { id: 'fuer-jeden', label: 'Ist Hypnose für jeden etwas?' },
   { id: 'dauer', label: 'Wie lange dauert eine Sitzung?' },
   { id: 'gelingen', label: 'Was kann ich selbst tun?' },
-  { id: 'honorar', label: 'Honorar' },
+  { id: 'preise', label: 'Preise und Bezahlung' },
 ];
 
 const gegenanzeigen = [
@@ -286,7 +286,7 @@ export default function Hypnose() {
               <div className="mt-6 space-y-5 leading-relaxed text-ink-soft">
                 <p>
                   Je nachdem, wie emotional eine Hypnose verläuft, kannst du im Anschluss
-                  sowohl erleichtert als auch erschöpft oder aufgewühlt sein. Die meisten
+                  sowohl erleichtert als auch erschöpft sein. Die meisten
                   Menschen sind im Nachgang noch etwas in sich vertieft oder beeindruckt von
                   dem gerade Erlebten und Gefühlten.
                 </p>
@@ -296,11 +296,10 @@ export default function Hypnose() {
                   Stelle noch Zeit, das Ganze Revue passieren zu lassen.
                 </p>
                 <p>
-                  Im Anschluss macht ein Spaziergang oder ein Snack an der frischen Luft
-                  Sinn, um sich wieder zu sammeln und einen klaren Kopf zu bekommen, bevor
-                  du zum Beispiel wieder am Straßenverkehr teilnimmst. Wenn inhaltlich große
-                  Themen anstehen, solltest du dir und deinem Körper hinterher etwas Ruhe
-                  gönnen.
+                  Im Anschluss macht ggf. ein kleiner Spaziergang an der frischen Luft Sinn,
+                  um sich zu sammeln, bevor du wieder am Straßenverkehr teilnimmst. Wenn
+                  inhaltlich große Themen anstehen, solltest du dir und deinem Körper
+                  hinterher etwas Ruhe gönnen.
                 </p>
                 <p>
                   Vermehrtes Träumen ist nach Hypnose normal. Es ist als positiver Effekt zu
@@ -345,7 +344,8 @@ export default function Hypnose() {
                 <p>
                   Manch einer ist näher am Spüren oder an seinen Themen als ein anderer und
                   kann sich möglicherweise leichter darauf einlassen. Du wirst schnell
-                  merken, ob eher Gespräche oder Hypnosen gewinnbringend für dich sind.
+                  merken, ob es eher der Austausch oder die Hypnosen sind, die deinen
+                  Prozess ideal begleiten.
                 </p>
                 <p className="font-display text-xl text-ink italic sm:text-2xl">
                   Ich biete dir daher immer die Kombination an.
@@ -393,20 +393,27 @@ export default function Hypnose() {
 
           <Reveal>
             <div>
-              <Frage id="honorar">Honorar</Frage>
+              <Frage id="preise">Preise und Bezahlung</Frage>
               <div className="mt-6 rounded-3xl border border-sand bg-shell p-8">
-                <p className="font-display text-3xl text-sage-deep">
-                  [Betrag] € <span className="text-xl text-ink-soft">pro Sitzung</span>
-                </p>
-                <p className="mt-4 leading-relaxed text-ink-soft">
-                  [Hier trägt Isa ihr Honorar ein – zum Beispiel: Zeitfenster von
-                  eineinhalb Stunden, Zahlungsweise, ob Pakete möglich sind.]
-                </p>
-                <p className="mt-5 leading-relaxed text-ink-soft">
-                  Das erste Kennenlernen ist kostenfrei. Die Klientinnen und Klienten tragen
-                  die Kosten eigenständig; eine Erstattung durch Krankenkassen erfolgt
-                  nicht.
-                </p>
+                <dl className="divide-y divide-sand">
+                  <div className="flex flex-wrap items-baseline justify-between gap-3 pb-4">
+                    <dt className="text-ink">Termin, 60 Minuten</dt>
+                    <dd className="font-display text-3xl text-sage-deep">150 €</dd>
+                  </div>
+                  <div className="flex flex-wrap items-baseline justify-between gap-3 pt-4">
+                    <dt className="text-ink">Termin, 90 Minuten</dt>
+                    <dd className="font-display text-3xl text-sage-deep">180 €</dd>
+                  </div>
+                </dl>
+
+                <div className="mt-7 space-y-3 leading-relaxed text-ink-soft">
+                  <p>
+                    Die Kosten trägt der Klient. Die Bezahlung erfolgt per Überweisung auf
+                    mein Konto innerhalb von 10 Tagen nach Rechnungstellung. Die Rechnung
+                    wird dir per E-Mail zugesendet.
+                  </p>
+                  <p>Das erste Kennenlernen ist kostenfrei.</p>
+                </div>
               </div>
             </div>
           </Reveal>
@@ -417,10 +424,11 @@ export default function Hypnose() {
       <section className="border-y border-sand bg-sand/60 py-12">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <p className="leading-relaxed text-ink-soft">
-            <span className="text-ink">Wichtiger Hinweis:</span> Die Sitzungen bei mir
-            ersetzen keine ärztliche oder psychologische Therapie. Die Klientinnen und
-            Klienten tragen die Kosten eigenständig. Ich weise ausdrücklich darauf hin, dass
-            ich nicht mehr ärztlich oder therapeutisch tätig bin.
+            <span className="text-ink">Wichtiger Hinweis:</span> Die Sitzungen stellen
+            keine Heilbehandlung dar und sind kein Ersatz für ärztliche oder
+            psychotherapeutische Behandlung. Die Klientinnen und Klienten tragen die Kosten
+            eigenständig. Ich weise ausdrücklich darauf hin, dass ich nicht mehr ärztlich
+            oder therapeutisch tätig bin.
           </p>
         </div>
       </section>

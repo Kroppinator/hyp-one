@@ -25,24 +25,26 @@ export default function Footer() {
               Coachingraum
             </h3>
             <address className="space-y-1 leading-relaxed text-ink-soft not-italic">
-              <p>[Straße und Hausnummer]</p>
-              <p>21244 Buchholz in der Nordheide</p>
+              <p>Buchholz in der Nordheide</p>
+              <p className="text-sm">
+                Die genaue Adresse erhältst du bei der Terminabsprache.
+              </p>
             </address>
             <div className="mt-5 space-y-1">
               <p>
                 <a
-                  href="mailto:[E-Mail-Adresse]"
+                  href="mailto:isabelle-kroppenstedt@gmx.de"
                   className="text-ink-soft underline-offset-4 transition-colors hover:text-ink hover:underline"
                 >
-                  [E-Mail-Adresse]
+                  isabelle-kroppenstedt@gmx.de
                 </a>
               </p>
               <p>
                 <a
-                  href="tel:[Telefonnummer]"
+                  href="tel:+4915560906840"
                   className="text-ink-soft underline-offset-4 transition-colors hover:text-ink hover:underline"
                 >
-                  [Telefonnummer]
+                  0155 60906840
                 </a>
               </p>
             </div>
@@ -111,8 +113,8 @@ export default function Footer() {
         <div className="mt-14 flex flex-col items-center gap-4 border-t border-sand pt-8">
           <Spiral className="h-7 w-7 text-apricot/60" />
           <p className="max-w-2xl text-center text-sm leading-relaxed text-ink-soft">
-            Coaching und Beratung · kein Ersatz für ärztliche oder psychologische Therapie ·
-            Selbstzahlerleistung · nicht mehr ärztlich oder therapeutisch tätig
+            Coaching und Begleitung · keine Heilbehandlung · kein Ersatz für ärztliche oder
+            psychotherapeutische Behandlung · Selbstzahlerleistung
           </p>
           <p className="text-sm text-ink-soft">
             © {new Date().getFullYear()} Isabelle Kroppenstedt · Auflösende Hypnose©

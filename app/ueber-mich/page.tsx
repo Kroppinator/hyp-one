@@ -136,7 +136,7 @@ export default function UeberMich() {
               <p>
                 Natürlich gingen all diese Erfahrungen aus Klinik, Praxis und privatem
                 Bereich auch an mir nicht spurlos vorüber. So folge ich nun dem Impuls, mit
-                Coaching und Beratung eben jene Menschen zu begleiten, die entweder ihren
+                Coaching und Begleiten eben jene Menschen zu beraten, die entweder ihren
                 Lebensstil optimieren möchten oder sich selbst und ihre Geschichte besser
                 kennenlernen wollen. Jene, die aus freien Stücken zu innerer Arbeit bereit
                 sind und von Gesprächen und Hypnose profitieren möchten.

@@ -21,17 +21,17 @@ const karla = Karla({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.transformationbeiisa.de'),
   title: {
-    default: 'Transformation bei Isa – Coaching & Beratung mit Auflösender Hypnose©',
+    default: 'Transformation bei Isa – Coaching & Begleitung mit Auflösender Hypnose©',
     template: '%s | Transformation bei Isa',
   },
   description:
-    'Isabelle Kroppenstedt begleitet dich bei deiner Reise nach Innen: emotionales Coaching, Gespräch und Auflösende Hypnose© in Buchholz in der Nordheide. Damit das Leben wieder Farbe bekommt.',
+    'Isabelle Kroppenstedt begleitet dich bei deiner Reise nach Innen: Coaching und Begleitung in Veränderungs- und Entscheidungsprozessen, Gespräch und Auflösende Hypnose© in Buchholz in der Nordheide.',
   keywords: [
     'Coaching',
     'Auflösende Hypnose',
     'Hypnose Buchholz',
     'emotionales Coaching',
-    'Beratung',
+    'Begleitung',
     'Buchholz in der Nordheide',
     'Isabelle Kroppenstedt',
   ],
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: 'Transformation bei Isa',
     title: 'Damit das Leben wieder Farbe bekommt…',
     description:
-      'Emotionales Coaching und Auflösende Hypnose© – ich begleite dich bei deiner individuellen Reise nach Innen.',
+      'Coaching, Begleitung und Auflösende Hypnose© – ich begleite dich bei deiner individuellen Reise nach Innen.',
   },
   robots: { index: true, follow: true },
 };

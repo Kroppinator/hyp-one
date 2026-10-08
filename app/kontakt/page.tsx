@@ -43,9 +43,11 @@ export default function Kontakt() {
                       Coachingraum
                     </h2>
                     <address className="mt-3 leading-relaxed text-ink-soft not-italic">
-                      [Straße und Hausnummer]
+                      Buchholz in der Nordheide
                       <br />
-                      21244 Buchholz in der Nordheide
+                      <span className="text-sm">
+                        Die genaue Adresse erhältst du bei der Terminabsprache.
+                      </span>
                     </address>
                   </div>
 
@@ -56,18 +58,18 @@ export default function Kontakt() {
                     <div className="mt-3 space-y-1">
                       <p>
                         <a
-                          href="mailto:[E-Mail-Adresse]"
+                          href="mailto:isabelle-kroppenstedt@gmx.de"
                           className="text-ink-soft underline-offset-4 transition-colors hover:text-ink hover:underline"
                         >
-                          [E-Mail-Adresse]
+                          isabelle-kroppenstedt@gmx.de
                         </a>
                       </p>
                       <p>
                         <a
-                          href="tel:[Telefonnummer]"
+                          href="tel:+4915560906840"
                           className="text-ink-soft underline-offset-4 transition-colors hover:text-ink hover:underline"
                         >
-                          [Telefonnummer]
+                          0155 60906840
                         </a>
                       </p>
                     </div>
@@ -78,8 +80,8 @@ export default function Kontakt() {
                       Anfahrt
                     </h2>
                     <p className="mt-3 leading-relaxed text-ink-soft">
-                      [Kurzer Hinweis zur Anfahrt: Parkmöglichkeiten, Bus- oder
-                      Bahnanbindung, Hinweise zum Finden des Eingangs.]
+                      Den genauen Ort und den Weg dorthin bespreche ich mit dir, sobald
+                      wir einen Termin gefunden haben.
                     </p>
                   </div>
 
@@ -116,10 +118,11 @@ export default function Kontakt() {
       <section className="border-t border-sand bg-sand/60 py-12">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <p className="leading-relaxed text-ink-soft">
-            <span className="text-ink">Wichtiger Hinweis:</span> Die Sitzungen bei mir
-            ersetzen keine ärztliche oder psychologische Therapie. Die Klientinnen und
-            Klienten tragen die Kosten eigenständig. Ich weise ausdrücklich darauf hin,
-            dass ich nicht mehr ärztlich oder therapeutisch tätig bin.
+            <span className="text-ink">Wichtiger Hinweis:</span> Die Sitzungen stellen
+            keine Heilbehandlung dar und sind kein Ersatz für ärztliche oder
+            psychotherapeutische Behandlung. Die Klientinnen und Klienten tragen die Kosten
+            eigenständig. Ich weise ausdrücklich darauf hin, dass ich nicht mehr ärztlich
+            oder therapeutisch tätig bin.
           </p>
         </div>
       </section>

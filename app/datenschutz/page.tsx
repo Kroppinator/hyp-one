@@ -17,9 +17,9 @@ export default function Datenschutz() {
         <br />
         21244 Buchholz in der Nordheide
         <br />
-        E-Mail: [E-Mail-Adresse]
+        E-Mail: isabelle-kroppenstedt@gmx.de
         <br />
-        Telefon: [Telefonnummer]
+        Telefon: 0155 60906840
       </p>
 
       <h2>2. Datenschutz auf einen Blick</h2>
@@ -33,7 +33,8 @@ export default function Datenschutz() {
 
       <h2>3. Hosting</h2>
       <p>
-        Diese Website wird bei [Hosting-Anbieter, z. B. Vercel Inc.] gehostet. Beim
+        Diese Website wird bei der Vercel Inc., 440 N Barranca Ave #4133, Covina, CA
+        91723, USA gehostet. Beim
         Aufruf der Seite werden durch den Anbieter automatisch sogenannte Server-Logfiles
         erfasst:
       </p>
@@ -66,7 +67,8 @@ export default function Datenschutz() {
         gesetzliche Aufbewahrungsfristen bleiben unberührt.
       </p>
       <p>
-        Der Versand erfolgt über den Mailserver [E-Mail-Anbieter]. Das Formular enthält
+        Der Versand erfolgt über den Mailserver von GMX (1&1 Mail & Media GmbH).
+        Das Formular enthält
         ein verstecktes Feld zur Spam-Abwehr, das keine personenbezogenen Daten erhebt.
       </p>
 
@@ -102,8 +104,9 @@ export default function Datenschutz() {
       <p className="mt-12 rounded-2xl border border-sand bg-shell p-6 text-sm">
         <strong className="text-ink">Hinweis an die Betreiberin:</strong> Diese
         Datenschutzerklärung ist ein sorgfältig vorbereiteter Entwurf, aber keine
-        Rechtsberatung. Bitte ergänze die Angaben in eckigen Klammern und lass den Text
-        vor dem Livegang rechtlich prüfen.
+        Rechtsberatung. Als verantwortliche Stelle ist eine vollständige Anschrift
+        anzugeben – bitte Straße und Hausnummer ergänzen. Den Text bitte vor dem
+        Livegang rechtlich prüfen lassen.
       </p>
     </LegalPage>
   );
