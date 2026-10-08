@@ -151,13 +151,14 @@
     },
     {
       "id": "grenzen",
-      "frage": "Wann kommt Hypnose nicht in Frage?",
+      "frage": "In diesen Fällen können wir leider nicht zusammen arbeiten:",
       "_achtung": "Diese Liste ist eine Sicherheitsangabe. Punkte bitte nicht ohne fachliche Rücksprache streichen.",
       "bloecke": [
         {
           "typ": "warnliste",
           "einleitung": "In diesen Fällen arbeite ich nicht mit Hypnose:",
           "punkte": [
+            "manifeste akute psychiatrische Krankheitsbilder wie etwa Angst- oder Panikstörungen, Zwangserkrankungen",
             "aktive Depression, Epilepsie, floride Schizophrenie oder Psychose, Persönlichkeitsstörungen, Suizidgedanken",
             "kardiovaskuläre Ereignisse (Schlaganfall, Herzinfarkt) und Thrombosen oder Embolien in den letzten 6 Monaten",
             "nach Operationen sollte der vom behandelnden Chirurgen empfohlene Abstand zur körperlichen Belastung eingehalten werden",
