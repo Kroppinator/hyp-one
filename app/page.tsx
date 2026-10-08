@@ -187,7 +187,13 @@ export default function Home() {
             </div>
           </Reveal>
 
-          <div className="mt-16 grid gap-12 md:grid-cols-3">
+          {/* Die Spaltenzahl richtet sich nach der Anzahl der Punkte, damit beim
+              Streichen oder Ergänzen in der Inhaltsdatei keine Lücke entsteht. */}
+          <div
+            className={`mt-16 grid gap-12 ${
+              erwartet.punkte.length >= 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'
+            }`}
+          >
             {erwartet.punkte.map((punkt, i) => (
               <Reveal key={punkt.titel} delay={i * 120}>
                 <div className="text-center md:text-left">

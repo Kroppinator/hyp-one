@@ -101,6 +101,18 @@ und worauf zu achten ist. Du kannst sie ergänzen, solange der Name mit `_` begi
 
 ---
 
+## Punkte ergänzen oder streichen
+
+Listen wie `punkte`, `karten`, `methoden` oder `eckdaten` dürfen länger oder kürzer
+werden – das Layout richtet sich danach. Bei „Was dich erwartet" wechselt die Seite
+zwischen zwei und drei Spalten, je nachdem wie viele Punkte dort stehen, damit keine
+Lücke entsteht.
+
+Beim Streichen daran denken: Das **Komma** am Ende der vorangehenden Zeile muss weg,
+wenn der gestrichene Punkt der letzte war.
+
+---
+
 ## Die Hypnose-Seite: Bausteine
 
 `hypnose.json` hat etwas mehr Struktur, weil dort verschiedene Textsorten vorkommen. Jeder
@@ -119,6 +131,15 @@ Abschnitt besteht aus Bausteinen mit einem `typ`:
 **Eine neue Frage anlegen:** einen Abschnitt nach demselben Muster ergänzen. Die
 Inhaltsübersicht oben auf der Seite entsteht automatisch – dort muss nichts nachgetragen
 werden. Die `id` darf nur Kleinbuchstaben und Bindestriche enthalten.
+
+**Lange Überschriften:** In der Inhaltsübersicht steht normalerweise dieselbe Überschrift
+wie auf der Seite. Ist die zu lang oder passt sie dort nicht, lässt sich mit `kurzform`
+eine kürzere Fassung nur für die Übersicht angeben:
+
+```json
+"frage": "Was kann ich tun, damit Hypnose gelingt und meine Themen erscheinen?",
+"kurzform": "Was kann ich selbst tun?",
+```
 
 ---
 
