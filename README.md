@@ -17,16 +17,15 @@ unterscheidet sich:
 | --- | --- | --- |
 | Hosting | Vercel | Uberspace, Mainz |
 | Kosten | 0 € bzw. Pro ~230 €/Jahr | ~60 €/Jahr |
-| Auslieferung | eingebaut | `.github/workflows/uberspace.yml` – **noch abgeschaltet** |
+| Auslieferung | eingebaut | `.github/workflows/uberspace.yml` – läuft bei Push auf diesen Branch |
 | Build-Ausgabe | Standard | `output: 'standalone'` (22 MB statt 377 MB) |
 | Bildoptimierung | zur Laufzeit | aus, Bilder sind vorab optimiert |
 | Datenschutzerklärung | Vercel, USA | Uberspace, Deutschland |
 
 **Einrichtung des Servers:** [deployment/uberspace/ANLEITUNG.md](deployment/uberspace/ANLEITUNG.md)
 
-Noch nichts davon ist aktiv — `main` läuft unverändert auf Vercel weiter. Auch die
-GitHub Action startet derzeit nur von Hand; sie wird erst eingeschaltet, wenn der
-Uberspace-Zugang steht (siehe Schritt 7a der Anleitung).
+`main` läuft unverändert auf Vercel weiter. Dieser Branch liefert parallel nach
+Uberspace aus, zum Vergleichen.
 
 ---
 

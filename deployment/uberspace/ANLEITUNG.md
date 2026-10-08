@@ -123,35 +123,29 @@ anlegen:
 
 ## 7. Erste Auslieferung
 
-In GitHub unter **Actions → „Nach Uberspace ausliefern" → Run workflow**
-starten. Der Durchlauf baut, lädt hoch, startet neu und prüft am Ende, ob die
-Startseite antwortet.
+Ein Push auf diesen Branch startet die Auslieferung. Der Durchlauf baut, lädt
+hoch, startet neu und prüft am Ende, ob die Startseite antwortet.
+
+> **Warum nicht über den Knopf „Run workflow"?** Den zeigt GitHub nur für
+> Abläufe, die auch auf dem Standard-Branch liegen. Diese Datei gibt es nur
+> auf `Uberspace_uat`, deshalb taucht sie in der Actions-Übersicht erst auf,
+> nachdem sie einmal gelaufen ist. Ein Push genügt.
 
 Schlägt er fehl, steht der Grund im Protokoll. Die häufigsten Ursachen stehen
 unten.
 
 ---
 
-## 7a. Automatik einschalten
+## 7a. Hinweis zur Automatik
 
-Erst wenn der Durchlauf von Hand sauber durchläuft, lohnt die Automatik. In
-`.github/workflows/uberspace.yml` ganz oben die beiden auskommentierten Zeilen
-freigeben:
+Der Auslöser steht bereits auf Push — jede Änderung auf diesem Branch geht
+von selbst live. **Das ist der Punkt, an dem Isabelles Textpflege wieder
+funktioniert:** Sie bearbeitet die Dateien in `inhalte/` über GitHub, und
+ohne diese Automatik bliebe die Änderung liegen.
 
-```yaml
-on:
-  push:
-    branches: [Uberspace_uat]
-  workflow_dispatch:
-```
-
-Ab dann geht jede Änderung auf diesem Branch von selbst live. **Das ist der
-Punkt, an dem Isabelles Textpflege wieder funktioniert** – sie bearbeitet die
-Dateien in `inhalte/` über GitHub, und ohne diese Automatik bliebe die
-Änderung liegen.
-
-Vorher ist das bewusst abgeschaltet: Ein automatischer Lauf ohne Server würde
-bei jedem Push scheitern und Fehlermeldungen verschicken.
+Abschalten lässt sie sich, indem man in
+`.github/workflows/uberspace.yml` die beiden Zeilen unter `push`
+auskommentiert.
 
 ---
 

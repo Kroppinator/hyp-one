@@ -1,20 +1,16 @@
 name: Nach Uberspace ausliefern
 
-# NOCH NICHT AKTIV.
+# Jede Änderung auf diesem Branch geht von selbst live. Das ist der Ersatz
+# für die Automatik, die bei Vercel eingebaut ist – ohne sie würden Isabelles
+# Textänderungen aus GitHub die Website nicht mehr erreichen.
 #
-# Solange es keinen Uberspace-Zugang gibt, würde ein automatischer Lauf nur
-# scheitern und Fehlermeldungen erzeugen. Deshalb startet dieser Ablauf
-# derzeit ausschließlich von Hand (Actions -> Run workflow) und auch dann
-# erst sinnvoll, wenn die drei Secrets hinterlegt sind.
-#
-# EINSCHALTEN, sobald der Server steht: die beiden Zeilen unter "push"
-# einkommentieren. Danach geht jede Änderung auf diesem Branch von selbst
-# live – das ist der Ersatz für die Automatik, die bei Vercel eingebaut ist
-# und ohne die Isabelles Textpflege über GitHub nicht mehr funktionieren
-# würde.
+# Hinweis zu "Run workflow" in der GitHub-Oberfläche: Der Knopf erscheint nur
+# für Abläufe, die auch auf dem Standard-Branch (main) liegen. Diese Datei
+# gibt es nur hier, deshalb ist sie dort nicht aufgeführt. Ein Push auf
+# diesen Branch löst sie trotzdem aus.
 on:
-  # push:
-  #   branches: [Uberspace_uat]
+  push:
+    branches: [Uberspace_uat]
   workflow_dispatch:
 
 # Zwei gleichzeitige Auslieferungen würden sich beim Hochladen überholen.
