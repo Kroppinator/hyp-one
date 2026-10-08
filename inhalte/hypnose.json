@@ -1,0 +1,238 @@
+{
+  "_zweck": "Alle Texte der Seite „Auflösende Hypnose“. Die Inhaltsübersicht oben auf der Seite entsteht automatisch aus den Überschriften – eine neue Frage hier anlegen genügt.",
+
+  "_bausteine": "Jeder Abschnitt besteht aus Bausteinen. Mögliche Typen: 'absatz' (normaler Text), 'kursiv' (hervorgehobener Satz in der Schreibschrift), 'aussage' (großer grüner Merksatz), 'zwischenueberschrift', 'kasten' (eingerahmter Hinweis mit Titel), 'warnliste' (die Gegenanzeigen) und 'preise'. Text zwischen *Sternchen* wird innerhalb eines Absatzes hervorgehoben.",
+
+  "kopf": {
+    "kleineUeberschrift": "Auflösende Hypnose©",
+    "ueberschrift": "Dein Unterbewusstsein kommt zu Wort",
+    "einleitung": "Hier findest du in Ruhe alles, was du vorher wissen möchtest: was diese Form der Hypnose ausmacht, wie eine Sitzung abläuft, wie sich Trance anfühlt – und wann sie nicht das Richtige ist.",
+    "bildBeschreibung": "Aquarell eines Prismas, das weißes Licht in die Farben des Spektrums bricht"
+  },
+
+  "inhaltsuebersicht": "Auf dieser Seite",
+
+  "abschnitte": [
+    {
+      "id": "was-ist-das",
+      "frage": "Was ist Auflösende Hypnose©?",
+      "bloecke": [
+        {
+          "typ": "absatz",
+          "text": "Auflösende Hypnose© ist eine Form der Hypnose, die darauf abzielt, dass der Mensch in einem Zustand der Trance sein Unterbewusstsein „zu Wort“ kommen lässt und darüber seine persönlichen Themen erreicht – zum Beispiel emotionale Blockaden oder alte Glaubenssätze."
+        },
+        {
+          "typ": "absatz",
+          "text": "Dem Fühlen wird während der Hypnose optimalerweise mehr Raum gegeben als im Normalzustand. Alte Erinnerungen dürfen gesehen und gefühlt werden. Im Verlauf findet dadurch eine Neubewertung statt."
+        },
+        {
+          "typ": "absatz",
+          "text": "Ein Unterschied zu einigen anderen Anwendungsformen von Hypnose ist, dass bei dieser Form *keinem festgelegten Skript* oder Protokoll gefolgt wird. Der Ablauf ist frei und am Klienten orientiert. Auch die Tiefe der Trance ist individuell und wird für die gemeinsame Arbeit so genutzt, wie sie eben vorhanden ist oder sich entwickelt."
+        },
+        {
+          "typ": "absatz",
+          "text": "Das heißt also, dass ich mit meiner Aufmerksamkeit vollständig bei dir sein kann, anstatt einem festgelegten Schema zu folgen. Dein Prozess wird begleitet und nach Bedarf gestützt – jedoch möglichst ohne ihn im Fluss zu stören oder zu behindern."
+        },
+        {
+          "typ": "absatz",
+          "text": "Suggestionen von außen zeigen zwar oft beeindruckende Wirkung, sind aber leider nicht von Nachhaltigkeit geprägt. Daher wird darauf in der Regel verzichtet. Lediglich beim Ein- und Ausleiten verwenden wir Suggestionen, oder bei vorher abgesprochenen Themen – sollte es dir zum Beispiel schwer fallen, Bilder vor deinem inneren Auge erscheinen zu lassen."
+        },
+        {
+          "typ": "kursiv",
+          "text": "Alles, was von dir kommt, hat grundsätzlich den größten Wert für dich und deinen Prozess."
+        }
+      ]
+    },
+    {
+      "id": "was-moeglich-ist",
+      "frage": "Was alles möglich ist",
+      "bloecke": [
+        {
+          "typ": "kursiv",
+          "text": "Das Unterbewusstsein ist ein bisschen wie deine emotionale Schatztruhe."
+        },
+        {
+          "typ": "absatz",
+          "text": "Erfahrungen, emotional prägende Erlebnisse, Stimmungen, Verknüpfungen mit Körperlichem. Ein bisschen wie eine Blackbox, die bei einem Flug alles mitschreibt. Unser Verstand hat womöglich längst Haken an Themen oder alte Dinge gemacht, die dort aber noch schlummern."
+        },
+        {
+          "typ": "absatz",
+          "text": "Beginnst du, sie zu öffnen, werden dir wohlbekannte Themen begegnen – genau wie die ein oder andere längst vergessene Erinnerung, zum Beispiel aus der Kindheit, die dich dann gegebenenfalls innerlich bewegen wird."
+        },
+        { "typ": "zwischenueberschrift", "text": "Wirkung" },
+        {
+          "typ": "absatz",
+          "text": "Richtest du deinen Fokus mehr nach innen und wirst spürsamer für deine Gefühlswelt, so kannst du sie nun reflektierter betrachten, für dich lösen oder verabschieden – so wie es dein Prozess dir erlaubt oder du hinschauen magst."
+        },
+        {
+          "typ": "absatz",
+          "text": "In Kenntnis deiner Themen kannst du dich im Anschluss neu und anders erleben. Meist machen die Menschen dann neue, andere Erfahrungen."
+        },
+        { "typ": "aussage", "text": "Es entsteht Bewegung, wo zuvor Stillstand war." }
+      ]
+    },
+    {
+      "id": "ablauf",
+      "frage": "Wie läuft Hypnose ab?",
+      "bloecke": [
+        {
+          "typ": "absatz",
+          "text": "Liegend oder sitzend hast du nach Einleitung einer Trance die Augen geschlossen. Mit der Aufmerksamkeit nach innen fokussiert kannst du in Form von Bildern, alten Gedächtnisinhalten, Symbolen, Farben, Gerüchen oder körperlichen Wahrnehmungen deine Themen spüren."
+        },
+        {
+          "typ": "absatz",
+          "text": "Das in der Hypnose Erlebte ist höchst individuell und unterliegt keiner Bewertung durch mich. Fortlaufend werden wir im Gespräch sein. Im Anschluss wird die Trance wieder ausgeleitet."
+        },
+        {
+          "typ": "absatz",
+          "text": "In der Regel verspüren die Menschen direkt nach der Sitzung ein erstes angenehmes Gefühl. Wichtig zu verstehen ist jedoch, dass das Unterbewusstsein „nacharbeitet“. Nicht nur die Sitzung an sich ist relevant – sie ist als eine Art Anstoß zu verstehen. Ein Perspektivenwechsel, eine Neubewertung und Neulernen finden statt, die wiederum das Erleben nachhaltig verändern."
+        },
+        {
+          "typ": "kasten",
+          "titel": "Meine Rolle",
+          "text": "Wie die eines Beifahrers. Ich begleite dich und werde mit Fragen oder Hinweisen aus meiner Wahrnehmung behilflich sein, die Themen anzugehen."
+        }
+      ]
+    },
+    {
+      "id": "trance",
+      "frage": "Wie fühlt sich Trance an?",
+      "bloecke": [
+        {
+          "typ": "absatz",
+          "text": "Die Menschen erleben die Trance in der Hypnose als eine Art Entspannungszustand, ähnlich wie kurz vor dem Einschlafen. Die Augen sind in der Regel geschlossen, und man ist bei vollem Bewusstsein."
+        },
+        {
+          "typ": "absatz",
+          "text": "Du behältst weiterhin die Kontrolle über das, was du sagst. *Jederzeit bist du in der Lage, eine Sitzung abzubrechen, indem du schlichtweg die Augen öffnest.* Auch erinnerst du dich in der Regel an alles Gesprochene. Du bist mit der Aufmerksamkeit lediglich stark nach innen fokussiert – in dem Maße, in dem es dir eben gelingt und du zulassen magst."
+        }
+      ]
+    },
+    {
+      "id": "wirkweise",
+      "frage": "Wie funktioniert Hypnose?",
+      "bloecke": [
+        {
+          "typ": "absatz",
+          "text": "Durch den Entspannungszustand werden Emotionen leichter zugänglich. Es dürfen andere Bereiche in deinem Gehirn aktiver werden. Das Erspüren und Durchleben der sich zeigenden Gefühle ist Teil deines Prozesses. Weg und Tempo werden automatisch durch dich bestimmt."
+        },
+        {
+          "typ": "absatz",
+          "text": "Das in der Hypnose Wahrgenommene ist stets subjektiv und wird von mir nicht bewertet."
+        },
+        { "typ": "aussage", "text": "Es gibt kein Richtig oder Falsch." },
+        {
+          "typ": "absatz",
+          "text": "Die Themen liefert das Unterbewusstsein so, wie sie gerade anliegen. Du kannst also gar nichts falsch machen."
+        }
+      ]
+    },
+    {
+      "id": "auswirkungen",
+      "frage": "Welche Auswirkungen hat Hypnose?",
+      "bloecke": [
+        {
+          "typ": "absatz",
+          "text": "Je nachdem, wie emotional eine Hypnose verläuft, kannst du im Anschluss sowohl erleichtert als auch erschöpft sein. Die meisten Menschen sind im Nachgang noch etwas in sich vertieft oder beeindruckt von dem gerade Erlebten und Gefühlten."
+        },
+        {
+          "typ": "absatz",
+          "text": "Mit endender Trance dürfen sich die Augen wieder auf ihre Umgebung fokussieren. Du kommst wieder im Hier und Jetzt an, und wir haben an der Stelle noch Zeit, das Ganze Revue passieren zu lassen."
+        },
+        {
+          "typ": "absatz",
+          "text": "Im Anschluss macht ggf. ein kleiner Spaziergang an der frischen Luft Sinn, um sich zu sammeln, bevor du wieder am Straßenverkehr teilnimmst. Wenn inhaltlich große Themen anstehen, solltest du dir und deinem Körper hinterher etwas Ruhe gönnen."
+        },
+        {
+          "typ": "absatz",
+          "text": "Vermehrtes Träumen ist nach Hypnose normal. Es ist als positiver Effekt zu verstehen und zeigt, dass etwas in Bewegung kommt."
+        }
+      ]
+    },
+    {
+      "id": "grenzen",
+      "frage": "Wann kommt Hypnose nicht in Frage?",
+      "_achtung": "Diese Liste ist eine Sicherheitsangabe. Punkte bitte nicht ohne fachliche Rücksprache streichen.",
+      "bloecke": [
+        {
+          "typ": "warnliste",
+          "einleitung": "In diesen Fällen arbeite ich nicht mit Hypnose:",
+          "punkte": [
+            "aktive Depression, Epilepsie, floride Schizophrenie oder Psychose, Persönlichkeitsstörungen, Suizidgedanken",
+            "kardiovaskuläre Ereignisse (Schlaganfall, Herzinfarkt) und Thrombosen oder Embolien in den letzten 6 Monaten",
+            "nach Operationen sollte der vom behandelnden Chirurgen empfohlene Abstand zur körperlichen Belastung eingehalten werden",
+            "unter Einfluss von Drogen oder Alkohol",
+            "geistige Behinderungen"
+          ],
+          "schluss": "Wenn du unsicher bist, ob einer dieser Punkte auf dich zutrifft, sprich mich einfach im kostenfreien Vorgespräch darauf an."
+        }
+      ]
+    },
+    {
+      "id": "fuer-jeden",
+      "frage": "Ist Hypnose für jeden etwas?",
+      "bloecke": [
+        {
+          "typ": "absatz",
+          "text": "Je nach Typ spürst du nach ein bis zwei Hypnosen, ob du davon profitierst oder nicht. Die Wirkung entfaltet sich meist in den darauffolgenden Tagen. Du merkst das zum Beispiel an vermehrtem Träumen."
+        },
+        {
+          "typ": "absatz",
+          "text": "Manch einer ist näher am Spüren oder an seinen Themen als ein anderer und kann sich möglicherweise leichter darauf einlassen. Du wirst schnell merken, ob es eher der Austausch oder die Hypnosen sind, die deinen Prozess ideal begleiten."
+        },
+        { "typ": "kursiv", "text": "Ich biete dir daher immer die Kombination an." }
+      ]
+    },
+    {
+      "id": "dauer",
+      "frage": "Wie lange dauert eine Sitzung?",
+      "bloecke": [
+        {
+          "typ": "absatz",
+          "text": "Ich peile eine reine Trancezeit von etwa 30 Minuten pro Sitzung an. In Einzelfällen, zum Beispiel wenn man gerade in einem sehr intensiven mentalen Prozess steckt, kann es auch einmal länger dauern."
+        },
+        {
+          "typ": "absatz",
+          "text": "Wir haben zuvor Zeit, uns zu besprechen, und auch im Nachhinein die Möglichkeit, das Erlebte gemeinsam noch einmal zu betrachten und sacken zu lassen. Eineinhalb Stunden insgesamt sind in der Regel ein gutes Zeitfenster."
+        }
+      ]
+    },
+    {
+      "id": "gelingen",
+      "frage": "Was kann ich tun, damit Hypnose gelingt und meine Themen erscheinen?",
+      "kurzform": "Was kann ich selbst tun?",
+      "bloecke": [
+        {
+          "typ": "absatz",
+          "text": "Mach es dir gemütlich – so kann das Unterbewusstsein am besten aktiv werden. Ganz von selbst landest du da, wo es für dich von Bedeutung ist. Es kann auch sein, dass dich dann überrascht, was du siehst."
+        },
+        { "typ": "kursiv", "text": "Siehst du nichts – arbeiten wir genau damit." }
+      ]
+    },
+    {
+      "id": "preise",
+      "frage": "Preise und Bezahlung",
+      "bloecke": [
+        {
+          "typ": "preise",
+          "posten": [
+            { "leistung": "Termin, 60 Minuten", "betrag": "150 €" },
+            { "leistung": "Termin, 90 Minuten", "betrag": "180 €" }
+          ],
+          "hinweise": [
+            "Die Kosten trägt der Klient. Die Bezahlung erfolgt per Überweisung auf mein Konto innerhalb von 10 Tagen nach Rechnungstellung. Die Rechnung wird dir per E-Mail zugesendet.",
+            "Das erste Kennenlernen ist kostenfrei."
+          ]
+        }
+      ]
+    }
+  ],
+
+  "abschluss": {
+    "ueberschrift": "Noch Fragen offen?",
+    "text": "Melde dich gern – dann telefonieren wir oder treffen uns persönlich, ganz wie du magst. Das Kennenlernen ist natürlich kostenfrei.",
+    "schaltflaeche": "Kontakt aufnehmen"
+  },
+
+  "seitenbeschreibung": "Was Auflösende Hypnose© ist, wie eine Sitzung abläuft, wie sich Trance anfühlt und wann Hypnose nicht in Frage kommt – erklärt von {inhaberin}, {ort}."
+}

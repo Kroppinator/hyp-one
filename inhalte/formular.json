@@ -1,0 +1,27 @@
+{
+  "_zweck": "Beschriftungen des Kontaktformulars. Der Einwilligungstext steht bewusst nicht hier, sondern in rechtlich.hinweise.json – er ist ein Pflichttext.",
+  "anliegen": [
+    "Kostenloses Kennenlernen",
+    "Terminanfrage",
+    "Frage zur Auflösenden Hypnose©",
+    "Etwas anderes"
+  ],
+  "felder": {
+    "name": "Dein Name",
+    "email": "E-Mail",
+    "telefon": "Telefon",
+    "telefonZusatz": "(optional)",
+    "anliegen": "Worum geht es?",
+    "nachricht": "Deine Nachricht",
+    "nachrichtPlatzhalter": "Erzähl mir gern in ein paar Sätzen, was dich beschäftigt – so viel oder so wenig, wie du magst."
+  },
+  "senden": "Nachricht senden",
+  "sendet": "Wird gesendet…",
+  "danke": {
+    "ueberschrift": "Danke dir.",
+    "text": "Deine Nachricht ist angekommen. Ich melde mich so bald wie möglich bei dir – in der Regel innerhalb weniger Tage.",
+    "nochmal": "Noch eine Nachricht schreiben"
+  },
+  "fehler": "Da ist etwas schiefgegangen. Bitte versuche es später noch einmal – oder schreib mir direkt eine E-Mail.",
+  "honeypot": "Bitte nicht ausfüllen"
+}

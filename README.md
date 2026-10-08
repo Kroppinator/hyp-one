@@ -35,6 +35,19 @@ npm start        # Produktionsbuild lokal starten
 ## Projektstruktur
 
 ```
+inhalte/                ALLE TEXTE DER WEBSITE – siehe CONTENT_GUIDE.md
+  stammdaten.json       Name, E-Mail, Telefon, Ort (Einzige Quelle)
+  startseite.json       Startseite
+  hypnose.json          Hypnose-Seite inkl. Preise
+  ueber-mich.json       Werdegang
+  kontakt.json          Kontaktseite
+  rahmen.json           Navigation und Fußzeile
+  formular.json         Beschriftungen des Kontaktformulars
+  rechtlich.*.json      Pflichttexte – nur nach anwaltlicher Rücksprache ändern
+
+lib/
+  inhalt.tsx            Platzhalter {feld} auflösen, *Betonung* auszeichnen
+
 app/
   layout.tsx            Schriften, Metadaten, Navbar + Footer
   page.tsx              Startseite
@@ -51,6 +64,7 @@ components/
   Footer.tsx            Adresse, Seitenlinks, Rechtslinks, Pflichthinweis
   ContactForm.tsx       Kontaktformular inkl. Einwilligung und Honeypot
   Aquarell.tsx          next/image-Rahmen für Isas Bilder (Multiply-Blend)
+  Pflichthinweis.tsx    Das Hinweisband am Fuß jeder Inhaltsseite
   Reveal.tsx            Sanftes Einblenden beim Scrollen
   Spiral.tsx            Spiral-Ornament („Reise nach Innen")
   LegalPage.tsx         Gemeinsamer Rahmen für Impressum/Datenschutz
@@ -59,6 +73,10 @@ public/bilder/          Isas Aquarelle und das freigestellte Porträt
 ```
 
 Inhalte pflegen: siehe [CONTENT_GUIDE.md](CONTENT_GUIDE.md).
+
+**Trennung von Inhalt und Darstellung:** In den `.tsx`-Dateien steht kein deutscher
+Fließtext mehr. Wer einen Satz ändern will, braucht nur `inhalte/` – wer das Layout
+ändern will, nur `app/` und `components/`.
 
 ---
 

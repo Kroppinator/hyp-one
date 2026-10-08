@@ -1,0 +1,23 @@
+{
+  "_zweck": "Texte der Kontaktseite. Adresse, E-Mail und Telefon stehen hier nicht – die kommen aus stammdaten.json und werden über Platzhalter wie {email} eingesetzt.",
+
+  "ueberschrift": "Möchtest du einen Termin vereinbaren?",
+  "einleitung": "Melde dich gern – dann telefonieren wir oder treffen uns persönlich, ganz wie du magst. Das Kennenlernen ist natürlich kostenfrei.",
+
+  "spalte": {
+    "ueberschriftOrt": "Coachingraum",
+    "ueberschriftErreichbar": "Direkt erreichbar",
+    "ueberschriftAnfahrt": "Anfahrt",
+    "anfahrt": "Den genauen Ort und den Weg dorthin bespreche ich mit dir, sobald wir einen Termin gefunden haben.",
+
+    "kastenUeberschrift": "Wie eine Sitzung abläuft",
+    "kastenText": "Rund 1,5 Stunden Zeitfenster, davon etwa 30 Minuten reine Trance – davor und danach ist Raum für das Gespräch."
+  },
+
+  "formular": {
+    "ueberschrift": "Schreib mir eine Nachricht",
+    "einleitung": "Ich melde mich so bald wie möglich bei dir zurück."
+  },
+
+  "seitenbeschreibung": "Termin vereinbaren bei {inhaberin} – Coaching und Auflösende Hypnose© in {ort}. Das Kennenlernen ist kostenfrei."
+}

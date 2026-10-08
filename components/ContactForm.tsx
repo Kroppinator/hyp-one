@@ -2,13 +2,11 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import texte from '@/inhalte/formular.json';
+import hinweise from '@/inhalte/rechtlich.hinweise.json';
 
-const SUBJECTS = [
-  'Kostenloses Kennenlernen',
-  'Terminanfrage',
-  'Frage zur Auflösenden Hypnose©',
-  'Etwas anderes',
-];
+const SUBJECTS = texte.anliegen;
+const f = texte.felder;
 
 const EMPTY = {
   name: '',
@@ -61,17 +59,14 @@ export default function ContactForm() {
   if (status === 'success') {
     return (
       <div className="rounded-2xl border border-sage/40 bg-shell p-10 text-center">
-        <p className="font-display text-3xl text-sage-deep">Danke dir.</p>
-        <p className="mt-4 leading-relaxed text-ink-soft">
-          Deine Nachricht ist angekommen. Ich melde mich so bald wie möglich bei dir –
-          in der Regel innerhalb weniger Tage.
-        </p>
+        <p className="font-display text-3xl text-sage-deep">{texte.danke.ueberschrift}</p>
+        <p className="mt-4 leading-relaxed text-ink-soft">{texte.danke.text}</p>
         <button
           type="button"
           onClick={() => setStatus('idle')}
           className="mt-6 text-sm text-ink-soft underline underline-offset-4 hover:text-ink"
         >
-          Noch eine Nachricht schreiben
+          {texte.danke.nochmal}
         </button>
       </div>
     );
@@ -82,7 +77,7 @@ export default function ContactForm() {
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="mb-2 block text-sm text-ink-soft">
-            Dein Name
+            {f.name}
           </label>
           <input
             id="name"
@@ -97,7 +92,7 @@ export default function ContactForm() {
         </div>
         <div>
           <label htmlFor="email" className="mb-2 block text-sm text-ink-soft">
-            E-Mail
+            {f.email}
           </label>
           <input
             id="email"
@@ -115,7 +110,7 @@ export default function ContactForm() {
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="phone" className="mb-2 block text-sm text-ink-soft">
-            Telefon <span className="text-ink-faint">(optional)</span>
+            {f.telefon} <span className="text-ink-faint">{f.telefonZusatz}</span>
           </label>
           <input
             id="phone"
@@ -129,7 +124,7 @@ export default function ContactForm() {
         </div>
         <div>
           <label htmlFor="subject" className="mb-2 block text-sm text-ink-soft">
-            Worum geht es?
+            {f.anliegen}
           </label>
           <select
             id="subject"
@@ -150,7 +145,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="message" className="mb-2 block text-sm text-ink-soft">
-          Deine Nachricht
+          {f.nachricht}
         </label>
         <textarea
           id="message"
@@ -159,14 +154,14 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           rows={5}
-          placeholder="Erzähl mir gern in ein paar Sätzen, was dich beschäftigt – so viel oder so wenig, wie du magst."
+          placeholder={f.nachrichtPlatzhalter}
           className={`${fieldClass} resize-y`}
         />
       </div>
 
       {/* Honeypot gegen Spam-Bots – für Menschen nicht sichtbar */}
       <div className="absolute left-[-9999px]" aria-hidden="true">
-        <label htmlFor="website">Bitte nicht ausfüllen</label>
+        <label htmlFor="website">{texte.honeypot}</label>
         <input
           id="website"
           type="text"
@@ -187,10 +182,9 @@ export default function ContactForm() {
           className="mt-1 h-4 w-4 shrink-0 accent-sage-deep"
         />
         <span>
-          Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner
-          Anfrage gespeichert und verarbeitet werden. Mehr dazu in der{' '}
+          {hinweise.einwilligung.text}{' '}
           <Link href="/datenschutz" className="underline underline-offset-2 hover:text-ink">
-            Datenschutzerklärung
+            {hinweise.einwilligung.verweis}
           </Link>
           .
         </span>
@@ -201,13 +195,12 @@ export default function ContactForm() {
         disabled={status === 'loading'}
         className="w-full rounded-full bg-sage-deep px-8 py-4 text-cream transition-all duration-300 hover:bg-ink disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {status === 'loading' ? 'Wird gesendet…' : 'Nachricht senden'}
+        {status === 'loading' ? texte.sendet : texte.senden}
       </button>
 
       {status === 'error' && (
         <p className="rounded-xl border border-rose-deep/30 bg-rose/15 px-4 py-3 text-sm text-rose-deep">
-          Da ist etwas schiefgegangen. Bitte versuche es später noch einmal – oder
-          schreib mir direkt eine E-Mail.
+          {texte.fehler}
         </p>
       )}
     </form>

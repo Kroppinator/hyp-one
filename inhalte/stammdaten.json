@@ -1,0 +1,23 @@
+{
+  "_zweck": "Stammdaten der Praxis. Diese Angaben erscheinen an mehreren Stellen gleichzeitig (Fußzeile, Kontaktseite, Impressum, Datenschutzerklärung). Hier einmal ändern genügt – überall sonst werden sie automatisch übernommen.",
+
+  "markenname": "Transformation bei Isa",
+  "_markennameGeteilt": "Für die Darstellung in Navigation und Fußzeile, wo der zweite Teil kursiv und farbig gesetzt wird.",
+  "markennameHaupt": "Transformation",
+  "markennameZusatz": "bei Isa",
+  "inhaberin": "Isabelle Kroppenstedt",
+  "claim": "Damit das Leben wieder Farbe bekommt…",
+  "taetigkeit": "Coaching und Begleitung in Veränderungs- und Entscheidungsprozessen",
+
+  "email": "isabelle-kroppenstedt@gmx.de",
+  "telefonAnzeige": "0155 60906840",
+  "telefonLink": "+4915560906840",
+
+  "ort": "Buchholz in der Nordheide",
+  "adresseHinweis": "Die genaue Adresse erhältst du bei der Terminabsprache.",
+
+  "_adresseVollstaendig": "Nur für Impressum und Datenschutzerklärung – dort verlangt § 5 DDG eine ladungsfähige Anschrift. Auf allen übrigen Seiten wird bewusst nur der Ort genannt.",
+  "strasse": "[Straße und Hausnummer]",
+  "plzUndOrt": "21244 Buchholz in der Nordheide",
+  "land": "Deutschland"
+}

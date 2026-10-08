@@ -2,14 +2,36 @@ import type { Metadata } from 'next';
 import Spiral from '@/components/Spiral';
 import Reveal from '@/components/Reveal';
 import ContactForm from '@/components/ContactForm';
+import Pflichthinweis from '@/components/Pflichthinweis';
+import inhalt from '@/inhalte/kontakt.json';
+import { fuelle, stammdaten } from '@/lib/inhalt';
 
 export const metadata: Metadata = {
   title: 'Kontakt',
-  description:
-    'Termin vereinbaren bei Isabelle Kroppenstedt – Coaching und Auflösende Hypnose© in Buchholz in der Nordheide. Das Kennenlernen ist kostenfrei.',
+  description: fuelle(inhalt.seitenbeschreibung),
 };
 
+const linkKlasse =
+  'text-ink-soft underline-offset-4 transition-colors hover:text-ink hover:underline';
+
+function Rubrik({
+  ueberschrift,
+  children,
+}: {
+  ueberschrift: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div>
+      <h2 className="text-sm tracking-[0.2em] text-sage-deep uppercase">{ueberschrift}</h2>
+      <div className="mt-3 leading-relaxed text-ink-soft">{children}</div>
+    </div>
+  );
+}
+
 export default function Kontakt() {
+  const s = inhalt.spalte;
+
   return (
     <>
       <section className="relative overflow-hidden pt-32 pb-16 sm:pt-40">
@@ -21,11 +43,10 @@ export default function Kontakt() {
             <div className="max-w-2xl">
               <Spiral className="h-9 w-9 text-sage-deep/60" />
               <h1 className="mt-6 font-display text-5xl leading-[1.05] text-ink sm:text-6xl">
-                Möchtest du einen Termin vereinbaren?
+                {inhalt.ueberschrift}
               </h1>
               <p className="mt-8 text-lg leading-relaxed text-ink-soft">
-                Melde dich gern – dann telefonieren wir oder treffen uns persönlich, ganz
-                wie du magst. Das Kennenlernen ist natürlich kostenfrei.
+                {inhalt.einleitung}
               </p>
             </div>
           </Reveal>
@@ -38,61 +59,32 @@ export default function Kontakt() {
             <div className="md:col-span-5">
               <Reveal>
                 <div className="space-y-10">
-                  <div>
-                    <h2 className="text-sm tracking-[0.2em] text-sage-deep uppercase">
-                      Coachingraum
-                    </h2>
-                    <address className="mt-3 leading-relaxed text-ink-soft not-italic">
-                      Buchholz in der Nordheide
+                  <Rubrik ueberschrift={s.ueberschriftOrt}>
+                    <address className="not-italic">
+                      {stammdaten.ort}
                       <br />
-                      <span className="text-sm">
-                        Die genaue Adresse erhältst du bei der Terminabsprache.
-                      </span>
+                      <span className="text-sm">{stammdaten.adresseHinweis}</span>
                     </address>
-                  </div>
+                  </Rubrik>
 
-                  <div>
-                    <h2 className="text-sm tracking-[0.2em] text-sage-deep uppercase">
-                      Direkt erreichbar
-                    </h2>
-                    <div className="mt-3 space-y-1">
-                      <p>
-                        <a
-                          href="mailto:isabelle-kroppenstedt@gmx.de"
-                          className="text-ink-soft underline-offset-4 transition-colors hover:text-ink hover:underline"
-                        >
-                          isabelle-kroppenstedt@gmx.de
-                        </a>
-                      </p>
-                      <p>
-                        <a
-                          href="tel:+4915560906840"
-                          className="text-ink-soft underline-offset-4 transition-colors hover:text-ink hover:underline"
-                        >
-                          0155 60906840
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div>
-                    <h2 className="text-sm tracking-[0.2em] text-sage-deep uppercase">
-                      Anfahrt
-                    </h2>
-                    <p className="mt-3 leading-relaxed text-ink-soft">
-                      Den genauen Ort und den Weg dorthin bespreche ich mit dir, sobald
-                      wir einen Termin gefunden haben.
+                  <Rubrik ueberschrift={s.ueberschriftErreichbar}>
+                    <p>
+                      <a href={`mailto:${stammdaten.email}`} className={linkKlasse}>
+                        {stammdaten.email}
+                      </a>
                     </p>
-                  </div>
+                    <p>
+                      <a href={`tel:${stammdaten.telefonLink}`} className={linkKlasse}>
+                        {stammdaten.telefonAnzeige}
+                      </a>
+                    </p>
+                  </Rubrik>
+
+                  <Rubrik ueberschrift={s.ueberschriftAnfahrt}>{s.anfahrt}</Rubrik>
 
                   <div className="rounded-3xl border border-sand bg-shell p-7">
-                    <p className="font-display text-xl text-ink">
-                      Wie eine Sitzung abläuft
-                    </p>
-                    <p className="mt-3 leading-relaxed text-ink-soft">
-                      Rund 1,5 Stunden Zeitfenster, davon etwa 30 Minuten reine Trance –
-                      davor und danach ist Raum für das Gespräch.
-                    </p>
+                    <p className="font-display text-xl text-ink">{s.kastenUeberschrift}</p>
+                    <p className="mt-3 leading-relaxed text-ink-soft">{s.kastenText}</p>
                   </div>
                 </div>
               </Reveal>
@@ -102,10 +94,10 @@ export default function Kontakt() {
               <Reveal delay={120}>
                 <div className="rounded-3xl border border-sand bg-shell/80 p-8 backdrop-blur-sm sm:p-10">
                   <h2 className="font-display text-3xl text-ink">
-                    Schreib mir eine Nachricht
+                    {inhalt.formular.ueberschrift}
                   </h2>
                   <p className="mt-3 mb-8 leading-relaxed text-ink-soft">
-                    Ich melde mich so bald wie möglich bei dir zurück.
+                    {inhalt.formular.einleitung}
                   </p>
                   <ContactForm />
                 </div>
@@ -115,17 +107,7 @@ export default function Kontakt() {
         </div>
       </section>
 
-      <section className="border-t border-sand bg-sand/60 py-12">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <p className="leading-relaxed text-ink-soft">
-            <span className="text-ink">Wichtiger Hinweis:</span> Die Sitzungen stellen
-            keine Heilbehandlung dar und sind kein Ersatz für ärztliche oder
-            psychotherapeutische Behandlung. Die Klientinnen und Klienten tragen die Kosten
-            eigenständig. Ich weise ausdrücklich darauf hin, dass ich nicht mehr ärztlich
-            oder therapeutisch tätig bin.
-          </p>
-        </div>
-      </section>
+      <Pflichthinweis rahmen="border-t" />
     </>
   );
 }

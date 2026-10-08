@@ -1,0 +1,20 @@
+{
+  "_ACHTUNG": "RECHTSTEXT – nicht wie gewöhnlichen Seitentext behandeln.",
+  "_regel": "Dieser Pflichthinweis grenzt Coaching von Heilbehandlung ab und steht am Fuß jeder Inhaltsseite. Er darf nicht gekürzt oder abgeschwächt werden. Änderungen bitte nur nach anwaltlicher Rücksprache. Erkennbar an der Namenskonvention: alle Dateien mit dem Präfix 'rechtlich.' sind Pflichttexte.",
+  "_zuletztGeprueft": "noch nicht anwaltlich geprüft",
+  "_woErscheintDas": "Als Band am Ende von Startseite, Hypnose-Seite und Kontaktseite sowie im Kasten „Wichtig zu wissen“ auf der Über-mich-Seite.",
+  "ueberschrift": "Wichtiger Hinweis:",
+  "text": "Die Sitzungen stellen keine Heilbehandlung dar und sind kein Ersatz für ärztliche oder psychotherapeutische Behandlung. Die Klientinnen und Klienten tragen die Kosten eigenständig. Ich weise ausdrücklich darauf hin, dass ich nicht mehr ärztlich oder therapeutisch tätig bin.",
+  "ueberMich": {
+    "ueberschrift": "Wichtig zu wissen",
+    "absaetze": [
+      "Die Sitzungen bei mir ersetzen also keine ärztliche oder psychologische Therapie, und die Klienten tragen eigenständig die Kosten.",
+      "*Ich weise ausdrücklich darauf hin, dass ich nicht mehr ärztlich oder therapeutisch tätig bin.*"
+    ]
+  },
+  "einwilligung": {
+    "_regel": "Pflichttext der DSGVO-Einwilligung am Kontaktformular. Ohne diese Zustimmung darf die Anfrage nicht verarbeitet werden – bitte nicht entfernen.",
+    "text": "Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert und verarbeitet werden. Mehr dazu in der",
+    "verweis": "Datenschutzerklärung"
+  }
+}

@@ -3,69 +3,12 @@ import Image from 'next/image';
 import Reveal from '@/components/Reveal';
 import Spiral from '@/components/Spiral';
 import Aquarell from '@/components/Aquarell';
+import Pflichthinweis from '@/components/Pflichthinweis';
+import inhalt from '@/inhalte/startseite.json';
+import { betont, text } from '@/lib/inhalt';
 
-const nutzen = [
-  'löse alte Muster und Glaubenssätze',
-  'entlarve Blockaden und Trigger',
-  'entdecke Wege und Möglichkeiten',
-  'schaffe deinem Unterbewusstsein Raum mit Auflösender Hypnose©, damit es für dich arbeiten kann',
-];
-
-/** Jeder Punkt hat sein eigenes Aquarell – Isas Zuordnung. */
-const situationen = [
-  {
-    text: 'Vielleicht fragst du dich, welcher Weg der richtige ist für dich. Du erlebst (kreative) Blockaden oder stehst vor einem Wendepunkt in deinem Leben?',
-    img: '/bilder/weggabelung.webp',
-    alt: 'Aquarell: ein Mensch steht vor einer Weggabelung in einer weiten Landschaft',
-  },
-  {
-    text: 'Du hast viel um die Ohren, sehnst dich nach Ruhe und möchtest wieder den Durchblick haben.',
-    img: '/bilder/kopf-gedanken.webp',
-    alt: 'Aquarell: ein Kopf, umgeben von vielen Gegenständen und Gedanken des Alltags',
-  },
-  {
-    text: 'Du erlebst Schwierigkeiten in Beziehungen oder Freundschaften, die dich festfahren lassen – und suchst nach den Ursachen?',
-    img: '/bilder/paar.webp',
-    alt: 'Aquarell: zwei Menschen, die sich voneinander abwenden',
-  },
-  {
-    text: 'Du möchtest spirituell wachsen. Vielleicht hast du einen Menschen verloren oder eine besondere Erfahrung gemacht, die du nicht einordnen kannst. Du hegst den Wunsch nach Selbstfindung und Erkenntnis.',
-    img: '/bilder/spirituelles-wachstum.webp',
-    alt: 'Aquarell: ein Mensch, von Licht umgeben',
-  },
-];
-
-const erwartet = [
-  {
-    titel: 'In deinem Tempo',
-    text: 'Fühlen, Erinnern, Reflexion, Klärung, Tiefe, Erkenntnis – nichts davon wird erzwungen. Du bestimmst Weg und Geschwindigkeit.',
-  },
-  {
-    titel: 'Erleichterung',
-    text: 'Auf fordernde innere Arbeit folgt in der Regel Erleichterung – der Lohn für deine Mühe.',
-  },
-  {
-    titel: 'Nähe zu dir selbst',
-    text: 'Denn nur wer sich selbst gut kennt, kann sich adäquat versorgen.',
-  },
-];
-
-const methoden = [
-  'Lockeres Gespräch',
-  'Reflexion',
-  'Perspektivwechsel',
-  'Achtsamkeit',
-  'Entspannungsverfahren',
-  'Atemtechniken',
-  'Auflösende Hypnose©',
-  'Raum für Spiritualität',
-];
-
-const eckdaten = [
-  { wert: '≈ 1,5 Std.', label: 'Zeitfenster pro Sitzung – mit Vorgespräch und Nachklang' },
-  { wert: '≈ 30 Min.', label: 'reine Trancezeit, in Einzelfällen auch einmal länger' },
-  { wert: 'kostenfrei', label: 'das erste Kennenlernen – telefonisch oder persönlich' },
-];
+const { kopf, coaching, kennstDuDas, erwartet, arbeitsweise, ueberMich, abschluss } =
+  inhalt;
 
 export default function Home() {
   return (
@@ -79,17 +22,14 @@ export default function Home() {
           <div className="grid items-center gap-14 md:grid-cols-12">
             <div className="md:col-span-7">
               <Reveal>
-                <p className="text-sm tracking-[0.2em] text-sage-deep uppercase">
-                  Coaching &amp; Begleitung in Veränderungs- und
-                  Entscheidungsprozessen · mit Auflösender Hypnose©
+                <p className="max-w-xl text-sm tracking-[0.2em] text-sage-deep uppercase">
+                  {kopf.kleineUeberschrift}
                 </p>
               </Reveal>
 
               <Reveal delay={120}>
-                <h1 className="mt-6 font-display text-5xl leading-[1.05] text-ink sm:text-6xl lg:text-7xl">
-                  Damit das Leben
-                  <br />
-                  wieder <span className="text-apricot-deep italic">Farbe</span> bekommt…
+                <h1 className="mt-6 font-display text-5xl leading-[1.05] whitespace-pre-line text-ink sm:text-6xl lg:text-7xl">
+                  {betont(kopf.ueberschrift, 'text-apricot-deep italic')}
                 </h1>
               </Reveal>
 
@@ -98,10 +38,10 @@ export default function Home() {
                   <Spiral className="mt-1 h-10 w-10 shrink-0 text-sage-deep/70" />
                   <div>
                     <p className="font-display text-2xl text-ink sm:text-3xl">
-                      Willkommen zu deiner Reise nach Innen.
+                      {kopf.begruessung}
                     </p>
                     <p className="mt-4 max-w-xl leading-relaxed text-ink-soft">
-                      Ich freue mich, dich auf deinem individuellen Weg begleiten zu dürfen.
+                      {text(kopf.einleitung)}
                     </p>
                   </div>
                 </div>
@@ -113,13 +53,13 @@ export default function Home() {
                     href="/kontakt"
                     className="rounded-full bg-sage-deep px-8 py-4 text-center text-cream shadow-sm transition-all duration-300 hover:bg-ink hover:shadow-md"
                   >
-                    Kostenlos kennenlernen
+                    {kopf.schaltflaecheHaupt}
                   </Link>
                   <Link
                     href="/hypnose"
                     className="rounded-full border border-sage-deep/40 px-8 py-4 text-center text-ink-soft transition-all duration-300 hover:border-sage-deep hover:text-ink"
                   >
-                    Was ist Auflösende Hypnose?
+                    {kopf.schaltflaecheZweit}
                   </Link>
                 </div>
               </Reveal>
@@ -129,7 +69,7 @@ export default function Home() {
               <Reveal delay={300}>
                 <Aquarell
                   src="/bilder/lebensbaum.webp"
-                  alt="Aquarell eines Lebensbaums mit farbiger Krone und weit verzweigten Wurzeln"
+                  alt={kopf.bildBeschreibung}
                   className="aspect-square w-full"
                   priority
                   sizes="(max-width: 768px) 90vw, 40vw"
@@ -140,8 +80,7 @@ export default function Home() {
 
           <Reveal delay={420}>
             <p className="mt-20 max-w-3xl border-l-2 border-sage pl-6 font-display text-xl leading-relaxed text-ink-soft italic sm:text-2xl">
-              Manchmal gibt es Themen im Leben, die keinen Krankheitswert haben, aber
-              dennoch unsere Aufmerksamkeit brauchen.
+              {kopf.leitsatz}
             </p>
           </Reveal>
         </div>
@@ -155,18 +94,18 @@ export default function Home() {
           <Reveal>
             <div className="max-w-2xl">
               <h2 className="font-display text-4xl text-ink sm:text-5xl">
-                Dein emotionales Coaching
+                {coaching.ueberschrift}
               </h2>
               <p className="mt-6 font-display text-xl text-ink-soft italic sm:text-2xl">
-                …ich begleite dich gerne bei deiner individuellen Reise nach Innen…
+                {coaching.unterzeile}
               </p>
-              <p className="mt-6 text-ink-soft">Lerne dich selbst kennen und:</p>
+              <p className="mt-6 text-ink-soft">{coaching.einleitung}</p>
             </div>
           </Reveal>
 
           <div className="mt-14 grid gap-6 sm:grid-cols-2">
-            {nutzen.map((text, i) => (
-              <Reveal key={text} delay={i * 100}>
+            {coaching.punkte.map((punkt, i) => (
+              <Reveal key={punkt} delay={i * 100}>
                 <div className="flex h-full gap-5 rounded-3xl border border-sand bg-cream p-8 transition-all duration-500 hover:-translate-y-1 hover:border-sage hover:shadow-[0_18px_50px_-32px_rgba(44,56,48,0.5)]">
                   <Image
                     src="/bilder/spirale.webp"
@@ -175,7 +114,7 @@ export default function Home() {
                     height={56}
                     className="aquarell blob-weich h-14 w-14 shrink-0"
                   />
-                  <p className="text-lg leading-relaxed text-ink">{text}</p>
+                  <p className="text-lg leading-relaxed text-ink">{punkt}</p>
                 </div>
               </Reveal>
             ))}
@@ -183,8 +122,7 @@ export default function Home() {
 
           <Reveal delay={200}>
             <p className="mt-14 max-w-2xl font-display text-2xl leading-relaxed text-ink italic sm:text-3xl">
-              …all das in deinem ganz eigenen Tempo. Denn sich selbst kennenlernen bedeutet
-              auch, <span className="text-rose-deep">sich lieben lernen</span>.
+              {betont(coaching.schlusssatz, 'text-rose-deep')}
             </p>
           </Reveal>
         </div>
@@ -197,23 +135,23 @@ export default function Home() {
         <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
           <Reveal>
             <h2 className="max-w-2xl font-display text-4xl text-ink sm:text-5xl">
-              Kennst du das?
+              {kennstDuDas.ueberschrift}
             </h2>
           </Reveal>
 
           <div className="mt-14 grid gap-8 sm:grid-cols-2">
-            {situationen.map((sit, i) => (
-              <Reveal key={i} delay={(i % 2) * 100}>
+            {kennstDuDas.karten.map((karte, i) => (
+              <Reveal key={karte.bild} delay={(i % 2) * 100}>
                 <div className="h-full rounded-3xl border border-sand bg-cream p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_50px_-32px_rgba(44,56,48,0.5)]">
                   <Aquarell
-                    src={sit.img}
-                    alt={sit.alt}
+                    src={karte.bild}
+                    alt={karte.bildBeschreibung}
                     className="aspect-square w-full"
                     shape="rect"
                     rounded="rounded-none"
                     sizes="(max-width: 640px) 100vw, 45vw"
                   />
-                  <p className="px-1 pt-6 leading-relaxed text-ink-soft">{sit.text}</p>
+                  <p className="px-1 pt-6 leading-relaxed text-ink-soft">{karte.text}</p>
                 </div>
               </Reveal>
             ))}
@@ -222,12 +160,10 @@ export default function Home() {
           <Reveal delay={150}>
             <div className="mt-16 rounded-3xl bg-shell p-8 sm:p-12">
               <p className="max-w-3xl text-lg leading-relaxed text-ink">
-                All das kannst du mit Hilfe von Hypnose in Trance und / oder im Rahmen von
-                Gesprächen angehen.
+                {kennstDuDas.kastenOben}
               </p>
               <p className="mt-5 max-w-3xl font-display text-xl leading-relaxed text-ink-soft italic sm:text-2xl">
-                Manchmal braucht es ein neutrales Ohr an der Seite – für Themen, die du
-                sonst mit niemandem teilen kannst.
+                {kennstDuDas.kastenUnten}
               </p>
             </div>
           </Reveal>
@@ -245,16 +181,18 @@ export default function Home() {
           <Reveal>
             <div className="flex flex-col items-center text-center">
               <Spiral className="h-10 w-10 text-sage" />
-              <h2 className="mt-6 font-display text-4xl sm:text-5xl">Was dich erwartet</h2>
+              <h2 className="mt-6 font-display text-4xl sm:text-5xl">
+                {erwartet.ueberschrift}
+              </h2>
             </div>
           </Reveal>
 
           <div className="mt-16 grid gap-12 md:grid-cols-3">
-            {erwartet.map((item, i) => (
-              <Reveal key={item.titel} delay={i * 120}>
+            {erwartet.punkte.map((punkt, i) => (
+              <Reveal key={punkt.titel} delay={i * 120}>
                 <div className="text-center md:text-left">
-                  <h3 className="font-display text-2xl text-sage">{item.titel}</h3>
-                  <p className="mt-4 leading-relaxed text-cream/75">{item.text}</p>
+                  <h3 className="font-display text-2xl text-sage">{punkt.titel}</h3>
+                  <p className="mt-4 leading-relaxed text-cream/75">{punkt.text}</p>
                 </div>
               </Reveal>
             ))}
@@ -271,7 +209,7 @@ export default function Home() {
             <Reveal>
               <Aquarell
                 src="/bilder/spirale.webp"
-                alt="Aquarell einer Spirale als Bild für die Reise nach Innen"
+                alt={arbeitsweise.bildBeschreibung}
                 className="aspect-square w-full"
                 morphDelay={-16}
               />
@@ -280,19 +218,23 @@ export default function Home() {
             <Reveal delay={120}>
               <div>
                 <h2 className="font-display text-4xl text-ink sm:text-5xl">
-                  Wie ich arbeite
+                  {arbeitsweise.ueberschrift}
                 </h2>
-                <p className="mt-6 text-lg leading-relaxed text-ink-soft">
-                  Vor allem intuitiv – als Mensch und als deine Weg-Begleiterin, mit meinem
-                  Erfahrungsschatz aus Leben, Studium, Beruf und Praxis.
-                </p>
-                <p className="mt-5 leading-relaxed text-ink-soft">
-                  Daraus entsteht eine Mischung, die sich ganz nach deinem Bedarf richtet.
-                  Auch Spiritualität hat Raum, wo sie für dich spürbar sein mag.
-                </p>
+                {arbeitsweise.absaetze.map((absatz, i) => (
+                  <p
+                    key={i}
+                    className={
+                      i === 0
+                        ? 'mt-6 text-lg leading-relaxed text-ink-soft'
+                        : 'mt-5 leading-relaxed text-ink-soft'
+                    }
+                  >
+                    {text(absatz)}
+                  </p>
+                ))}
 
                 <ul className="mt-8 flex flex-wrap gap-2.5">
-                  {methoden.map((m) => (
+                  {arbeitsweise.methoden.map((m) => (
                     <li
                       key={m}
                       className="rounded-full border border-sage/60 bg-shell px-4 py-2 text-sm text-ink-soft"
@@ -306,11 +248,11 @@ export default function Home() {
           </div>
 
           <div className="mt-20 grid gap-6 sm:grid-cols-3">
-            {eckdaten.map((item, i) => (
-              <Reveal key={item.wert} delay={i * 100}>
+            {arbeitsweise.eckdaten.map((eck, i) => (
+              <Reveal key={eck.wert} delay={i * 100}>
                 <div className="h-full rounded-3xl border border-sand bg-shell p-8 text-center">
-                  <p className="font-display text-3xl text-sage-deep">{item.wert}</p>
-                  <p className="mt-3 leading-relaxed text-ink-soft">{item.label}</p>
+                  <p className="font-display text-3xl text-sage-deep">{eck.wert}</p>
+                  <p className="mt-3 leading-relaxed text-ink-soft">{eck.beschriftung}</p>
                 </div>
               </Reveal>
             ))}
@@ -325,17 +267,14 @@ export default function Home() {
         <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
           <div className="grid items-center gap-14 md:grid-cols-12">
             <Reveal className="md:col-span-5">
-              {/* Freigestelltes Porträt – steht ohne Rahmen auf der Fläche,
-                  hinterlegt von einem weichen Aquarellkreis. */}
               <div className="relative mx-auto w-full max-w-[15rem] sm:max-w-xs">
-                {/* Ovaler Farbgrund, etwas größer als das Porträt selbst */}
                 <div
                   className="blob blob-morph absolute -inset-5 bg-gradient-to-br from-sage/50 via-shell to-apricot/35"
                   style={{ animationDelay: '-24s' }}
                 />
                 <Aquarell
                   src="/bilder/isabelle.webp"
-                  alt="Porträt von Isabelle Kroppenstedt"
+                  alt={ueberMich.bildBeschreibung}
                   className="portraet-weich aspect-2/3 w-full"
                   shape="rect"
                   rounded="rounded-none"
@@ -349,36 +288,27 @@ export default function Home() {
             <Reveal delay={120} className="md:col-span-7">
               <div>
                 <p className="text-sm tracking-[0.2em] text-sage-deep uppercase">
-                  Über mich
+                  {ueberMich.kleineUeberschrift}
                 </p>
                 <h2 className="mt-5 font-display text-4xl text-ink sm:text-5xl">
-                  Isabelle Kroppenstedt
+                  {ueberMich.ueberschrift}
                 </h2>
 
                 <div className="mt-8 space-y-5 leading-relaxed text-ink-soft">
-                  <p>
-                    Nach dem Studium der Humanmedizin arbeitete ich als Ärztin im Bereich
-                    Psychosomatische Medizin und Psychotherapie. Schon immer interessierten
-                    mich die Lebenswege und Geschichten der Menschen – wie sie sich von
-                    klein auf entwickelten und aus welchen Beweggründen sie die Dinge so
-                    tun, wie sie sie eben tun.
-                  </p>
+                  {ueberMich.absaetze.map((absatz, i) => (
+                    <p key={i}>{text(absatz)}</p>
+                  ))}
                   <p className="font-display text-xl text-ink italic sm:text-2xl">
-                    Zwischen dem klassischen „gesund&ldquo; und „krank&ldquo; liegt ein
-                    großer Raum in unser aller Leben, der unsere Aufmerksamkeit verdient.
+                    {ueberMich.leitsatz}
                   </p>
-                  <p>
-                    Heute begleite ich Menschen, die ihren Lebensstil optimieren oder sich
-                    selbst und ihre Geschichte besser kennenlernen möchten. Jene, die aus
-                    freien Stücken zu innerer Arbeit bereit sind.
-                  </p>
+                  <p>{text(ueberMich.nachsatz)}</p>
                 </div>
 
                 <Link
                   href="/ueber-mich"
                   className="mt-8 inline-flex items-center gap-2 text-ink underline decoration-sage decoration-2 underline-offset-8 transition-colors hover:text-sage-deep"
                 >
-                  Meinen ganzen Weg lesen
+                  {ueberMich.verweis}
                 </Link>
               </div>
             </Reveal>
@@ -386,18 +316,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* -------------------------------------------------------------- Hinweis */}
-      <section className="border-y border-sand bg-sand/60 py-12">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <p className="leading-relaxed text-ink-soft">
-            <span className="text-ink">Wichtiger Hinweis:</span> Die Sitzungen stellen
-            keine Heilbehandlung dar und sind kein Ersatz für ärztliche oder
-            psychotherapeutische Behandlung. Die Klientinnen und Klienten tragen die Kosten
-            eigenständig. Ich weise ausdrücklich darauf hin, dass ich nicht mehr ärztlich
-            oder therapeutisch tätig bin.
-          </p>
-        </div>
-      </section>
+      <Pflichthinweis />
 
       {/* ------------------------------------------------------------ Abschluss */}
       <section className="relative overflow-hidden py-24 md:py-32">
@@ -409,17 +328,14 @@ export default function Home() {
             <div className="flex flex-col items-center">
               <Spiral className="h-10 w-10 text-sage-deep/60" />
               <h2 className="mt-6 font-display text-4xl text-ink sm:text-5xl">
-                Möchtest du einen Termin vereinbaren?
+                {abschluss.ueberschrift}
               </h2>
-              <p className="mt-6 leading-relaxed text-ink-soft">
-                Melde dich gern – dann telefonieren wir oder treffen uns persönlich, ganz
-                wie du magst. Das Kennenlernen ist natürlich kostenfrei.
-              </p>
+              <p className="mt-6 leading-relaxed text-ink-soft">{abschluss.text}</p>
               <Link
                 href="/kontakt"
                 className="mt-10 rounded-full bg-sage-deep px-10 py-4 text-cream shadow-sm transition-all duration-300 hover:bg-ink hover:shadow-md"
               >
-                Kontakt aufnehmen
+                {abschluss.schaltflaeche}
               </Link>
             </div>
           </Reveal>

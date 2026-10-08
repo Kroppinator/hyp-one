@@ -3,45 +3,104 @@ import Link from 'next/link';
 import Reveal from '@/components/Reveal';
 import Spiral from '@/components/Spiral';
 import Aquarell from '@/components/Aquarell';
+import Pflichthinweis from '@/components/Pflichthinweis';
+import inhalt from '@/inhalte/hypnose.json';
+import { fuelle, text } from '@/lib/inhalt';
 
 export const metadata: Metadata = {
   title: 'Auflösende Hypnose©',
-  description:
-    'Was Auflösende Hypnose© ist, wie eine Sitzung abläuft, wie sich Trance anfühlt und wann Hypnose nicht in Frage kommt – erklärt von Isabelle Kroppenstedt, Buchholz in der Nordheide.',
+  description: fuelle(inhalt.seitenbeschreibung),
 };
 
-const inhalt = [
-  { id: 'was-ist-das', label: 'Was ist Auflösende Hypnose©?' },
-  { id: 'was-moeglich-ist', label: 'Was alles möglich ist' },
-  { id: 'ablauf', label: 'Wie läuft Hypnose ab?' },
-  { id: 'trance', label: 'Wie fühlt sich Trance an?' },
-  { id: 'wirkweise', label: 'Wie funktioniert Hypnose?' },
-  { id: 'auswirkungen', label: 'Welche Auswirkungen hat Hypnose?' },
-  { id: 'grenzen', label: 'Wann kommt Hypnose nicht in Frage?' },
-  { id: 'fuer-jeden', label: 'Ist Hypnose für jeden etwas?' },
-  { id: 'dauer', label: 'Wie lange dauert eine Sitzung?' },
-  { id: 'gelingen', label: 'Was kann ich selbst tun?' },
-  { id: 'preise', label: 'Preise und Bezahlung' },
-];
+/** Ein Baustein aus der Inhaltsdatei – siehe dort den Schlüssel "_bausteine". */
+type Baustein = {
+  typ: string;
+  text?: string;
+  titel?: string;
+  einleitung?: string;
+  punkte?: string[];
+  schluss?: string;
+  posten?: { leistung: string; betrag: string }[];
+  hinweise?: string[];
+};
 
-const gegenanzeigen = [
-  'aktive Depression, Epilepsie, floride Schizophrenie oder Psychose, Persönlichkeitsstörungen, Suizidgedanken',
-  'kardiovaskuläre Ereignisse (Schlaganfall, Herzinfarkt) und Thrombosen oder Embolien in den letzten 6 Monaten',
-  'nach Operationen sollte der vom behandelnden Chirurgen empfohlene Abstand zur körperlichen Belastung eingehalten werden',
-  'unter Einfluss von Drogen oder Alkohol',
-  'geistige Behinderungen',
-];
+function Baustein({ baustein }: { baustein: Baustein }) {
+  switch (baustein.typ) {
+    case 'kursiv':
+      return (
+        <p className="font-display text-xl text-ink italic sm:text-2xl">
+          {text(baustein.text ?? '')}
+        </p>
+      );
 
-/** Überschrift eines FAQ-Abschnitts, zugleich Sprungziel der Inhaltsübersicht. */
-function Frage({ id, children }: { id: string; children: React.ReactNode }) {
-  return (
-    <h2 id={id} className="scroll-mt-28 font-display text-3xl text-ink sm:text-4xl">
-      {children}
-    </h2>
-  );
+    case 'aussage':
+      return (
+        <p className="font-display text-2xl text-sage-deep italic sm:text-3xl">
+          {text(baustein.text ?? '')}
+        </p>
+      );
+
+    case 'zwischenueberschrift':
+      return <h3 className="pt-4 font-display text-2xl text-ink">{baustein.text}</h3>;
+
+    case 'kasten':
+      return (
+        <div className="rounded-3xl border border-sage/50 bg-shell p-8">
+          <p className="font-display text-xl text-ink">{baustein.titel}</p>
+          <p className="mt-3 leading-relaxed text-ink-soft">{text(baustein.text ?? '')}</p>
+        </div>
+      );
+
+    case 'warnliste':
+      return (
+        <div className="rounded-3xl border border-rose-deep/30 bg-rose/10 p-8">
+          <p className="leading-relaxed text-ink-soft">{baustein.einleitung}</p>
+          <ul className="mt-5 space-y-3">
+            {baustein.punkte?.map((punkt) => (
+              <li key={punkt} className="flex gap-4">
+                <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-rose-deep" />
+                <span className="leading-relaxed text-ink-soft">{punkt}</span>
+              </li>
+            ))}
+          </ul>
+          {baustein.schluss && (
+            <p className="mt-6 leading-relaxed text-ink-soft">{baustein.schluss}</p>
+          )}
+        </div>
+      );
+
+    case 'preise':
+      return (
+        <div className="rounded-3xl border border-sand bg-shell p-8">
+          <dl className="divide-y divide-sand">
+            {baustein.posten?.map((posten, i) => (
+              <div
+                key={posten.leistung}
+                className={`flex flex-wrap items-baseline justify-between gap-3 ${
+                  i === 0 ? 'pb-4' : 'py-4 last:pb-0'
+                }`}
+              >
+                <dt className="text-ink">{posten.leistung}</dt>
+                <dd className="font-display text-3xl text-sage-deep">{posten.betrag}</dd>
+              </div>
+            ))}
+          </dl>
+          <div className="mt-7 space-y-3 leading-relaxed text-ink-soft">
+            {baustein.hinweise?.map((hinweis, i) => (
+              <p key={i}>{text(hinweis)}</p>
+            ))}
+          </div>
+        </div>
+      );
+
+    default:
+      return <p className="leading-relaxed text-ink-soft">{text(baustein.text ?? '')}</p>;
+  }
 }
 
 export default function Hypnose() {
+  const { kopf, abschnitte, abschluss } = inhalt;
+
   return (
     <>
       {/* ------------------------------------------------------------- Auftakt */}
@@ -54,15 +113,13 @@ export default function Hypnose() {
             <div className="md:col-span-7">
               <Reveal>
                 <p className="text-sm tracking-[0.2em] text-sage-deep uppercase">
-                  Auflösende Hypnose©
+                  {kopf.kleineUeberschrift}
                 </p>
                 <h1 className="mt-6 font-display text-5xl leading-[1.05] text-ink sm:text-6xl">
-                  Dein Unterbewusstsein kommt zu Wort
+                  {kopf.ueberschrift}
                 </h1>
                 <p className="mt-8 text-lg leading-relaxed text-ink-soft">
-                  Hier findest du in Ruhe alles, was du vorher wissen möchtest: was diese
-                  Form der Hypnose ausmacht, wie eine Sitzung abläuft, wie sich Trance
-                  anfühlt – und wann sie nicht das Richtige ist.
+                  {kopf.einleitung}
                 </p>
               </Reveal>
             </div>
@@ -71,7 +128,7 @@ export default function Hypnose() {
               <Reveal delay={150}>
                 <Aquarell
                   src="/bilder/prisma.webp"
-                  alt="Aquarell eines Prismas, das weißes Licht in die Farben des Spektrums bricht"
+                  alt={kopf.bildBeschreibung}
                   className="aspect-square w-full"
                   morphDelay={-9}
                   priority
@@ -91,16 +148,16 @@ export default function Hypnose() {
             className="rounded-3xl border border-sand bg-shell p-8"
           >
             <h2 className="text-sm tracking-[0.2em] text-sage-deep uppercase">
-              Auf dieser Seite
+              {inhalt.inhaltsuebersicht}
             </h2>
             <ul className="mt-5 grid gap-x-10 gap-y-3 sm:grid-cols-2">
-              {inhalt.map((item) => (
-                <li key={item.id}>
+              {abschnitte.map((abschnitt) => (
+                <li key={abschnitt.id}>
                   <a
-                    href={`#${item.id}`}
+                    href={`#${abschnitt.id}`}
                     className="text-ink-soft underline-offset-4 transition-colors hover:text-ink hover:underline"
                   >
-                    {item.label}
+                    {'kurzform' in abschnitt ? abschnitt.kurzform : abschnitt.frage}
                   </a>
                 </li>
               ))}
@@ -114,324 +171,27 @@ export default function Hypnose() {
         <div className="watercolor top-1/3 -right-24 h-96 w-96 bg-sage/45" />
 
         <div className="relative mx-auto max-w-3xl space-y-20 px-6 lg:px-8">
-          <Reveal>
-            <div>
-              <Frage id="was-ist-das">Was ist Auflösende Hypnose©?</Frage>
-              <div className="mt-6 space-y-5 leading-relaxed text-ink-soft">
-                <p>
-                  Auflösende Hypnose© ist eine Form der Hypnose, die darauf abzielt, dass
-                  der Mensch in einem Zustand der Trance sein Unterbewusstsein „zu
-                  Wort&ldquo; kommen lässt und darüber seine persönlichen Themen erreicht –
-                  zum Beispiel emotionale Blockaden oder alte Glaubenssätze.
-                </p>
-                <p>
-                  Dem Fühlen wird während der Hypnose optimalerweise mehr Raum gegeben als
-                  im Normalzustand. Alte Erinnerungen dürfen gesehen und gefühlt werden. Im
-                  Verlauf findet dadurch eine Neubewertung statt.
-                </p>
-                <p>
-                  Ein Unterschied zu einigen anderen Anwendungsformen von Hypnose ist, dass
-                  bei dieser Form <span className="text-ink">keinem festgelegten Skript</span>{' '}
-                  oder Protokoll gefolgt wird. Der Ablauf ist frei und am Klienten
-                  orientiert. Auch die Tiefe der Trance ist individuell und wird für die
-                  gemeinsame Arbeit so genutzt, wie sie eben vorhanden ist oder sich
-                  entwickelt.
-                </p>
-                <p>
-                  Das heißt also, dass ich mit meiner Aufmerksamkeit vollständig bei dir
-                  sein kann, anstatt einem festgelegten Schema zu folgen. Dein Prozess wird
-                  begleitet und nach Bedarf gestützt – jedoch möglichst ohne ihn im Fluss zu
-                  stören oder zu behindern.
-                </p>
-                <p>
-                  Suggestionen von außen zeigen zwar oft beeindruckende Wirkung, sind aber
-                  leider nicht von Nachhaltigkeit geprägt. Daher wird darauf in der Regel
-                  verzichtet. Lediglich beim Ein- und Ausleiten verwenden wir Suggestionen,
-                  oder bei vorher abgesprochenen Themen – sollte es dir zum Beispiel schwer
-                  fallen, Bilder vor deinem inneren Auge erscheinen zu lassen.
-                </p>
-                <p className="font-display text-xl text-ink italic sm:text-2xl">
-                  Alles, was von dir kommt, hat grundsätzlich den größten Wert für dich und
-                  deinen Prozess.
-                </p>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal>
-            <div>
-              <Frage id="was-moeglich-ist">Was alles möglich ist</Frage>
-              <div className="mt-6 space-y-5 leading-relaxed text-ink-soft">
-                <p className="font-display text-xl text-ink italic sm:text-2xl">
-                  Das Unterbewusstsein ist ein bisschen wie deine emotionale Schatztruhe.
-                </p>
-                <p>
-                  Erfahrungen, emotional prägende Erlebnisse, Stimmungen, Verknüpfungen mit
-                  Körperlichem. Ein bisschen wie eine Blackbox, die bei einem Flug alles
-                  mitschreibt. Unser Verstand hat womöglich längst Haken an Themen oder alte
-                  Dinge gemacht, die dort aber noch schlummern.
-                </p>
-                <p>
-                  Beginnst du, sie zu öffnen, werden dir wohlbekannte Themen begegnen –
-                  genau wie die ein oder andere längst vergessene Erinnerung, zum Beispiel
-                  aus der Kindheit, die dich dann gegebenenfalls innerlich bewegen wird.
-                </p>
-              </div>
-
-              <h3 className="mt-10 font-display text-2xl text-ink">Wirkung</h3>
-              <div className="mt-4 space-y-5 leading-relaxed text-ink-soft">
-                <p>
-                  Richtest du deinen Fokus mehr nach innen und wirst spürsamer für deine
-                  Gefühlswelt, so kannst du sie nun reflektierter betrachten, für dich lösen
-                  oder verabschieden – so wie es dein Prozess dir erlaubt oder du hinschauen
-                  magst.
-                </p>
-                <p>
-                  In Kenntnis deiner Themen kannst du dich im Anschluss neu und anders
-                  erleben. Meist machen die Menschen dann neue, andere Erfahrungen.
-                </p>
-                <p className="font-display text-2xl text-sage-deep italic sm:text-3xl">
-                  Es entsteht Bewegung, wo zuvor Stillstand war.
-                </p>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal>
-            <div>
-              <Frage id="ablauf">Wie läuft Hypnose ab?</Frage>
-              <div className="mt-6 space-y-5 leading-relaxed text-ink-soft">
-                <p>
-                  Liegend oder sitzend hast du nach Einleitung einer Trance die Augen
-                  geschlossen. Mit der Aufmerksamkeit nach innen fokussiert kannst du in
-                  Form von Bildern, alten Gedächtnisinhalten, Symbolen, Farben, Gerüchen
-                  oder körperlichen Wahrnehmungen deine Themen spüren.
-                </p>
-                <p>
-                  Das in der Hypnose Erlebte ist höchst individuell und unterliegt keiner
-                  Bewertung durch mich. Fortlaufend werden wir im Gespräch sein. Im
-                  Anschluss wird die Trance wieder ausgeleitet.
-                </p>
-                <p>
-                  In der Regel verspüren die Menschen direkt nach der Sitzung ein erstes
-                  angenehmes Gefühl. Wichtig zu verstehen ist jedoch, dass das
-                  Unterbewusstsein „nacharbeitet&ldquo;. Nicht nur die Sitzung an sich ist
-                  relevant – sie ist als eine Art Anstoß zu verstehen. Ein
-                  Perspektivenwechsel, eine Neubewertung und Neulernen finden statt, die
-                  wiederum das Erleben nachhaltig verändern.
-                </p>
-              </div>
-
-              <div className="mt-8 rounded-3xl border border-sage/50 bg-shell p-8">
-                <p className="font-display text-xl text-ink">Meine Rolle</p>
-                <p className="mt-3 leading-relaxed text-ink-soft">
-                  Wie die eines Beifahrers. Ich begleite dich und werde mit Fragen oder
-                  Hinweisen aus meiner Wahrnehmung behilflich sein, die Themen anzugehen.
-                </p>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal>
-            <div>
-              <Frage id="trance">Wie fühlt sich Trance an?</Frage>
-              <div className="mt-6 space-y-5 leading-relaxed text-ink-soft">
-                <p>
-                  Die Menschen erleben die Trance in der Hypnose als eine Art
-                  Entspannungszustand, ähnlich wie kurz vor dem Einschlafen. Die Augen sind
-                  in der Regel geschlossen, und man ist bei vollem Bewusstsein.
-                </p>
-                <p>
-                  Du behältst weiterhin die Kontrolle über das, was du sagst.{' '}
-                  <span className="text-ink">
-                    Jederzeit bist du in der Lage, eine Sitzung abzubrechen, indem du
-                    schlichtweg die Augen öffnest.
-                  </span>{' '}
-                  Auch erinnerst du dich in der Regel an alles Gesprochene. Du bist mit der
-                  Aufmerksamkeit lediglich stark nach innen fokussiert – in dem Maße, in dem
-                  es dir eben gelingt und du zulassen magst.
-                </p>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal>
-            <div>
-              <Frage id="wirkweise">Wie funktioniert Hypnose?</Frage>
-              <div className="mt-6 space-y-5 leading-relaxed text-ink-soft">
-                <p>
-                  Durch den Entspannungszustand werden Emotionen leichter zugänglich. Es
-                  dürfen andere Bereiche in deinem Gehirn aktiver werden. Das Erspüren und
-                  Durchleben der sich zeigenden Gefühle ist Teil deines Prozesses. Weg und
-                  Tempo werden automatisch durch dich bestimmt.
-                </p>
-                <p>
-                  Das in der Hypnose Wahrgenommene ist stets subjektiv und wird von mir
-                  nicht bewertet.
-                </p>
-                <p className="font-display text-2xl text-ink italic sm:text-3xl">
-                  Es gibt kein Richtig oder Falsch.
-                </p>
-                <p>
-                  Die Themen liefert das Unterbewusstsein so, wie sie gerade anliegen. Du
-                  kannst also gar nichts falsch machen.
-                </p>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal>
-            <div>
-              <Frage id="auswirkungen">Welche Auswirkungen hat Hypnose?</Frage>
-              <div className="mt-6 space-y-5 leading-relaxed text-ink-soft">
-                <p>
-                  Je nachdem, wie emotional eine Hypnose verläuft, kannst du im Anschluss
-                  sowohl erleichtert als auch erschöpft sein. Die meisten
-                  Menschen sind im Nachgang noch etwas in sich vertieft oder beeindruckt von
-                  dem gerade Erlebten und Gefühlten.
-                </p>
-                <p>
-                  Mit endender Trance dürfen sich die Augen wieder auf ihre Umgebung
-                  fokussieren. Du kommst wieder im Hier und Jetzt an, und wir haben an der
-                  Stelle noch Zeit, das Ganze Revue passieren zu lassen.
-                </p>
-                <p>
-                  Im Anschluss macht ggf. ein kleiner Spaziergang an der frischen Luft Sinn,
-                  um sich zu sammeln, bevor du wieder am Straßenverkehr teilnimmst. Wenn
-                  inhaltlich große Themen anstehen, solltest du dir und deinem Körper
-                  hinterher etwas Ruhe gönnen.
-                </p>
-                <p>
-                  Vermehrtes Träumen ist nach Hypnose normal. Es ist als positiver Effekt zu
-                  verstehen und zeigt, dass etwas in Bewegung kommt.
-                </p>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal>
-            <div>
-              <Frage id="grenzen">Wann kommt Hypnose nicht in Frage?</Frage>
-              <div className="mt-6 rounded-3xl border border-rose-deep/30 bg-rose/10 p-8">
-                <p className="leading-relaxed text-ink-soft">
-                  In diesen Fällen arbeite ich nicht mit Hypnose:
-                </p>
-                <ul className="mt-5 space-y-3">
-                  {gegenanzeigen.map((g) => (
-                    <li key={g} className="flex gap-4">
-                      <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-rose-deep" />
-                      <span className="leading-relaxed text-ink-soft">{g}</span>
-                    </li>
+          {abschnitte.map((abschnitt) => (
+            <Reveal key={abschnitt.id}>
+              <div>
+                <h2
+                  id={abschnitt.id}
+                  className="scroll-mt-28 font-display text-3xl text-ink sm:text-4xl"
+                >
+                  {abschnitt.frage}
+                </h2>
+                <div className="mt-6 space-y-5">
+                  {abschnitt.bloecke.map((baustein, i) => (
+                    <Baustein key={i} baustein={baustein} />
                   ))}
-                </ul>
-                <p className="mt-6 leading-relaxed text-ink-soft">
-                  Wenn du unsicher bist, ob einer dieser Punkte auf dich zutrifft, sprich
-                  mich einfach im kostenfreien Vorgespräch darauf an.
-                </p>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal>
-            <div>
-              <Frage id="fuer-jeden">Ist Hypnose für jeden etwas?</Frage>
-              <div className="mt-6 space-y-5 leading-relaxed text-ink-soft">
-                <p>
-                  Je nach Typ spürst du nach ein bis zwei Hypnosen, ob du davon profitierst
-                  oder nicht. Die Wirkung entfaltet sich meist in den darauffolgenden Tagen.
-                  Du merkst das zum Beispiel an vermehrtem Träumen.
-                </p>
-                <p>
-                  Manch einer ist näher am Spüren oder an seinen Themen als ein anderer und
-                  kann sich möglicherweise leichter darauf einlassen. Du wirst schnell
-                  merken, ob es eher der Austausch oder die Hypnosen sind, die deinen
-                  Prozess ideal begleiten.
-                </p>
-                <p className="font-display text-xl text-ink italic sm:text-2xl">
-                  Ich biete dir daher immer die Kombination an.
-                </p>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal>
-            <div>
-              <Frage id="dauer">Wie lange dauert eine Sitzung?</Frage>
-              <div className="mt-6 space-y-5 leading-relaxed text-ink-soft">
-                <p>
-                  Ich peile eine reine Trancezeit von etwa 30 Minuten pro Sitzung an. In
-                  Einzelfällen, zum Beispiel wenn man gerade in einem sehr intensiven
-                  mentalen Prozess steckt, kann es auch einmal länger dauern.
-                </p>
-                <p>
-                  Wir haben zuvor Zeit, uns zu besprechen, und auch im Nachhinein die
-                  Möglichkeit, das Erlebte gemeinsam noch einmal zu betrachten und sacken zu
-                  lassen. Eineinhalb Stunden insgesamt sind in der Regel ein gutes
-                  Zeitfenster.
-                </p>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal>
-            <div>
-              <Frage id="gelingen">
-                Was kann ich tun, damit Hypnose gelingt und meine Themen erscheinen?
-              </Frage>
-              <div className="mt-6 space-y-5 leading-relaxed text-ink-soft">
-                <p>
-                  Mach es dir gemütlich – so kann das Unterbewusstsein am besten aktiv
-                  werden. Ganz von selbst landest du da, wo es für dich von Bedeutung ist.
-                  Es kann auch sein, dass dich dann überrascht, was du siehst.
-                </p>
-                <p className="font-display text-xl text-ink italic sm:text-2xl">
-                  Siehst du nichts – arbeiten wir genau damit.
-                </p>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal>
-            <div>
-              <Frage id="preise">Preise und Bezahlung</Frage>
-              <div className="mt-6 rounded-3xl border border-sand bg-shell p-8">
-                <dl className="divide-y divide-sand">
-                  <div className="flex flex-wrap items-baseline justify-between gap-3 pb-4">
-                    <dt className="text-ink">Termin, 60 Minuten</dt>
-                    <dd className="font-display text-3xl text-sage-deep">150 €</dd>
-                  </div>
-                  <div className="flex flex-wrap items-baseline justify-between gap-3 pt-4">
-                    <dt className="text-ink">Termin, 90 Minuten</dt>
-                    <dd className="font-display text-3xl text-sage-deep">180 €</dd>
-                  </div>
-                </dl>
-
-                <div className="mt-7 space-y-3 leading-relaxed text-ink-soft">
-                  <p>
-                    Die Kosten trägt der Klient. Die Bezahlung erfolgt per Überweisung auf
-                    mein Konto innerhalb von 10 Tagen nach Rechnungstellung. Die Rechnung
-                    wird dir per E-Mail zugesendet.
-                  </p>
-                  <p>Das erste Kennenlernen ist kostenfrei.</p>
                 </div>
               </div>
-            </div>
-          </Reveal>
+            </Reveal>
+          ))}
         </div>
       </section>
 
-      {/* -------------------------------------------------------------- Hinweis */}
-      <section className="border-y border-sand bg-sand/60 py-12">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <p className="leading-relaxed text-ink-soft">
-            <span className="text-ink">Wichtiger Hinweis:</span> Die Sitzungen stellen
-            keine Heilbehandlung dar und sind kein Ersatz für ärztliche oder
-            psychotherapeutische Behandlung. Die Klientinnen und Klienten tragen die Kosten
-            eigenständig. Ich weise ausdrücklich darauf hin, dass ich nicht mehr ärztlich
-            oder therapeutisch tätig bin.
-          </p>
-        </div>
-      </section>
+      <Pflichthinweis />
 
       {/* ------------------------------------------------------------ Abschluss */}
       <section className="relative overflow-hidden py-24 md:py-32">
@@ -442,17 +202,14 @@ export default function Hypnose() {
             <div className="flex flex-col items-center">
               <Spiral className="h-10 w-10 text-sage-deep/60" />
               <h2 className="mt-6 font-display text-4xl text-ink sm:text-5xl">
-                Noch Fragen offen?
+                {abschluss.ueberschrift}
               </h2>
-              <p className="mt-6 leading-relaxed text-ink-soft">
-                Melde dich gern – dann telefonieren wir oder treffen uns persönlich, ganz
-                wie du magst. Das Kennenlernen ist natürlich kostenfrei.
-              </p>
+              <p className="mt-6 leading-relaxed text-ink-soft">{abschluss.text}</p>
               <Link
                 href="/kontakt"
                 className="mt-10 rounded-full bg-sage-deep px-10 py-4 text-cream shadow-sm transition-all duration-300 hover:bg-ink hover:shadow-md"
               >
-                Kontakt aufnehmen
+                {abschluss.schaltflaeche}
               </Link>
             </div>
           </Reveal>

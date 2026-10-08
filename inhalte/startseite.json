@@ -1,0 +1,127 @@
+{
+  "_zweck": "Alle Texte der Startseite. Das Hinweisband am Ende steht in rechtlich.hinweise.json.",
+  "_hinweisZumSternchen": "Text zwischen *Sternchen* wird farbig hervorgehoben.",
+  "_hinweisZumUmbruch": "Ein Zeilenumbruch in der Hauptüberschrift wird genau dort gesetzt, wo in der Datei eine neue Zeile beginnt.",
+
+  "kopf": {
+    "kleineUeberschrift": "Coaching & Begleitung in Veränderungs- und Entscheidungsprozessen · mit Auflösender Hypnose©",
+    "ueberschrift": "Damit das Leben\nwieder *Farbe* bekommt…",
+    "begruessung": "Willkommen zu deiner Reise nach Innen.",
+    "einleitung": "Ich freue mich, dich auf deinem individuellen Weg begleiten zu dürfen.",
+    "schaltflaecheHaupt": "Kostenlos kennenlernen",
+    "schaltflaecheZweit": "Was ist Auflösende Hypnose?",
+    "bildBeschreibung": "Aquarell eines Lebensbaums mit farbiger Krone und weit verzweigten Wurzeln",
+    "leitsatz": "Manchmal gibt es Themen im Leben, die keinen Krankheitswert haben, aber dennoch unsere Aufmerksamkeit brauchen."
+  },
+
+  "coaching": {
+    "ueberschrift": "Dein emotionales Coaching",
+    "unterzeile": "…ich begleite dich gerne bei deiner individuellen Reise nach Innen…",
+    "einleitung": "Lerne dich selbst kennen und:",
+    "punkte": [
+      "löse alte Muster und Glaubenssätze",
+      "entlarve Blockaden und Trigger",
+      "entdecke Wege und Möglichkeiten",
+      "schaffe deinem Unterbewusstsein Raum mit Auflösender Hypnose©, damit es für dich arbeiten kann"
+    ],
+    "schlusssatz": "…all das in deinem ganz eigenen Tempo. Denn sich selbst kennenlernen bedeutet auch, *sich lieben lernen*."
+  },
+
+  "kennstDuDas": {
+    "ueberschrift": "Kennst du das?",
+    "_hinweisBilder": "Jede Karte braucht ein eigenes Bild aus public/bilder/. Die Beschreibung unter 'bildBeschreibung' lesen blinde Besucher und Google vor.",
+    "karten": [
+      {
+        "text": "Vielleicht fragst du dich, welcher Weg der richtige ist für dich. Du erlebst (kreative) Blockaden oder stehst vor einem Wendepunkt in deinem Leben?",
+        "bild": "/bilder/weggabelung.webp",
+        "bildBeschreibung": "Aquarell: ein Mensch steht vor einer Weggabelung in einer weiten Landschaft"
+      },
+      {
+        "text": "Du hast viel um die Ohren, sehnst dich nach Ruhe und möchtest wieder den Durchblick haben.",
+        "bild": "/bilder/kopf-gedanken.webp",
+        "bildBeschreibung": "Aquarell: ein Kopf, umgeben von vielen Gegenständen und Gedanken des Alltags"
+      },
+      {
+        "text": "Du erlebst Schwierigkeiten in Beziehungen oder Freundschaften, die dich festfahren lassen – und suchst nach den Ursachen?",
+        "bild": "/bilder/paar.webp",
+        "bildBeschreibung": "Aquarell: zwei Menschen, die sich voneinander abwenden"
+      },
+      {
+        "text": "Du möchtest spirituell wachsen. Vielleicht hast du einen Menschen verloren oder eine besondere Erfahrung gemacht, die du nicht einordnen kannst. Du hegst den Wunsch nach Selbstfindung und Erkenntnis.",
+        "bild": "/bilder/spirituelles-wachstum.webp",
+        "bildBeschreibung": "Aquarell: ein Mensch, von Licht umgeben"
+      }
+    ],
+    "kastenOben": "All das kannst du mit Hilfe von Hypnose in Trance und / oder im Rahmen von Gesprächen angehen.",
+    "kastenUnten": "Manchmal braucht es ein neutrales Ohr an der Seite – für Themen, die du sonst mit niemandem teilen kannst."
+  },
+
+  "erwartet": {
+    "ueberschrift": "Was dich erwartet",
+    "punkte": [
+      {
+        "titel": "In deinem Tempo",
+        "text": "Fühlen, Erinnern, Reflexion, Klärung, Tiefe, Erkenntnis – nichts davon wird erzwungen. Du bestimmst Weg und Geschwindigkeit."
+      },
+      {
+        "titel": "Erleichterung",
+        "text": "Auf fordernde innere Arbeit folgt in der Regel Erleichterung – der Lohn für deine Mühe."
+      },
+      {
+        "titel": "Nähe zu dir selbst",
+        "text": "Denn nur wer sich selbst gut kennt, kann sich adäquat versorgen."
+      }
+    ]
+  },
+
+  "arbeitsweise": {
+    "ueberschrift": "Wie ich arbeite",
+    "absaetze": [
+      "Vor allem intuitiv – als Mensch und als deine Weg-Begleiterin, mit meinem Erfahrungsschatz aus Leben, Studium, Beruf und Praxis.",
+      "Daraus entsteht eine Mischung, die sich ganz nach deinem Bedarf richtet. Auch Spiritualität hat Raum, wo sie für dich spürbar sein mag."
+    ],
+    "methoden": [
+      "Lockeres Gespräch",
+      "Reflexion",
+      "Perspektivwechsel",
+      "Achtsamkeit",
+      "Entspannungsverfahren",
+      "Atemtechniken",
+      "Auflösende Hypnose©",
+      "Raum für Spiritualität"
+    ],
+    "bildBeschreibung": "Aquarell einer Spirale als Bild für die Reise nach Innen",
+    "eckdaten": [
+      {
+        "wert": "≈ 1,5 Std.",
+        "beschriftung": "Zeitfenster pro Sitzung – mit Vorgespräch und Nachklang"
+      },
+      {
+        "wert": "≈ 30 Min.",
+        "beschriftung": "reine Trancezeit, in Einzelfällen auch einmal länger"
+      },
+      {
+        "wert": "kostenfrei",
+        "beschriftung": "das erste Kennenlernen – telefonisch oder persönlich"
+      }
+    ]
+  },
+
+  "ueberMich": {
+    "kleineUeberschrift": "Über mich",
+    "ueberschrift": "Isabelle Kroppenstedt",
+    "absaetze": [
+      "Nach dem Studium der Humanmedizin arbeitete ich als Ärztin im Bereich Psychosomatische Medizin und Psychotherapie. Schon immer interessierten mich die Lebenswege und Geschichten der Menschen – wie sie sich von klein auf entwickelten und aus welchen Beweggründen sie die Dinge so tun, wie sie sie eben tun."
+    ],
+    "leitsatz": "Zwischen dem klassischen „gesund“ und „krank“ liegt ein großer Raum in unser aller Leben, der unsere Aufmerksamkeit verdient.",
+    "nachsatz": "Heute begleite ich Menschen, die ihren Lebensstil optimieren oder sich selbst und ihre Geschichte besser kennenlernen möchten. Jene, die aus freien Stücken zu innerer Arbeit bereit sind.",
+    "bildBeschreibung": "Porträt von Isabelle Kroppenstedt",
+    "verweis": "Meinen ganzen Weg lesen"
+  },
+
+  "abschluss": {
+    "ueberschrift": "Möchtest du einen Termin vereinbaren?",
+    "text": "Melde dich gern – dann telefonieren wir oder treffen uns persönlich, ganz wie du magst. Das Kennenlernen ist natürlich kostenfrei.",
+    "schaltflaeche": "Kontakt aufnehmen"
+  }
+}

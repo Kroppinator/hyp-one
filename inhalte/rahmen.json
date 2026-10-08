@@ -1,0 +1,33 @@
+{
+  "_zweck": "Der Rahmen, der auf jeder Seite gleich ist: Navigation oben und Fußzeile unten. Adresse, E-Mail und Telefon stehen hier bewusst nicht – die kommen über die Platzhalter aus stammdaten.json.",
+
+  "navigation": {
+    "links": [
+      { "beschriftung": "Auflösende Hypnose", "ziel": "/hypnose" },
+      { "beschriftung": "Über mich", "ziel": "/ueber-mich" }
+    ],
+    "schaltflaeche": "Kennenlernen",
+    "schaltflaecheMobil": "Kostenlos kennenlernen"
+  },
+
+  "fusszeile": {
+    "ueberschriftKontakt": "Coachingraum",
+    "ueberschriftSeiten": "Seiten",
+    "ueberschriftRecht": "Rechtliches",
+
+    "seiten": [
+      { "beschriftung": "Auflösende Hypnose©", "ziel": "/hypnose" },
+      { "beschriftung": "Über mich", "ziel": "/ueber-mich" },
+      { "beschriftung": "Kontakt", "ziel": "/kontakt" }
+    ],
+    "recht": [
+      { "beschriftung": "Impressum", "ziel": "/impressum" },
+      { "beschriftung": "Datenschutz", "ziel": "/datenschutz" }
+    ],
+
+    "_pflichthinweis": "RECHTLICH RELEVANT – die Kurzfassung des Pflichthinweises. Die ausführliche Fassung steht in rechtlich.hinweise.json. Bitte nicht kürzen.",
+    "pflichthinweisKurz": "Coaching und Begleitung · keine Heilbehandlung · kein Ersatz für ärztliche oder psychotherapeutische Behandlung · Selbstzahlerleistung",
+
+    "copyright": "Isabelle Kroppenstedt · Auflösende Hypnose©"
+  }
+}
