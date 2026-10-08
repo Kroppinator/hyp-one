@@ -53,7 +53,7 @@ export default function Navbar() {
         <Link
           href="/"
           onClick={handleLogoClick}
-          className="group flex items-center gap-3"
+          className="group flex items-center gap-0"
         >
           {/* Querformat: Prisma links, Regenbogen läuft nach rechts aus.
               Das Verblassen am rechten Rand steckt in der Bilddatei selbst. */}
@@ -63,16 +63,17 @@ export default function Navbar() {
             width={640}
             height={342}
             priority
-            className="h-12 w-auto shrink-0 object-contain"
+            className="h-10 w-auto shrink-0 object-contain sm:h-12"
           />
-          <span className="flex flex-col leading-none">
-            <span className="font-display text-xl tracking-wide text-ink sm:text-2xl">
+          {/* Gleiche Setzung wie in der Fußzeile. */}
+          <span className="-ml-3 flex flex-col leading-none sm:-ml-4">
+            <span className="font-display text-xl whitespace-nowrap text-ink max-[360px]:text-lg sm:text-2xl">
               {stammdaten.markennameHaupt}{' '}
               <span className="text-apricot-deep italic">
                 {stammdaten.markennameZusatz}
               </span>
             </span>
-            <span className="mt-1 text-[0.72rem] tracking-[0.2em] text-ink-soft uppercase">
+            <span className="mt-1.5 text-[0.7rem] tracking-[0.14em] text-sage-deep uppercase sm:mt-2 sm:text-sm sm:tracking-[0.18em]">
               {stammdaten.inhaberin}
             </span>
           </span>
