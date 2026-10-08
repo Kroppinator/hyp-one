@@ -115,7 +115,7 @@ export default function Hypnose() {
           <div className="grid items-center gap-14 md:grid-cols-12">
             <div className="md:col-span-7">
               <Reveal>
-                <p className="text-sm tracking-[0.2em] text-sage-deep uppercase">
+                <p className="text-lg tracking-[0.15em] text-sage-deep uppercase">
                   {kopf.kleineUeberschrift}
                 </p>
                 <h1 className="mt-6 font-display text-5xl leading-[1.05] text-ink sm:text-6xl">

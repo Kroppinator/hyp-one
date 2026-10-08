@@ -66,7 +66,7 @@ export default function Navbar() {
             className="h-10 w-auto shrink-0 object-contain sm:h-12"
           />
           {/* Gleiche Setzung wie in der Fußzeile. */}
-          <span className="-ml-3 flex flex-col leading-none sm:-ml-4">
+          <span className="ml-1 flex flex-col leading-none">
             <span className="font-display text-xl whitespace-nowrap text-ink max-[360px]:text-lg sm:text-2xl">
               {stammdaten.markennameHaupt}{' '}
               <span className="text-apricot-deep italic">

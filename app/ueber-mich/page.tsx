@@ -45,7 +45,7 @@ export default function UeberMich() {
 
             <div className="md:col-span-7">
               <Reveal delay={120}>
-                <p className="text-sm tracking-[0.2em] text-sage-deep uppercase">
+                <p className="text-lg tracking-[0.15em] text-sage-deep uppercase">
                   {inhalt.kleineUeberschrift}
                 </p>
                 <h1 className="mt-6 font-display text-5xl leading-[1.05] text-ink sm:text-6xl">

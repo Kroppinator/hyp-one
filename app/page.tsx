@@ -19,16 +19,18 @@ export default function Home() {
         <div className="watercolor top-72 left-1/4 h-80 w-80 bg-apricot/50" />
 
         <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
+          {/* Steht über dem Raster, damit die lange Zeile die volle Breite
+              nutzen kann und nicht in drei Zeilen zerfällt. */}
+          <Reveal>
+            <p className="mb-10 max-w-4xl text-lg tracking-[0.15em] text-balance text-sage-deep uppercase">
+              {kopf.kleineUeberschrift}
+            </p>
+          </Reveal>
+
           <div className="grid items-center gap-14 md:grid-cols-12">
             <div className="md:col-span-7">
-              <Reveal>
-                <p className="max-w-xl text-sm tracking-[0.2em] text-sage-deep uppercase">
-                  {kopf.kleineUeberschrift}
-                </p>
-              </Reveal>
-
               <Reveal delay={120}>
-                <h1 className="mt-6 font-display text-5xl leading-[1.05] whitespace-pre-line text-ink sm:text-6xl lg:text-7xl">
+                <h1 className="font-display text-5xl leading-[1.05] whitespace-pre-line text-ink sm:text-6xl lg:text-7xl">
                   {betont(kopf.ueberschrift, 'text-apricot-deep italic')}
                 </h1>
               </Reveal>
