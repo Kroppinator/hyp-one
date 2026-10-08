@@ -151,7 +151,8 @@
     },
     {
       "id": "grenzen",
-      "frage": "In diesen Fällen können wir leider nicht zusammen arbeiten:",
+      "frage": "In diesen Fällen können wir leider nicht zusammenarbeiten:",
+      "kurzform": "Wann kommt Hypnose nicht in Frage?",
       "_achtung": "Diese Liste ist eine Sicherheitsangabe. Punkte bitte nicht ohne fachliche Rücksprache streichen.",
       "bloecke": [
         {
