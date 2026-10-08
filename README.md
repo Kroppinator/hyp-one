@@ -97,6 +97,16 @@ Für das Kontaktformular. Lokal in `.env.local`, in Produktion unter
 Ohne gesetzte Variablen antwortet `/api/contact` mit Status 500 und das Formular zeigt
 eine Fehlermeldung – die Seite selbst funktioniert weiterhin.
 
+**Nach dem Eintragen in Vercel einmal neu deployen**, sonst greifen die Werte nicht.
+
+Zwei Stolpersteine bei GMX: Im Postfach muss der Zugriff über POP3/IMAP freigeschaltet
+sein, und `EMAIL_FROM` muss dieselbe Adresse sein wie `EMAIL_USER` – unter einer fremden
+Absenderadresse verweigert GMX den Versand.
+
+Zum Prüfen ohne echte Mail: Ein POST mit ausgefülltem Honeypot-Feld (`website`) liefert
+`200`, ohne etwas zu versenden; ein POST mit ungültiger Adresse liefert `400`. Kommt
+stattdessen `500`, stimmt etwas mit den Zugangsdaten nicht.
+
 ---
 
 ## Design-Tokens
