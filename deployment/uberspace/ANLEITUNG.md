@@ -132,6 +132,29 @@ unten.
 
 ---
 
+## 7a. Automatik einschalten
+
+Erst wenn der Durchlauf von Hand sauber durchläuft, lohnt die Automatik. In
+`.github/workflows/uberspace.yml` ganz oben die beiden auskommentierten Zeilen
+freigeben:
+
+```yaml
+on:
+  push:
+    branches: [Uberspace_uat]
+  workflow_dispatch:
+```
+
+Ab dann geht jede Änderung auf diesem Branch von selbst live. **Das ist der
+Punkt, an dem Isabelles Textpflege wieder funktioniert** – sie bearbeitet die
+Dateien in `inhalte/` über GitHub, und ohne diese Automatik bliebe die
+Änderung liegen.
+
+Vorher ist das bewusst abgeschaltet: Ein automatischer Lauf ohne Server würde
+bei jedem Push scheitern und Fehlermeldungen verschicken.
+
+---
+
 ## 8. Domain verbinden
 
 ```bash
