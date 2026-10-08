@@ -55,13 +55,15 @@ export default function Navbar() {
           onClick={handleLogoClick}
           className="group flex items-center gap-3"
         >
+          {/* Querformat: Prisma links, Regenbogen läuft nach rechts aus.
+              Das Verblassen am rechten Rand steckt in der Bilddatei selbst. */}
           <Image
             src="/bilder/prisma-logo.webp"
             alt=""
-            width={44}
-            height={44}
+            width={640}
+            height={342}
             priority
-            className="h-11 w-11 shrink-0 object-contain"
+            className="h-12 w-auto shrink-0 object-contain"
           />
           <span className="flex flex-col leading-none">
             <span className="font-display text-xl tracking-wide text-ink sm:text-2xl">

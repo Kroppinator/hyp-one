@@ -175,6 +175,11 @@ Sinnvolle Größe: längste Kante etwa 1000 Pixel.
 Die `bildBeschreibung` lesen blinde Besucher vor und Google wertet sie aus – bitte nicht
 leer lassen.
 
+**Das Logo** (`prisma-logo.webp`) ist ein Sonderfall: Es ist im Querformat zugeschnitten,
+das weiße Papier ist stufenlos transparent gemacht, und der Auslauf nach rechts steckt
+schon in der Datei. Ein einfacher Austausch durch ein neues Bild funktioniert dort also
+nicht – dafür bitte Bescheid sagen.
+
 **Achtung bei neuen Bildern:** Die Originale aus dem Bildgenerator tragen oben rechts ein
 kleines „Made with AI"-Zeichen. Beim Verkleinern wurden deshalb an allen vier Seiten
 48 Pixel weggeschnitten. Bei einem neuen Bild bitte prüfen, ob dort noch so ein Zeichen
