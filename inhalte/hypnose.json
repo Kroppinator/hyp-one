@@ -6,7 +6,7 @@
   "kopf": {
     "kleineUeberschrift": "Auflösende Hypnose©",
     "ueberschrift": "Dein Unterbewusstsein kommt zu Wort",
-    "einleitung": "Hier findest du in Ruhe alles, was du vorher wissen möchtest: was diese Form der Hypnose ausmacht, wie eine Sitzung abläuft, wie sich Trance anfühlt – und wann sie nicht das Richtige ist.",
+    "einleitung": "Hier findest du in Ruhe alles, was du vorher wissen möchtest: was diese Form der Hypnose ausmacht, wie ein Termin abläuft, wie sich Trance anfühlt – und wann sie nicht das Richtige ist.",
     "bildBeschreibung": "Aquarell eines Prismas, das weißes Licht in die Farben des Spektrums bricht"
   },
 
@@ -77,7 +77,7 @@
       "bloecke": [
         {
           "typ": "absatz",
-          "text": "Liegend oder sitzend hast du nach Einleitung einer Trance die Augen geschlossen. Mit der Aufmerksamkeit nach innen fokussiert kannst du in Form von Bildern, alten Gedächtnisinhalten, Symbolen, Farben, Gerüchen oder körperlichen Wahrnehmungen deine Themen spüren."
+          "text": "Liegend oder sitzend hast du nach Einleitung einer Trance die Augen geschlossen. Mit der Aufmerksamkeit nach innen fokussiert kannst du in Form von Bildern, alten oder neuen Gedächtnisinhalten, Symbolen, Farben, Gerüchen oder körperlichen Wahrnehmungen deine Themen spüren."
         },
         {
           "typ": "absatz",
@@ -85,7 +85,7 @@
         },
         {
           "typ": "absatz",
-          "text": "In der Regel verspüren die Menschen direkt nach der Sitzung ein erstes angenehmes Gefühl. Wichtig zu verstehen ist jedoch, dass das Unterbewusstsein „nacharbeitet“. Nicht nur die Sitzung an sich ist relevant – sie ist als eine Art Anstoß zu verstehen. Ein Perspektivenwechsel, eine Neubewertung und Neulernen finden statt, die wiederum das Erleben nachhaltig verändern."
+          "text": "In der Regel verspüren die Menschen direkt nach dem Termin ein erstes angenehmes Gefühl. Wichtig zu verstehen ist jedoch, dass das Unterbewusstsein „nacharbeitet“. Nicht nur der Termin an sich ist relevant – er ist als eine Art Anstoß zu verstehen. Ein Perspektivenwechsel, eine Neubewertung und Neulernen finden statt, die wiederum das Erleben nachhaltig verändern."
         },
         {
           "typ": "kasten",
@@ -104,7 +104,7 @@
         },
         {
           "typ": "absatz",
-          "text": "Du behältst weiterhin die Kontrolle über das, was du sagst. *Jederzeit bist du in der Lage, eine Sitzung abzubrechen, indem du schlichtweg die Augen öffnest.* Auch erinnerst du dich in der Regel an alles Gesprochene. Du bist mit der Aufmerksamkeit lediglich stark nach innen fokussiert – in dem Maße, in dem es dir eben gelingt und du zulassen magst."
+          "text": "Du behältst weiterhin die Kontrolle über das, was du sagst. *Jederzeit bist du in der Lage, einen Termin abzubrechen, indem du schlichtweg die Augen öffnest.* Auch erinnerst du dich in der Regel an alles Gesprochene. Du bist mit der Aufmerksamkeit lediglich stark nach innen fokussiert – in dem Maße, in dem es dir eben gelingt und du zulassen magst."
         }
       ]
     },
@@ -187,11 +187,11 @@
     },
     {
       "id": "dauer",
-      "frage": "Wie lange dauert eine Sitzung?",
+      "frage": "Wie lange dauert ein Termin?",
       "bloecke": [
         {
           "typ": "absatz",
-          "text": "Ich peile eine reine Trancezeit von etwa 30 Minuten pro Sitzung an. In Einzelfällen, zum Beispiel wenn man gerade in einem sehr intensiven mentalen Prozess steckt, kann es auch einmal länger dauern."
+          "text": "Ich peile eine reine Trancezeit von etwa 30 Minuten pro Termin an. In Einzelfällen kann es auch einmal länger dauern."
         },
         {
           "typ": "absatz",
@@ -223,7 +223,8 @@
           ],
           "hinweise": [
             "Die Kosten trägt der Klient. Die Bezahlung erfolgt per Überweisung auf mein Konto innerhalb von 10 Tagen nach Rechnungstellung. Die Rechnung wird dir per E-Mail zugesendet.",
-            "Das erste Kennenlernen ist kostenfrei."
+            "Das erste Kennenlernen ist kostenfrei.",
+            "Solltest du einen finanziellen Engpass haben, möchtest aber dennoch mit mir arbeiten, sprich mich gerne an."
           ]
         }
       ]
@@ -236,5 +237,5 @@
     "schaltflaeche": "Kontakt aufnehmen"
   },
 
-  "seitenbeschreibung": "Was Auflösende Hypnose© ist, wie eine Sitzung abläuft, wie sich Trance anfühlt und wann Hypnose nicht in Frage kommt – erklärt von {inhaberin}, {ort}."
+  "seitenbeschreibung": "Was Auflösende Hypnose© ist, wie ein Termin abläuft, wie sich Trance anfühlt und wann Hypnose nicht in Frage kommt – erklärt von {inhaberin}, {ort}."
 }
