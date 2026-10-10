@@ -77,7 +77,7 @@
       "bloecke": [
         {
           "typ": "absatz",
-          "text": "Liegend oder sitzend hast du nach Einleitung einer Trance die Augen geschlossen. Mit der Aufmerksamkeit nach innen fokussiert kannst du in Form von Bildern, alten Gedächtnisinhalten, Symbolen, Farben, Gerüchen oder körperlichen Wahrnehmungen deine Themen spüren."
+          "text": "Liegend oder sitzend hast du nach Einleitung einer Trance die Augen geschlossen. Mit der Aufmerksamkeit nach innen fokussiert kannst du in Form von Bildern, alten oder neuen Gedächtnisinhalten, Symbolen, Farben, Gerüchen oder körperlichen Wahrnehmungen deine Themen spüren."
         },
         {
           "typ": "absatz",
@@ -191,7 +191,7 @@
       "bloecke": [
         {
           "typ": "absatz",
-          "text": "Ich peile eine reine Trancezeit von etwa 30 Minuten pro Sitzung an. In Einzelfällen, zum Beispiel wenn man gerade in einem sehr intensiven mentalen Prozess steckt, kann es auch einmal länger dauern."
+          "text": "Ich peile eine reine Trancezeit von etwa 30 Minuten pro Sitzung an. In Einzelfällen kann es auch einmal länger dauern."
         },
         {
           "typ": "absatz",
@@ -223,7 +223,8 @@
           ],
           "hinweise": [
             "Die Kosten trägt der Klient. Die Bezahlung erfolgt per Überweisung auf mein Konto innerhalb von 10 Tagen nach Rechnungstellung. Die Rechnung wird dir per E-Mail zugesendet.",
-            "Das erste Kennenlernen ist kostenfrei."
+            "Das erste Kennenlernen ist kostenfrei.",
+            "Solltest du einen finanziellen Engpass haben, möchtest aber dennoch mit mir arbeiten, sprich mich gerne an."
           ]
         }
       ]

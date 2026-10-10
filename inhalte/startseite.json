@@ -4,14 +4,14 @@
   "_hinweisZumUmbruch": "Ein Zeilenumbruch in der Hauptüberschrift wird genau dort gesetzt, wo in der Datei eine neue Zeile beginnt.",
 
   "kopf": {
-    "kleineUeberschrift": "Coaching & Begleitung in Veränderungs- und Entscheidungsprozessen · mit Auflösender Hypnose©",
+    "kleineUeberschrift": "Coaching & Begleitung in Veränderungs- und Entscheidungsprozessen",
     "ueberschrift": "Damit das Leben\nwieder *Farbe* bekommt…",
     "begruessung": "Willkommen zu deiner Reise nach Innen.",
     "einleitung": "Ich freue mich, dich auf deinem individuellen Weg begleiten zu dürfen.",
     "schaltflaecheHaupt": "Kostenlos kennenlernen",
     "schaltflaecheZweit": "Was ist Auflösende Hypnose?",
     "bildBeschreibung": "Aquarell eines Lebensbaums mit farbiger Krone und weit verzweigten Wurzeln",
-    "leitsatz": "Manchmal gibt es Themen im Leben, die keinen Krankheitswert haben, aber dennoch unsere Aufmerksamkeit brauchen."
+    "leitsatz": "Manchmal gibt es Themen im Leben, die keinen Krankheitswert haben, aber dennoch unsere Aufmerksamkeit verdienen."
   },
 
   "coaching": {
@@ -37,12 +37,12 @@
         "bildBeschreibung": "Aquarell: ein Mensch steht vor einer Weggabelung in einer weiten Landschaft"
       },
       {
-        "text": "Du hast viel um die Ohren, sehnst dich nach Ruhe und möchtest wieder den Durchblick haben.",
+        "text": "Du hast viel um die Ohren, sehnst dich nach Ruhe und möchtest wieder den Durchblick haben, dich sammeln.",
         "bild": "/bilder/kopf-gedanken.webp",
         "bildBeschreibung": "Aquarell: ein Kopf, umgeben von vielen Gegenständen und Gedanken des Alltags"
       },
       {
-        "text": "Du erlebst Schwierigkeiten in Beziehungen oder Freundschaften, die dich festfahren lassen – und suchst nach den Ursachen?",
+        "text": "Du fühlst dich emotional getriggert in bestimmten Situationen und möchtest dem auf den Grund gehen.",
         "bild": "/bilder/paar.webp",
         "bildBeschreibung": "Aquarell: zwei Menschen, die sich voneinander abwenden"
       },
@@ -53,7 +53,7 @@
       }
     ],
     "kastenOben": "All das kannst du mit Hilfe von Hypnose in Trance und / oder im Rahmen von Gesprächen angehen.",
-    "kastenUnten": "Manchmal braucht es ein neutrales Ohr an der Seite für Themen, die du sonst mit niemandem teilen kannst."
+    "kastenUnten": "Manchmal braucht es ein neutrales Ohr an der Seite für Themen, die du sonst mit niemandem teilen magst."
   },
 
   "erwartet": {
@@ -64,8 +64,8 @@
         "text": "Fühlen, Erinnern, Reflexion, Klärung, Tiefe, Erkenntnis – nichts davon wird erzwungen. Du bestimmst Weg und Geschwindigkeit."
       },
       {
-        "titel": "Nähe zu dir selbst",
-        "text": "Denn nur wer sich selbst gut kennt, kann sich adäquat versorgen."
+        "titel": "Nähe zu dir selbst ",
+        "text": "Wer den Blick auf sich selbst wagt, kann sich kennen-lieben und respektieren lernen. Manchmal ist dieser Weg nicht ganz einfach. Ich begleite dich gern dabei."
       }
     ]
   },
